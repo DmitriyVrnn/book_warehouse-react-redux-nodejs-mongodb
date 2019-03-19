@@ -1,0 +1,65 @@
+h1 {
+  font-family: "FiraSans-Black", "Arial", serif;
+  color: #333;
+}
+
+.form_add-book {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
+  -webkit-box-shadow: 3px 2px 5px -2px rgba(0, 0, 0, 0.75);
+          box-shadow: 3px 2px 5px -2px rgba(0, 0, 0, 0.75);
+}
+
+.form_add-book .form-group {
+  padding: 10px;
+  font-size: 1em;
+  font-family: "Comic Sans MS", serif;
+}
+
+.form_add-book .form-group .form-control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.form_add-book .form-group input[type="text"] {
+  padding: 10px;
+  width: 20em;
+  border: 2px solid #d8d2d2;
+  border-radius: 5px;
+  background-color: #EEEEEE;
+}
+
+.form_add-book .form-group input[type="submit"] {
+  width: 8.5em;
+  height: 40px;
+  background-color: #CC584C;
+  border-radius: 5px;
+  border: 2px solid #9e382d;
+  cursor: pointer;
+}
+
+.form_add-book .form-group input[type="submit"]:hover {
+  background-color: #9e382d;
+  color: white;
+}
+
+.form_add-book .form-group input[type="submit"]:active {
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+.form_add-book .form-group input[value] {
+  font-size: 1em;
+  font-family: "FiraSans-Black", "Arial", serif;
+}
+/*# sourceMappingURL=add-book.css.map */

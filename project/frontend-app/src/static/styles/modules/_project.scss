@@ -1,0 +1,328 @@
+@import '../cosmetics/color';
+@import "../cosmetics/fonts";
+
+$borderRadius: 10px;
+$imageBig: 100px;
+$imageSmall: 60px;
+$padding: 10px;
+
+.navigation {
+  display: flex;
+  align-items: center;
+
+  .logotype {
+    display: flex;
+    width: 120px;
+    min-width: 120px;
+    height: 90px;
+    align-items: center;
+    justify-content: space-between;
+
+    transition: all .5s ease-out;
+
+    &:hover {
+      transform: rotate(45deg);
+      transition: all .5s ease-out;
+    }
+  }
+
+  .categories {
+    display: flex;
+    margin-left: 45px;
+
+    .category-item {
+      margin: 0 10px;
+      text-transform: uppercase;
+
+      .element-books {
+        color: $black;
+      }
+
+      a {
+        color: white;
+        font-weight: bold;
+        transition: all .2s ease-out;
+        font-family: "HanSolo", "Aria", serif;
+        letter-spacing: 2px;
+
+        &:hover {
+          color: $black;
+          transition: all .2s ease-out;
+        }
+      }
+    }
+  }
+}
+
+input[type="search"] {
+  display: flex;
+  width: 500px;
+  height: 15px;
+  margin-right: 20px;
+  padding: 15px;
+  border: 2px solid rgb(216, 210, 210);
+  border-radius: 5px;
+  outline: none;
+  font-size: 12px;
+  transition: all .5s ease-out;
+  justify-content: center;
+
+  &:focus, &:hover {
+    width: 700px;
+    transition: all .5s ease-out;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-grow: 1;
+
+  .sidebar {
+    max-width: 200px;
+    background-color: $red;
+    z-index: 1;
+    box-shadow: 1px 3px 7px 1px rgb(100, 98, 98);
+
+    .sidebar-worker {
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+      font-size: 20px;
+      padding-left: 10px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #eeeeee;
+
+      a {
+
+        margin-top: 5px;
+        font-size: 18px;
+        text-decoration: underline;
+      }
+    }
+
+    .sidebar-list {
+      flex-shrink: 1;
+      flex-grow: 0;
+      flex-basis: 300px;
+      min-width: 200px;
+      display: flex;
+
+      flex-flow: column wrap;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+
+      .sidebar-item {
+        margin-top: 20px;
+        cursor: pointer;
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        transition: all .1s ease-out;
+
+        &:hover {
+          background-color: darken($color: $red, $amount: 10);
+          transition: all .1s ease-out;
+        }
+
+        a {
+          color: white;
+          font-size: 20px;
+          margin-left: 10px;
+          display: flex;
+          font-family: 'FiraSans-Black', 'Aria', serif;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+.content {
+  width: 100%;
+  padding: 50px;
+  background-color: #eeeeee;
+
+  .feed-grid {
+    display: flex;
+    max-width: 1170px;
+    margin: 0 auto;
+
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: flex-start;
+  }
+
+  .header {
+    background-color: $black;
+    color: white;
+    font-size: 1.2em;
+    padding: 0.5rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  img {
+    border-radius: 50%;
+    height: $imageSmall;
+    width: $imageSmall;
+  }
+
+  .table-users {
+    border: 1px solid darken($baseColor, 5%);
+    border-radius: $borderRadius;
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+    max-width: calc(100% - 2em);
+    margin: 1em auto;
+    overflow: hidden;
+    width: 100em;
+  }
+
+  table {
+    width: 100%;
+
+    td, th {
+      color: darken($baseColor, 10%);
+      padding: $padding;
+    }
+
+    td {
+      text-align: center;
+      vertical-align: middle;
+
+      &:last-child {
+        font-size: 0.95em;
+        line-height: 1.4;
+        text-align: left;
+      }
+    }
+
+    th {
+      background-color: lighten($baseColor, 50%);
+      font-weight: 300;
+    }
+
+    tr {
+      &:nth-child(2n) {
+        background-color: white;
+      }
+      &:nth-child(2n+1) {
+        background-color: lighten($baseColor, 55%)
+      }
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    table, tr, td {
+      display: block;
+    }
+
+    td {
+      &:first-child {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: $imageBig;
+      }
+
+      &:not(:first-child) {
+        clear: both;
+        margin-left: $imageBig;
+        padding: 4px 20px 4px 90px;
+        position: relative;
+        text-align: left;
+
+        &:before {
+          color: lighten($baseColor, 30%);
+          content: '';
+          display: block;
+          left: 0;
+          position: absolute;
+        }
+      }
+
+      &:nth-child(2):before {
+        content: 'Name:';
+      }
+      &:nth-child(3):before {
+        content: 'Email:';
+      }
+      &:nth-child(4):before {
+        content: 'Phone:';
+      }
+      &:nth-child(5):before {
+        content: 'Comments:';
+      }
+    }
+
+    tr {
+      padding: $padding 0;
+      position: relative;
+      &:first-child {
+        display: none;
+      }
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .header {
+      background-color: transparent;
+      color: lighten($baseColor, 60%);
+      font-size: 2em;
+      font-weight: 700;
+      padding: 0;
+      text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    img {
+      border: 3px solid;
+      border-color: lighten($baseColor, 50%);
+      height: $imageBig;
+      margin: 0.5rem 0;
+      width: $imageBig;
+    }
+
+    td {
+      &:first-child {
+        background-color: lighten($baseColor, 45%);
+        border-bottom: 1px solid lighten($baseColor, 30%);
+        border-radius: $borderRadius $borderRadius 0 0;
+        position: relative;
+        top: 0;
+        transform: translateY(0);
+        width: 100%;
+      }
+
+      &:not(:first-child) {
+        margin: 0;
+        padding: 5px 1em;
+        width: 100%;
+
+        &:before {
+          font-size: .8em;
+          padding-top: 0.3em;
+          position: relative;
+        }
+      }
+
+      &:last-child {
+        padding-bottom: 1rem !important;
+      }
+    }
+
+    tr {
+      background-color: white !important;
+      border: 1px solid lighten($baseColor, 20%);
+      border-radius: $borderRadius;
+      box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+      margin: 0.5rem 0;
+      padding: 0;
+    }
+
+    .table-users {
+      border: none;
+      box-shadow: none;
+      overflow: visible;
+    }
+  }
+}
