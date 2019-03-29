@@ -11,5 +11,11 @@
     <orderEntry type="library" name="@types/express" level="application" />
     <orderEntry type="library" name="@types/node" level="application" />
     <orderEntry type="library" name="@types/mongoose" level="application" />
+    <orderEntry type="library" name="@types/bcrypt" level="application" />
+    <orderEntry type="library" name="@types/bcryptjs" level="application" />
+    <orderEntry type="library" name="@types/passport" level="application" />
+    <orderEntry type="library" name="@types/passport-jwt" level="application" />
+    <orderEntry type="library" name="@types/validator" level="application" />
+    <orderEntry type="library" name="@types/mongodb" level="application" />
   </component>
 </module>

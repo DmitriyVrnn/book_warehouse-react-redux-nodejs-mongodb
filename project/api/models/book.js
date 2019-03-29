@@ -1,7 +1,7 @@
 //Модель - книга
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const uniqueValidator = require('mongoose-unique-validator')
+const uniqueValidator = require('mongoose-unique-validator');
 
 //Описываем книгу
 const book = new Schema({

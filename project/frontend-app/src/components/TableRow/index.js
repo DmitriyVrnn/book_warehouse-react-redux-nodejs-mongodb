@@ -5,12 +5,15 @@ import axios from 'axios';
 export default class TableRow extends PureComponent {
 
     deleteBook = () => {
-        axios.get('http://localhost:4200/book/delete/' + this.props.obj._id)
-            .then(() => {
-                console.log('Книга удалена');
-                this.props.removeToListBook(this.props.obj);
-            })
-            .catch((err) => console.log( err));
+        const confirm = window.confirm(`Вы уверены что хотите удалить книгу "${this.props.obj.titleBook}"?`);
+        if (confirm) {
+            axios.get('http://localhost:4200/book/delete/' + this.props.obj._id)
+                .then(() => {
+                    alert(`Книга "${this.props.obj.titleBook}" удалена`);
+                    this.props.removeToListBook(this.props.obj);
+                })
+                .catch((err) => console.log(err));
+        } else alert("Удаление отменено")
     };
 
     render() {

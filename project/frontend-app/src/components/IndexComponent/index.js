@@ -19,7 +19,7 @@ export default class IndexComponent extends Component {
     }
 
     componentDidMount() {
-        console.log('mount')
+        console.log('mount');
         this.getRequest();
     }
 
