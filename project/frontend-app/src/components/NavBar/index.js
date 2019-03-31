@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {logoutUser} from '../../actions/authentication'
 import {withRouter} from 'react-router-dom';
-import MainContent from '../MainContent'
+import MainPage from '../../pages/main-page'
+
 
 class NavBar extends Component {
 
@@ -17,12 +18,8 @@ class NavBar extends Component {
         const {isAuthenticated, user} = this.props.auth;
         const authLinks = (
             //TODO: Вынести информацию о пользователе в отдельный компонент
-            <MainContent name={user.name}
-                         logout={this.onLogout}
-                         src={user.avatar}
-                         alt={user.name}
-                         title={user.name}
-            />
+            <MainPage onLogout={this.onLogout}
+                      user={user.name}/>
         );
 
         const guestLinks = (

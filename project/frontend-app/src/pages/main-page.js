@@ -1,14 +1,15 @@
 import React from 'react'
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 
-import logo from '../../static/img/phone-book-svgrepo-com.svg'
-import "../../static/styles/main.scss"
+import logo from '../static/img/phone-book-svgrepo-com.svg'
+import "../static/styles/main.scss"
 
-import EditBook from "../EditBook";
-import AddBook from "../AddBook";
-import IndexComponent from "../IndexComponent";
+import EditBook from "../components/EditBook";
+import AddBook from "../components/AddBook";
+import IndexComponent from "../components/IndexComponent";
+import Profile from "../components/Profile"
 
-const MainContent = (props) => {
+const MainPage = (props) => {
     return (
         <Router>
             <div className={'body'}>
@@ -32,9 +33,8 @@ const MainContent = (props) => {
                 <section className="wrapper">
                     <aside className="sidebar">
                         <div className="sidebar-worker">Пользователь:
-                            <Link to="/" onClick={props.logout}>
-                                {props.name}
-                            </Link>
+                            <Profile name={props.user}/>
+                            <Link to={"/"} onClick={props.onLogout}>Выход</Link>
                         </div>
                         <ul className="sidebar-list">
                             <li className="sidebar-item"><Link to={'/'}>Чат</Link></li>
@@ -59,4 +59,4 @@ const MainContent = (props) => {
     )
 };
 
-export default MainContent;
+export default MainPage;
