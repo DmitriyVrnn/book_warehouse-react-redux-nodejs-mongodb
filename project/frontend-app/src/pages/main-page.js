@@ -8,6 +8,9 @@ import EditBook from "../components/EditBook";
 import AddBook from "../components/AddBook";
 import IndexComponent from "../components/IndexComponent";
 import Profile from "../components/Profile"
+import NewPost from "../components/NewPost"
+import CreatePost from "../components/CreatePost"
+import PostList from '../components/PostList'
 
 const MainPage = (props) => {
     return (
@@ -37,7 +40,7 @@ const MainPage = (props) => {
                             <Link to={"/"} onClick={props.onLogout}>Выход</Link>
                         </div>
                         <ul className="sidebar-list">
-                            <li className="sidebar-item"><Link to={'/'}>Чат</Link></li>
+                            <li className="sidebar-item"><Link to={'/post'}>Стена</Link></li>
                             <li className="sidebar-item"><Link to={'/'}>Заказ</Link></li>
                             <li className="sidebar-item"><Link to={'/index'}>Хранилище</Link></li>
                             <li className="sidebar-item"><Link to={'/add'}>Добавить книгу</Link></li>
@@ -50,6 +53,7 @@ const MainPage = (props) => {
                                 <Route exact path='/add' component={AddBook}/>
                                 <Route path='/edit/:id' component={EditBook}/>
                                 <Route path='/index' component={IndexComponent}/>
+                                <Route path='/post' component={CreatePost}/>
                             </Switch>
                         </div>
                     </main>
