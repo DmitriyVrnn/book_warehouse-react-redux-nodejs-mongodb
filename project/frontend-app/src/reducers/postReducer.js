@@ -1,11 +1,13 @@
-import {ADD_POST, DELETE_POST} from "../actions/constants";
+import {ADD_POST, DELETE_POST, FETCH_POST} from "../constants/constants";
 
 export default (state = [], action) => {
     switch (action.type){
         case ADD_POST:
             return[...state, action.payload];
         case DELETE_POST:
-            return state.filter(post => post.id !== action.payload.id)
+            return state.filter(post => post._id !== action.payload.id)
+        case FETCH_POST:
+            return action.posts
         default:
             return state;
     }

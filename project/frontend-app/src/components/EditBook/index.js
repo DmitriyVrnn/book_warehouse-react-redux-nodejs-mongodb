@@ -25,6 +25,7 @@ export default class EditBook extends PureComponent {
                     series: response.data.series,
                     idBook: response.data.idBook
                 })
+                console.log(this.state)
             })
             .catch(err => {
                 console.log(err)
@@ -71,10 +72,13 @@ export default class EditBook extends PureComponent {
             idBook: this.state.idBook
         }
 
-        axios.post('http://localhost:4200/book/update/' + this.props.match.params.id, book)
-            .then(res => console.log(res))
+            axios.post('http://localhost:4200/book/update/' + this.props.match.params.id, book)
+            .then(res =>{
+                console.log(res)
+                this.props.history.push('/index/'+this.props.match.params.id)
+            })
         //window.location.reload(); //НУ ТАКОЕ СЕБЕ
-        this.props.history.push('/index');
+       // this.props.history.push('/index');
     }
 
     render() {

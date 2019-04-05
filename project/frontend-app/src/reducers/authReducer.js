@@ -1,4 +1,4 @@
-import {SET_CURRENT_USER} from "../actions/constants";
+import {SET_CURRENT_USER} from "../constants/constants";
 import isEmpty from '../validation/is-empty'
 
 const initialState = {

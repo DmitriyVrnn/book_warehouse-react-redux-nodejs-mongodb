@@ -13,6 +13,7 @@ const config = require('./database/DB');
 //подключаем роутер
 const serverRouting = require('./routes/serverBookRouter');
 const users = require('./routes/user');
+const postRoute = require('./routes/postRoute')
 
 //ожидаем, что подключимся к БД
 mongoose.connect(config.DB).then(
@@ -34,6 +35,8 @@ app.get('/', function(req, res) {
 app.use('/book', serverRouting);
 
 app.use('/api/users', users);
+
+app.use('/posts', postRoute);
 
 app.listen(PORT, () => {
     console.log(`Сервер запущен на ${PORT} порту`);

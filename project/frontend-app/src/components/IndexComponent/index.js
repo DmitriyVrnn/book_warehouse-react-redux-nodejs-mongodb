@@ -8,7 +8,8 @@ export default class IndexComponent extends Component {
         this.state = {books: []};
     }
 
-    getRequest() {
+    componentDidMount() {
+        console.log('mount');
         axios.get('http://localhost:4200/book/')
             .then(response => {
                 this.setState({books: response.data})
@@ -16,17 +17,6 @@ export default class IndexComponent extends Component {
             .catch(error => {
                 console.log(error)
             })
-    }
-
-    componentDidMount() {
-        console.log('mount');
-        this.getRequest();
-    }
-
-    componentDidUpdate() {
-        this.getRequest();
-        console.log('update')
-
     }
 
     removeToListBook = (item) => {

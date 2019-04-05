@@ -1,5 +1,6 @@
 import React from 'react'
 import PostList from '../PostList'
+import {fetchAllPosts} from "../../actions/post";
 
 export default class NewPost extends React.Component {
     state = {
@@ -54,7 +55,7 @@ export default class NewPost extends React.Component {
                     <div>
                         <button type="submit">Добавить пост</button>
                         <button type="button" onClick={this.handleReset}>
-                            Удалить
+                            Сбросить
                         </button>
                     </div>
                 </form>
