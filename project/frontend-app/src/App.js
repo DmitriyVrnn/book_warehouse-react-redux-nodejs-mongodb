@@ -25,6 +25,11 @@ if(localStorage.jwtToken) {
 }
 
 class App extends Component {
+
+    componentDidMount(){
+        document.title = "Bookstore";
+    }
+
     render() {
         return (
             <Provider store = { store }>

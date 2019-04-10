@@ -1,6 +1,5 @@
 import React from 'react'
 import PostList from '../PostList'
-import {fetchAllPosts} from "../../actions/post";
 
 export default class NewPost extends React.Component {
     state = {
@@ -59,7 +58,6 @@ export default class NewPost extends React.Component {
                         </button>
                     </div>
                 </form>
-                {/*Подключение постов*/}
                 <PostList/>
             </div>
         );

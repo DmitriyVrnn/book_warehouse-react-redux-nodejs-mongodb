@@ -17,7 +17,6 @@ class NavBar extends Component {
     render() {
         const {isAuthenticated, user} = this.props.auth;
         const authLinks = (
-            //TODO: Вынести информацию о пользователе в отдельный компонент
             <MainPage onLogout={this.onLogout}
                       user={user.name}/>
         );

@@ -11,6 +11,7 @@ function PostList({ posts, onDelete }) {
             </div>
         )
     }
+
     return (
         <div>
             {posts.map(post => {
@@ -33,9 +34,6 @@ const mapDispatchToProps = dispatch => {
         onDelete: id => {
             dispatch(deletePost(id));
         },
-        getPosts: id => {
-            dispatch(fetchAllPosts(id))
-        }
     };
 };
 
