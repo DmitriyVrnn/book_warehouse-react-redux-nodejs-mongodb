@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {logoutUser} from '../../actions/authentication'
 import {withRouter} from 'react-router-dom';
-import MainPage from '../../pages/main-page'
+import MainPage from '../pages/main-page'
 
 
 class NavBar extends Component {

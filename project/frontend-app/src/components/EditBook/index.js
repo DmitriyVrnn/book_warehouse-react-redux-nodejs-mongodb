@@ -1,6 +1,5 @@
 import React, {PureComponent} from 'react';
 import axios from 'axios';
-import '../AddBook/add-book.scss';
 
 export default class EditBook extends PureComponent {
 

@@ -5,9 +5,9 @@ export default (state = [], action) => {
         case ADD_POST:
             return[...state, action.payload];
         case DELETE_POST:
-            return state.filter(post => post._id !== action.payload.id)
+            return state.filter(post => post._id !== action.payload.id);
         case FETCH_POST:
-            return action.posts
+            return action.posts;
         default:
             return state;
     }

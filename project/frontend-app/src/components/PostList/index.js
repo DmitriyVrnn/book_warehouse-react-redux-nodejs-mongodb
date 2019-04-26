@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import Post from '../Post'
-import {deletePost, fetchAllPosts} from "../../actions/post";
+import {deletePost} from "../../actions/post";
 
 function PostList({ posts, onDelete }) {
     if(!posts.length) {

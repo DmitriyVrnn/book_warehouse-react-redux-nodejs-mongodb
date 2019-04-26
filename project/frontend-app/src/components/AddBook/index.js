@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import './add-book.scss'
 import axios from 'axios'
 
 export default class AddBook extends Component {
@@ -20,31 +19,31 @@ export default class AddBook extends Component {
         this.setState({
             titleBook: e.target.value
         })
-    }
+    };
 
     onChangeAuthorBook = (e) => {
         this.setState({
             authorBook: e.target.value
         })
-    }
+    };
 
     onChangePublishing = (e) => {
         this.setState({
             publishing: e.target.value
         })
-    }
+    };
 
     onChangeSeriesBook = (e) => {
         this.setState({
             series: e.target.value
         })
-    }
+    };
 
     onChangeIdBook = (e) => {
         this.setState({
             idBook: e.target.value
         })
-    }
+    };
 
     onSubmit = (e) => {
         e.preventDefault();
@@ -64,7 +63,7 @@ export default class AddBook extends Component {
             series: '',
             idBook: ''
         })
-    }
+    };
 
     render() {
         return (

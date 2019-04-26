@@ -1,16 +1,14 @@
 import React from 'react'
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 
-import logo from '../static/img/phone-book-svgrepo-com.svg'
-import "../static/styles/main.scss"
+import logo from '../../static/img/phone-book-svgrepo-com.svg'
+import "../../static/styles/main.scss"
 
-import EditBook from "../components/EditBook";
-import AddBook from "../components/AddBook";
-import IndexComponent from "../components/IndexComponent";
-import Profile from "../components/Profile"
-import NewPost from "../components/NewPost"
-import CreatePost from "../components/CreatePost"
-import PostList from '../components/PostList'
+import EditBook from "../../components/EditBook";
+import AddBook from "../../components/AddBook";
+import IndexComponent from "../../components/IndexComponent";
+import Profile from "../../components/Profile"
+import CreatePost from "../../components/CreatePost"
 
 const MainPage = (props) => {
     return (

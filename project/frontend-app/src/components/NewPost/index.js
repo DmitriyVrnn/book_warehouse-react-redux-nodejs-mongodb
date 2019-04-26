@@ -1,11 +1,17 @@
 import React from 'react'
 import PostList from '../PostList'
+import {fetchAllPosts} from "../../actions/post";
+import {connect} from 'react-redux';
 
-export default class NewPost extends React.Component {
+class NewPost extends React.Component {
     state = {
         title: '',
         body: ''
     };
+
+    componentDidMount() {
+        this.props.dispatch(fetchAllPosts())
+    }
 
     handleInputChange = e => {
         this.setState({
@@ -44,7 +50,7 @@ export default class NewPost extends React.Component {
                     <div>
                         <textarea
                             cols="21"
-                            rows="10    "
+                            rows="10"
                             placeholder="Body"
                             name="body"
                             onChange={this.handleInputChange}
@@ -63,3 +69,14 @@ export default class NewPost extends React.Component {
         );
     }
 }
+
+const mapStateToProps = (dispatch) => {
+    return {
+        allPosts: id => {
+            dispatch(fetchAllPosts())
+        }
+    }
+};
+
+export default connect(mapStateToProps)(NewPost)
+

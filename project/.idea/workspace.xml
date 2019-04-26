@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9175101-8be7-435f-b63e-e1ca36548d5a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-app/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-app/src/components/EditBook/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-app/src/components/EditBook/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-app/src/components/NavBar/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-app/src/components/NavBar/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-app/src/components/NewPost/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-app/src/components/NewPost/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-app/src/components/PostList/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-app/src/components/PostList/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-app/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-app/src/store.js" afterDir="false" />
-    </list>
+    <list default="true" id="a9175101-8be7-435f-b63e-e1ca36548d5a" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -323,7 +315,7 @@
   <component name="PropertiesComponent">
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="G:/React_example/letters-social-master" />
+    <property name="last_opened_file_path" value="G:/React_example/letters-social-chapter-4" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -386,12 +378,12 @@
       <workItem from="1554402983168" duration="599000" />
       <workItem from="1554415847587" duration="8149000" />
       <workItem from="1554817285319" duration="1046000" />
-      <workItem from="1554829176526" duration="5424000" />
+      <workItem from="1554829176526" duration="5642000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="142564000" />
+    <option name="totallyTimeSpent" value="142782000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
