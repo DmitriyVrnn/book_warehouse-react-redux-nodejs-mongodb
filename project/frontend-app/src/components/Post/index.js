@@ -1,13 +1,17 @@
 import React from 'react'
+import Profile from '../Profile'
 
-export default ({ post: { title, body, _id }, onDelete }) => {
+const Post = ({post: {title, body, _id}, onDelete}) => {
     return (
         <div>
-            <h2>{ title }</h2>
-            <p>{ body }</p>
+            <h2>{title}</h2>
+
+            <p>{body}</p>
             <button type="button" onClick={() => onDelete(_id)}>
                 Удалить
             </button>
         </div>
     );
 };
+
+export default Post;

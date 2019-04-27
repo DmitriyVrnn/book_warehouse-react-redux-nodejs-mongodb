@@ -21,22 +21,18 @@ class NewPost extends React.Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        if (this.state.title.trim() && this.state.body.trim()) {
+        if ((this.state.title.trim() && this.state.body.trim()) || this.state.body.trim()) {
             this.props.onAddPost(this.state);
-            this.handleReset();
+            this.setState({
+                title: '',
+                body: ''
+            })
         }
-    };
-
-    handleReset = () => {
-        this.setState({
-            title: '',
-            body: ''
-        });
     };
 
     render() {
         return (
-            <div>
+            <div className="create-post">
                 <form onSubmit={this.handleSubmit}>
                     <div>
                         <input
@@ -47,22 +43,15 @@ class NewPost extends React.Component {
                             value={this.state.title}
                         />
                     </div>
-                    <div>
-                        <textarea
-                            cols="21"
-                            rows="10"
-                            placeholder="Body"
-                            name="body"
-                            onChange={this.handleInputChange}
-                            value={this.state.body}>
+                    <textarea
+                        cols="21"
+                        rows="10"
+                        placeholder="Body"
+                        name="body"
+                        onChange={this.handleInputChange}
+                        value={this.state.body}>
                         </textarea>
-                    </div>
-                    <div>
-                        <button type="submit">Добавить пост</button>
-                        <button type="button" onClick={this.handleReset}>
-                            Сбросить
-                        </button>
-                    </div>
+                        <button className="btn-add_post" type="submit">Отправить</button>
                 </form>
                 <PostList/>
             </div>
