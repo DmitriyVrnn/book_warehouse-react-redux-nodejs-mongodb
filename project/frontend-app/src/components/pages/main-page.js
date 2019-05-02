@@ -7,7 +7,7 @@ import "../../static/styles/main.scss"
 import EditBook from "../../components/EditBook";
 import AddBook from "../../components/AddBook";
 import IndexComponent from "../../components/IndexComponent";
-import Profile from "../../components/Profile"
+import UserInfo from "../UserInfo"
 import CreatePost from "../../components/CreatePost"
 
 const MainPage = (props) => {
@@ -34,7 +34,7 @@ const MainPage = (props) => {
                 <section className="wrapper">
                     <aside className="sidebar">
                         <div className="sidebar-worker">Пользователь:
-                            <Profile name={props.user}/>
+                            <UserInfo name={props.user}/>
                             <Link to={"/"} onClick={props.onLogout}>Выход</Link>
                         </div>
                         <ul className="sidebar-list">

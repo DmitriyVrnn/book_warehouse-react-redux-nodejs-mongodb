@@ -1,16 +1,16 @@
 import React from 'react'
 import PostList from '../PostList'
-import {fetchAllPosts} from "../../actions/post";
-import {connect} from 'react-redux';
+import UserInfo from "../UserInfo";
 
 class NewPost extends React.Component {
     state = {
         title: '',
-        body: ''
+        author: this.props.auth.user.name,
+        body: '',
     };
 
     componentDidMount() {
-        this.props.dispatch(fetchAllPosts())
+        this.props.allPosts()
     }
 
     handleInputChange = e => {
@@ -25,12 +25,14 @@ class NewPost extends React.Component {
             this.props.onAddPost(this.state);
             this.setState({
                 title: '',
-                body: ''
+                author:'',
+                body: '',
             })
         }
     };
 
     render() {
+        const {user} = this.props.auth;
         return (
             <div className="create-post">
                 <form onSubmit={this.handleSubmit}>
@@ -43,6 +45,7 @@ class NewPost extends React.Component {
                             value={this.state.title}
                         />
                     </div>
+                    <UserInfo name={user.name}/>
                     <textarea
                         cols="21"
                         rows="10"
@@ -51,21 +54,15 @@ class NewPost extends React.Component {
                         onChange={this.handleInputChange}
                         value={this.state.body}>
                         </textarea>
-                        <button className="btn-add_post" type="submit">Отправить</button>
+                    <button className="btn-add_post" type="submit">Отправить</button>
                 </form>
-                <PostList/>
+                <PostList author={user.name}/>
             </div>
         );
     }
 }
 
-const mapStateToProps = (dispatch) => {
-    return {
-        allPosts: id => {
-            dispatch(fetchAllPosts())
-        }
-    }
-};
 
-export default connect(mapStateToProps)(NewPost)
+export default NewPost;
+
 

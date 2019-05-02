@@ -6,6 +6,9 @@ const PostSchema = new Schema({
     title: {
         type: String
     },
+    author: {
+        type: String,
+    },
     body: {
         type: String,
         required: true
