@@ -1,10 +1,13 @@
 import React, {Component, Fragment} from 'react'
 import axios from 'axios'
+import {connect} from 'react-redux'
+import { bindActionCreators } from 'redux';
 
 import TableRow from '../TableRow'
 import SearchBar from '../SearchBar'
+import {searchText} from "../../actions/books";
 
-export default class IndexComponent extends Component {
+class IndexComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {books: []};
@@ -19,6 +22,10 @@ export default class IndexComponent extends Component {
             .catch(error => {
                 console.log(error)
             })
+    }
+
+    onKeyUp = (value) => {
+        this.props.search(value)
     }
 
     removeToListBook = (item) => {
@@ -38,7 +45,7 @@ export default class IndexComponent extends Component {
     render() {
         return (
             <Fragment>
-                <SearchBar/>
+                <SearchBar onKeyUp={this.onKeyUp}/>
                 <div className={"table-users"}>
                     <div className={"header"}>Книги</div>
                     <table cellSpacing="0">
@@ -58,3 +65,18 @@ export default class IndexComponent extends Component {
         )
     }
 }
+
+const mapState = (state) => ({
+    state
+})
+
+const mapDispatchToProps = dispatch => {
+    return {
+        search: value => {
+            dispatch(searchText(value))
+        }
+    }
+}
+
+
+export default connect(mapState, mapDispatchToProps)(IndexComponent)
