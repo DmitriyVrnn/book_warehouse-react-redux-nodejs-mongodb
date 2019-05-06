@@ -1,6 +1,8 @@
-import React, {Component} from 'react'
+import React, {Component, Fragment} from 'react'
 import axios from 'axios'
+
 import TableRow from '../TableRow'
+import SearchBar from '../SearchBar'
 
 export default class IndexComponent extends Component {
     constructor(props) {
@@ -35,21 +37,24 @@ export default class IndexComponent extends Component {
 
     render() {
         return (
-            <div className={"table-users"}>
-                <div className={"header"}>Книги</div>
-                <table cellSpacing="0">
-                    <tbody>
-                    <tr>
-                        <th>Название</th>
-                        <th>Автор</th>
-                        <th>Издательство</th>
-                        <th>Серия</th>
-                        <th width="230">ID товара</th>
-                    </tr>
-                    {this.tabRow()}
-                    </tbody>
-                </table>
-            </div>
+            <Fragment>
+                <SearchBar/>
+                <div className={"table-users"}>
+                    <div className={"header"}>Книги</div>
+                    <table cellSpacing="0">
+                        <tbody>
+                        <tr>
+                            <th>Название</th>
+                            <th>Автор</th>
+                            <th>Издательство</th>
+                            <th>Серия</th>
+                            <th width="230">ID товара</th>
+                        </tr>
+                        {this.tabRow()}
+                        </tbody>
+                    </table>
+                </div>
+            </Fragment>
         )
     }
 }

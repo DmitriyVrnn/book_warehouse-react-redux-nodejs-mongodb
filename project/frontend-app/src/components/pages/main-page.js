@@ -26,9 +26,6 @@ const MainPage = (props) => {
                             <li className="category-item"><Link to={'/'}>Опции</Link></li>
                         </ul>
                     </nav>
-                    <div className="search-form">
-                        <input type="search" name="search" id="search" placeholder="Поиск..."/>
-                    </div>
                 </header>
 
                 <section className="wrapper">

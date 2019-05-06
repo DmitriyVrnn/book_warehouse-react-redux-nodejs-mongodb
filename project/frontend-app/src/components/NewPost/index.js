@@ -2,11 +2,12 @@ import React from 'react'
 import PostList from '../PostList'
 import UserInfo from "../UserInfo";
 
-class NewPost extends React.Component {
+class NewPost extends React.PureComponent {
     state = {
         title: '',
         author: this.props.auth.user.name,
         body: '',
+        date: new Date().toLocaleString()
     };
 
     componentDidMount() {
@@ -56,7 +57,7 @@ class NewPost extends React.Component {
                         </textarea>
                     <button className="btn-add_post" type="submit">Отправить</button>
                 </form>
-                <PostList author={user.name}/>
+                <PostList author={user.name} date={this.state.date}/>
             </div>
         );
     }

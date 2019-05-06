@@ -13,6 +13,9 @@ const PostSchema = new Schema({
         type: String,
         required: true
     },
+    date: {
+        type: String,
+    }
 }, {
     collection: 'posts'
 });

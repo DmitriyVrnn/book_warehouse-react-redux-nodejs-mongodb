@@ -33,3 +33,8 @@ textarea {
   }
 }
 
+.post-list{
+  display: flex;
+  flex-direction: column-reverse;
+}
+
