@@ -6,7 +6,7 @@ import "../../static/styles/main.scss"
 
 import EditBook from "../../components/EditBook";
 import AddBook from "../../components/AddBook";
-import IndexComponent from "../../components/IndexComponent";
+import StoreBooks from '../../containers/StoreBooks'
 import UserInfo from "../UserInfo"
 import CreatePost from "../../components/CreatePost"
 
@@ -47,7 +47,7 @@ const MainPage = (props) => {
                             <Switch>
                                 <Route exact path='/add' component={AddBook}/>
                                 <Route path='/edit/:id' component={EditBook}/>
-                                <Route path='/index' component={IndexComponent}/>
+                                <Route path='/index' component={StoreBooks}/>
                                 <Route path='/post' component={CreatePost}/>
                             </Switch>
                         </div>
