@@ -23,7 +23,7 @@ export default class EditBook extends PureComponent {
                     publishing: response.data.publishing,
                     series: response.data.series,
                     idBook: response.data.idBook
-                })
+                });
                 console.log(this.state)
             })
             .catch(err => {
@@ -35,31 +35,31 @@ export default class EditBook extends PureComponent {
         this.setState({
             titleBook: e.target.value
         })
-    }
+    };
 
     onChangeAuthorBook = (e) => {
         this.setState({
             authorBook: e.target.value
         })
-    }
+    };
 
     onChangePublishing = (e) => {
         this.setState({
             publishing: e.target.value
         })
-    }
+    };
 
     onChangeSeriesBook = (e) => {
         this.setState({
             series: e.target.value
         })
-    }
+    };
 
     onChangeIdBook = (e) => {
         this.setState({
             idBook: e.target.value
         })
-    }
+    };
 
     onSubmit = (e) => {
         e.preventDefault();
@@ -121,7 +121,6 @@ export default class EditBook extends PureComponent {
                     <div className={"form-group"}>
                         <input type="submit" value={"Сохранить"} className={"form-control"}/>
                     </div>
-
                 </form>
             </>
         )

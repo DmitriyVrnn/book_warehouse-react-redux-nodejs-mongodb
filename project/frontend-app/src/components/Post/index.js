@@ -8,7 +8,6 @@ const Post = ({post: {title, body, author, date, _id}, onDelete}) => {
             <p>{body}</p>
             <UserInfo name={author}/>
             <span>{date}</span>
-            {console.log(`New Date Now ${date}`)}
             <button type="button" onClick={() => onDelete(_id)}>
                 Удалить
             </button>

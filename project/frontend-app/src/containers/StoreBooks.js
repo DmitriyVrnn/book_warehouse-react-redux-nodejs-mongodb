@@ -8,11 +8,11 @@ class StoreBooks extends Component {
 
     state = {
         term: '',
-        books: []
+        books: [],
+        filter: '' //Все/ отсутствуют/ скоро будут
     };
 
     componentDidMount() {
-        console.log('mount');
         axios.get('http://localhost:4200/book/')
             .then(response => {
                 this.setState({books: response.data})
@@ -32,6 +32,7 @@ class StoreBooks extends Component {
         if (term.length === 0) {
             return items;
         }
+
         return items.filter((item) => {
             return item.titleBook.toLowerCase().indexOf(term.toLowerCase()) > -1;
         });

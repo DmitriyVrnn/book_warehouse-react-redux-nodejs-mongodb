@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import Post from '../Post'
 import {deletePost} from "../../actions/post";
 
-function PostList({ posts, onDelete, author, date}) {
+const PostList = ({ posts, onDelete, author, date}) => {
     if(!posts.length) {
         return (
             <div>
