@@ -54,7 +54,7 @@ $padding: 10px;
   }
 }
 
-input[type="search"] {
+/*input[type="search"] {
   display: flex;
   width: 500px;
   height: 15px;
@@ -71,7 +71,7 @@ input[type="search"] {
     width: 700px;
     transition: all .5s ease-out;
   }
-}
+}*/
 
 .wrapper {
   display: flex;
@@ -171,7 +171,7 @@ input[type="search"] {
   .table-users {
     border: 1px solid darken($baseColor, 5%);
     border-radius: $borderRadius;
-    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 30px 6px rgba(31, 51, 73, 0.10);
     max-width: calc(100% - 2em);
     margin: 1em auto;
     overflow: hidden;

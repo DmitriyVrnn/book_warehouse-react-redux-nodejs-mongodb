@@ -8,10 +8,10 @@ serverBookRouter.route('/add').post((req, res) => {
     const book = new Book(req.body);
     book.save()
         .then(book => {
-            res.json('Книга успешно добавлена')
+            res.status(200).json('Книга успешно добавлена')
         })
         .catch(err => {
-            res.status(400).send('Ну удается сохранить в базу данных');
+            res.status(400).send('Не удается сохранить в базу данных');
         })
 });
 

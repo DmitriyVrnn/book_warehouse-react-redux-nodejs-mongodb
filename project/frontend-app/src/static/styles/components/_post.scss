@@ -1,0 +1,40 @@
+.create-post {
+  background-color: #fff;
+  box-shadow: 0 0 30px 6px rgba(31, 51, 73, 0.10);
+}
+
+textarea {
+  background-color: transparent;
+  border: 0;
+  box-sizing: border-box;
+  display: block;
+  font-size: 14px;
+  line-height: 18px;
+  min-height: 69px;
+  outline: 0;
+  padding: 23px 12px 14px;
+  resize: none;
+  width: 100%;
+}
+
+.btn-add_post {
+  background: #0d47a1;
+  color: white;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  width: 7em;
+  cursor: pointer;
+  margin-left: 10px;
+  font-family: "FiraSans-Black", "Arial", serif;
+  font-size: 1em;
+  &:hover {
+    background: lighten(#0d47a1, 10);
+  }
+}
+
+.post-list{
+  display: flex;
+  flex-direction: column-reverse;
+}
+

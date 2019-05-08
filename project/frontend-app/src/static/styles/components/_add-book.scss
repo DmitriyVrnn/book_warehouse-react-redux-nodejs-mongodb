@@ -1,6 +1,6 @@
 h1{
   font-family: "FiraSans-Black", "Arial", serif;
-  color: #333;
+  color: $black;
 }
 
 .form_add-book{
@@ -31,12 +31,12 @@ h1{
     input[type="submit"]{
       width: 8.5em;
       height: 40px;
-      background-color: #CC584C;
+      background-color: $red;
       border-radius: 5px;
-      border: 2px solid darken(#CC584C, 15);
+      border: 2px solid darken($red, 15);
       cursor: pointer;
       &:hover{
-        background-color: darken(#CC584C, 15);
+        background-color: darken($red, 15);
         color: white;
       }
       &:active{
