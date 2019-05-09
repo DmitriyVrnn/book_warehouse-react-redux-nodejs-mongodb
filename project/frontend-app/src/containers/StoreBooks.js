@@ -32,7 +32,6 @@ class StoreBooks extends Component {
         if (term.length === 0) {
             return items;
         }
-
         return items.filter((item) => {
             return item.titleBook.toLowerCase().indexOf(term.toLowerCase()) > -1;
         });

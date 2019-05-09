@@ -5,11 +5,11 @@ import {deletePost} from "../../actions/post";
 
 const PostList = ({ posts, onDelete, author, date}) => {
     if(!posts.length) {
-        return (
-            <div>
-                Сообщения отсутствуют
-            </div>
-        )
+            return (
+                <div>
+                    Сообщения отсутствуют
+                </div>
+            )
     }
 
     return (

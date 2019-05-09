@@ -9,6 +9,9 @@ import AddBook from "../../components/AddBook";
 import StoreBooks from '../../containers/StoreBooks'
 import UserInfo from "../UserInfo"
 import CreatePost from "../../components/CreatePost"
+import Register from '../Register'
+import Links from '../Links'
+import CollectionBooks from '../../containers/CollectionBooks'
 
 const MainPage = (props) => {
     return (
@@ -34,12 +37,7 @@ const MainPage = (props) => {
                             <UserInfo name={props.user}/>
                             <Link to={"/"} onClick={props.onLogout}>Выход</Link>
                         </div>
-                        <ul className="sidebar-list">
-                            <li className="sidebar-item"><Link to={'/post'}>Стена</Link></li>
-                            <li className="sidebar-item"><Link to={'/'}>Заказ</Link></li>
-                            <li className="sidebar-item"><Link to={'/index'}>Хранилище</Link></li>
-                            <li className="sidebar-item"><Link to={'/add'}>Добавить книгу</Link></li>
-                        </ul>
+                        <Links/>
                     </aside>
 
                     <main className={"content"}>
@@ -47,8 +45,10 @@ const MainPage = (props) => {
                             <Switch>
                                 <Route exact path='/add' component={AddBook}/>
                                 <Route path='/edit/:id' component={EditBook}/>
+                                <Route path='/register' component={Register}/>
                                 <Route path='/index' component={StoreBooks}/>
                                 <Route path='/post' component={CreatePost}/>
+                                <Route path='/books' component={CollectionBooks}/>
                             </Switch>
                         </div>
                     </main>
