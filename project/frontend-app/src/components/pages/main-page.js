@@ -4,6 +4,8 @@ import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 import logo from '../../static/img/phone-book-svgrepo-com.svg'
 import "../../static/styles/main.scss"
 
+import SandBox from '../Modal/SandBox'
+
 import EditBook from "../../components/EditBook";
 import AddBook from "../../components/AddBook";
 import StoreBooks from '../../containers/StoreBooks'
@@ -25,7 +27,7 @@ const MainPage = (props) => {
                             <li className="category-item"><Link to={'/books'}><span
                                 className="element-books">Книги</span></Link></li>
                             <li className="category-item"><Link to={'/'}>Авторы</Link></li>
-                            <li className="category-item"><Link to={'/'}>Склады</Link></li>
+                            <li className="category-item"><Link to={'/test'}>Тест</Link></li>
                             <li className="category-item"><Link to={'/'}>Опции</Link></li>
                         </ul>
                     </nav>
@@ -46,6 +48,7 @@ const MainPage = (props) => {
                                 <Route exact path='/add' component={AddBook}/>
                                 <Route path='/edit/:id' component={EditBook}/>
                                 <Route path='/register' component={Register}/>
+                                <Route path='/test' component={SandBox}/>
                                 <Route path='/index' component={StoreBooks}/>
                                 <Route path='/post' component={CreatePost}/>
                                 <Route path='/books' component={CollectionBooks}/>
