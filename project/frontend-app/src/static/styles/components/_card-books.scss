@@ -1,0 +1,30 @@
+.container {
+
+}
+
+.books-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  text-overflow: ellipsis;
+  width: 15em;
+  background: white;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14);
+  cursor: pointer;
+  border-radius: 5px;
+  &:hover {
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.book-card h2 {
+  font-size: 14px;
+  text-overflow: ellipsis;
+}
+

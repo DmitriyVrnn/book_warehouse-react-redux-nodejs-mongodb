@@ -20,7 +20,7 @@ const book = new Schema({
         type: String
     },
     idBook: {
-        type: Number,
+        type: String,
         unique: true
     }
 }, {

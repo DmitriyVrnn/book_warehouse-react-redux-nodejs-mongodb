@@ -19,7 +19,7 @@ const MainPage = (props) => {
             <div className={'body'}>
                 <header>
                     <nav className="navigation">
-                        <Link to="/"><img className="logotype" src={logo}
+                        <Link to="/books"><img className="logotype" src={logo}
                                           alt="Логотип"/></Link>
                         <ul className="categories">
                             <li className="category-item"><Link to={'/books'}><span

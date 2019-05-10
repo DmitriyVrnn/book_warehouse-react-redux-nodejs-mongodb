@@ -12,7 +12,7 @@ const BookList = ({booksCollection}) => {
     }
 
     return(
-        <div>
+        <div className="books-grid">
             {booksCollection.map(book => {
                 return (
                     <Book book={ book } key={ book._id }/>
