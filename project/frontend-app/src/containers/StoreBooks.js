@@ -1,5 +1,6 @@
 import React, {Component, Fragment} from 'react'
 import axios from "axios";
+import ReactToExcel from 'react-html-table-to-excel';
 
 import TableBooks from '../components/TableBooks'
 import SearchBar from '../components/SearchBar'
@@ -47,6 +48,12 @@ class StoreBooks extends Component {
         return (
             <Fragment>
                 <SearchBar onSearchChange={this.onSearchChange}/>
+                <ReactToExcel
+                    table="table-to-xls"
+                    filename="books-table"
+                    sheet="books"
+                    buttonText="Экпортировать в Excel"
+                />
                 <TableBooks books={visibleItems}
                             removeToListBook={this.removeToListBook}/>
             </Fragment>
