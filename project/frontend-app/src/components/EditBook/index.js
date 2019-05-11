@@ -70,7 +70,6 @@ export default class EditBook extends PureComponent {
             series: this.state.series,
             idBook: this.state.idBook
         };
-
         axios.post('http://localhost:4200/book/update/' + this.props.match.params.id, book)
             .then(res => {
                 console.log(res);

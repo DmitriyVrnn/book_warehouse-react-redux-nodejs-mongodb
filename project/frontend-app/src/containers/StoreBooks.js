@@ -4,19 +4,23 @@ import ReactToExcel from 'react-html-table-to-excel';
 
 import TableBooks from '../components/TableBooks'
 import SearchBar from '../components/SearchBar'
+import Loader from '../components/Loader'
 
 class StoreBooks extends Component {
 
     state = {
         term: '',
         books: [],
-        filter: '' //Все/ отсутствуют/ скоро будут
+        loading: false
     };
 
     componentDidMount() {
         axios.get('http://localhost:4200/book/')
             .then(response => {
-                this.setState({books: response.data})
+                this.setState({
+                    books: response.data,
+                    loading: false,
+                })
             })
             .catch(error => {
                 console.log(error)
@@ -43,8 +47,12 @@ class StoreBooks extends Component {
     };
 
     render() {
-        const {books, term} = this.state;
+        const {books, term, loading} = this.state;
         const visibleItems = this.search(books, term);
+
+        if(loading){
+            return <Loader/>
+        }
         return (
             <Fragment>
                 <SearchBar onSearchChange={this.onSearchChange}/>

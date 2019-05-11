@@ -4,7 +4,10 @@ import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 import logo from '../../static/img/phone-book-svgrepo-com.svg'
 import "../../static/styles/main.scss"
 
+//--start--- Тестовые компоненты
 import SandBox from '../Modal/SandBox'
+import Loader from '../Loader'
+//--end---
 
 import EditBook from "../../components/EditBook";
 import AddBook from "../../components/AddBook";
@@ -48,7 +51,7 @@ const MainPage = (props) => {
                                 <Route exact path='/add' component={AddBook}/>
                                 <Route path='/edit/:id' component={EditBook}/>
                                 <Route path='/register' component={Register}/>
-                                <Route path='/test' component={SandBox}/>
+                                <Route path='/test' component={Loader}/>
                                 <Route path='/index' component={StoreBooks}/>
                                 <Route path='/post' component={CreatePost}/>
                                 <Route path='/books' component={CollectionBooks}/>

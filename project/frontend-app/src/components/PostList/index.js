@@ -3,20 +3,20 @@ import {connect} from 'react-redux'
 import Post from '../Post'
 import {deletePost} from "../../actions/post";
 
-const PostList = ({ posts, onDelete, author, date}) => {
-    if(!posts.length) {
-            return (
-                <div>
-                    Сообщения отсутствуют
-                </div>
-            )
+const PostList = ({posts, onDelete, author, date}) => {
+    if (!posts.length) {
+        return (
+            <div>
+                Сообщения отсутствуют
+            </div>
+        )
     }
 
     return (
         <div className={"post-list"}>
             {posts.map(post => {
                 return (
-                    <Post post={ post } author={author} date={date} onDelete={ onDelete } key={ post._id }/>
+                    <Post post={post} author={author} date={date} onDelete={onDelete} key={post._id}/>
                 );
             })}
         </div>
