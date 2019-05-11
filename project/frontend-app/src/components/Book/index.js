@@ -1,5 +1,7 @@
 import React, {useState} from 'react'
+
 import Modal from '../Modal'
+import ModalBookInfo from './ModalBookInfo'
 
 const Book = ({book: {titleBook, authorBook, description}}) => {
     const [isOpen, setOpen] = useState(false);
@@ -24,6 +26,7 @@ const Book = ({book: {titleBook, authorBook, description}}) => {
                    onCancel={handleCancel}
                    onSubmit={handleSubmit}>
                 <p>Автор: {authorBook}</p>
+
                 {description ? <p>Описание: {description}</p> : <p>Описание: отсутствует</p>}
             </Modal>
             {checkDescription()}
@@ -35,34 +38,6 @@ const Book = ({book: {titleBook, authorBook, description}}) => {
 };
 
 export default Book;
-
-
-/*class Book extends Component {
-    constructor(props){
-        super(props)
-        this.state = {
-            book: {
-                titleBook: '',
-                authorBook: '',
-            }
-        }
-    }
-
-
-    render(){
-        const {titleBook, authorBook} = this.state.book
-        console.log(this.state.book.titleBook)
-        return(
-            <div className='book-card'>
-                <div>Тут фото</div>
-                <h2>Название: {titleBook}</h2>
-                <p>Автор: {authorBook}</p>
-            </div>
-        )
-    }
-}
-
-export default Book;*/
 
 
 /*const Book = ({book: {titleBook, authorBook, description}}) => {

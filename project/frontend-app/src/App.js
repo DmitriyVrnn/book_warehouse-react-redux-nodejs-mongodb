@@ -9,7 +9,6 @@ import { setCurrentUser, logoutUser } from './actions/authentication';
 import NavBar from './components/NavBar';
 import Register from './components/Register';
 import Login from './components/Login';
-import Loader from './components/Loader'
 
 //import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -27,24 +26,11 @@ if(localStorage.jwtToken) {
 
 class App extends Component {
 
-    state = {
-        loading: false
-    };
-
     componentDidMount(){
         document.title = "Bookstore";
-        this.setState({
-            loading: false,
-        })
     }
 
     render() {
-        const {loading} = this.state;
-
-        if(loading){
-            return <Loader/>
-        }
-
         return (
             <Provider store = { store }>
                 <Router>

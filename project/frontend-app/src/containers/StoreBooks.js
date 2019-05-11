@@ -11,7 +11,7 @@ class StoreBooks extends Component {
     state = {
         term: '',
         books: [],
-        loading: false
+        loading: true
     };
 
     componentDidMount() {
