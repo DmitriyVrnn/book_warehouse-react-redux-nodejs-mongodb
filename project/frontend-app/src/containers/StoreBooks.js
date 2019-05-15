@@ -1,17 +1,19 @@
-import React, {Component, Fragment} from 'react'
+import React, {PureComponent, Fragment} from 'react'
 import axios from "axios";
 import ReactToExcel from 'react-html-table-to-excel';
 
 import TableBooks from '../components/TableBooks'
 import SearchBar from '../components/SearchBar'
 import Loader from '../components/Loader'
+import SortButton from "../components/SortButton";
 
-class StoreBooks extends Component {
+class StoreBooks extends PureComponent {
 
     state = {
         term: '',
         books: [],
-        loading: true
+        loading: true,
+        sortDirection: 1, //1 - с большого, -1 - с меньшего
     };
 
     componentDidMount() {
@@ -33,6 +35,35 @@ class StoreBooks extends Component {
         })
     };
 
+    compareBy = (key) => {
+        return (a, b) => {
+            if (key) {
+                console.log(this.state.books.titleBook)
+                if (a[key] > b[key]) return 1;
+                if (a[key] < b[key]) return -1;
+            }
+            return 0;
+        };
+    };
+
+    sortBy = (key) => {
+        let booksCopy = [...this.state.books];
+        console.log(booksCopy);
+        booksCopy.sort(this.compareBy(key));
+        this.setState({books: booksCopy});
+    };
+
+    /*sortDataTableByName = (direction) => {
+        this.setState({sortDir: direction});
+        this.state.books.sort((a, b) => {
+            if (a.titleBook > b.titleBook) return this.state.sortDir ? 1 : -1;
+            if (a.titleBook < b.titleBook) return this.state.sortDir ? 1 : -1;
+            return 0;
+        });
+       this.setState({sortedData: this.state.books})
+        console.log(this.state.sortedData)
+    };*/
+
     search(items, term) {
         if (term.length === 0) {
             return items;
@@ -50,12 +81,13 @@ class StoreBooks extends Component {
         const {books, term, loading} = this.state;
         const visibleItems = this.search(books, term);
 
-        if(loading){
+        if (loading) {
             return <Loader/>
         }
         return (
             <Fragment>
                 <SearchBar onSearchChange={this.onSearchChange}/>
+                <SortButton sortBy={this.sortBy}/>
                 <ReactToExcel
                     table="table-to-xls"
                     filename="books-table"

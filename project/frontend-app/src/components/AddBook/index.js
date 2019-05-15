@@ -11,7 +11,7 @@ export default class AddBook extends Component {
             authorBook: '',
             publishing: '',
             series: '',
-            idBook: ''
+            idBook: '',
         }
     }
 
@@ -108,7 +108,6 @@ export default class AddBook extends Component {
                     <div className={"form-group"}>
                         <input type="submit" value={"Добавить в базу"} className={"form-control"}/>
                     </div>
-
                 </form>
             </>
         )
