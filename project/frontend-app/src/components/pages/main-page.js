@@ -6,7 +6,7 @@ import "../../static/styles/main.scss"
 
 //--start--- Тестовые компоненты
 import SandBox from '../Modal/SandBox'
-import Loader from '../Loader'
+import TestDirectory from '../TestDirectory'
 //--end---
 
 import EditBook from "../../components/EditBook";
@@ -22,26 +22,17 @@ const MainPage = (props) => {
     return (
         <Router>
             <div className={'body'}>
-                <header>
-                    <nav className="navigation">
-                        <Link to="/books"><img className="logotype" src={logo}
-                                          alt="Логотип"/></Link>
-                        <ul className="categories">
-                            <li className="category-item"><Link to={'/books'}><span
-                                className="element-books">Книги</span></Link></li>
-                            <li className="category-item"><Link to={'/'}>Авторы</Link></li>
-                            <li className="category-item"><Link to={'/test'}>Тест</Link></li>
-                            <li className="category-item"><Link to={'/'}>Опции</Link></li>
-                        </ul>
-                    </nav>
+                <header className='header'>
+                    <Link to="/books"><img className="logotype" src={logo}
+                                           alt="Логотип"/></Link>
+                    <div className="header-worker">
+                        <UserInfo name={props.user}/>
+                        <Link to={"/"} onClick={props.onLogout}>Выход</Link>
+                    </div>
                 </header>
 
                 <section className="wrapper">
                     <aside className="sidebar">
-                        <div className="sidebar-worker">Пользователь:
-                            <UserInfo name={props.user}/>
-                            <Link to={"/"} onClick={props.onLogout}>Выход</Link>
-                        </div>
                         <Links/>
                     </aside>
 
@@ -51,7 +42,7 @@ const MainPage = (props) => {
                                 <Route exact path='/add' component={AddBook}/>
                                 <Route path='/edit/:id' component={EditBook}/>
                                 <Route path='/register' component={Register}/>
-                                <Route path='/test' component={Loader}/>
+                                <Route path='/test' component={TestDirectory}/>
                                 <Route path='/index' component={StoreBooks}/>
                                 <Route path='/post' component={CreatePost}/>
                                 <Route path='/books' component={CollectionBooks}/>

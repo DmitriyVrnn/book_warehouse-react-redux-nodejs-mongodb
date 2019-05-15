@@ -31,12 +31,13 @@ h1{
     input[type="submit"]{
       width: 8.5em;
       height: 40px;
-      background-color: $red;
+      background-color: $main-color;
+      color: white;
       border-radius: 5px;
-      border: 2px solid darken($red, 15);
+      border: 2px solid darken($main-color, 15);
       cursor: pointer;
       &:hover{
-        background-color: darken($red, 15);
+        background-color: darken($main-color, 15);
         color: white;
       }
       &:active{

@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 
 const UserInfo = (props) => {
     return (
-        <div>
-            <span>{props.name}</span>
+        <div className="block-user">
+            <span className="name-user">{props.name}</span>
         </div>
     )
 };

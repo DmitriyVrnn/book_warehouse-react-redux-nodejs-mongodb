@@ -1,6 +1,12 @@
 .create-post {
-  background-color: #fff;
+  background-color: #eeeeee;
   box-shadow: 0 0 30px 6px rgba(31, 51, 73, 0.10);
+}
+
+.form-post {
+  border-radius: 5px;
+  background: white;
+  margin-bottom: 15px;
 }
 
 textarea {
@@ -18,23 +24,55 @@ textarea {
 }
 
 .btn-add_post {
-  background: #0d47a1;
-  color: white;
+  background: #88c5cc;
   height: 30px;
   border-radius: 5px;
   border: none;
+  color: black;
   width: 7em;
   cursor: pointer;
   margin-left: 10px;
   font-family: "FiraSans-Black", "Arial", serif;
   font-size: 1em;
   &:hover {
-    background: lighten(#0d47a1, 10);
+    background: darken(#88c5cc, 15);
   }
 }
 
-.post-list{
+.post-list {
   display: flex;
   flex-direction: column-reverse;
 }
 
+.post-block{
+  background: white;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-bottom: 10px;
+
+  .btn-delete{
+    color: $red;
+    cursor: pointer;
+    outline: none;
+    background: none;
+    border: none;
+    width: 30px;
+  }
+
+  .author{
+    display: flex;
+    &:first-child{
+      font-size: 14px;
+    }
+    .name-user{
+      margin-left: 4px;
+    }
+  }
+}
+
+.post-block > *{
+  padding-bottom: 15px;
+}

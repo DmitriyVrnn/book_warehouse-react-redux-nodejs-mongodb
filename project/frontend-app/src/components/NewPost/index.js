@@ -36,7 +36,7 @@ class NewPost extends React.PureComponent {
         const {user} = this.props.auth;
         return (
             <div className="create-post">
-                <form onSubmit={this.handleSubmit}>
+                <form className="form-post" onSubmit={this.handleSubmit}>
                     <div>
                         <input
                             type="text"
