@@ -1,4 +1,4 @@
-/*import React from 'react';
+import React from 'react';
 
 class TestDirectory extends React.Component {
     constructor(props) {
@@ -18,12 +18,12 @@ class TestDirectory extends React.Component {
         data.append('file', this.uploadInput.files[0]);
         data.append('filename', this.fileName.value);
 
-        fetch('http://localhost:8000/upload', {
+        fetch('http://localhost:4200/upload', {
             method: 'POST',
             body: data,
         }).then((response) => {
             response.json().then((body) => {
-                this.setState({ imageURL: `http://localhost:8000/${body.file}` });
+                this.setState({ imageURL: `http://localhost:4200/${body.file}` });
             });
         });
     }
@@ -47,4 +47,4 @@ class TestDirectory extends React.Component {
     }
 }
 
-export default TestDirectory;*/
+export default TestDirectory;
