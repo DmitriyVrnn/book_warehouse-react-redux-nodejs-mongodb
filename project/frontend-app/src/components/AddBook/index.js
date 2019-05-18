@@ -1,10 +1,9 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import axios from 'axios'
+import {NotificationContainer, NotificationManager} from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
 
-import {ErrorHandler, SuccessHandler} from '../Handlers/Handlers'
-
-export default class AddBook extends Component {
-
+export default class AddBook extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
@@ -17,6 +16,21 @@ export default class AddBook extends Component {
             success: false,
         }
     }
+
+    componentDidUpdate() {
+        const {error, success} = this.state;
+        if (error) {
+            NotificationManager.error('Невозможно добавить книгу', 'Ошибка!', 5000, () => {
+                alert(`Книгу невозможно добавить, возможно она уже добавлена`);
+            });
+            this.setState({error: false})
+        }
+        if (success) {
+            NotificationManager.success('Книга добавлена', 'Успешно!');
+            this.setState({success: false})
+        }
+    }
+
 
     onChangeTitleBook = (e) => {
         this.setState({
@@ -82,64 +96,51 @@ export default class AddBook extends Component {
         })
     };
 
-
-    showForm = () => {
-        return (
-            <form className={"form_add-book"} onSubmit={this.onSubmit}>
-                <div className={"form-group"}>
-                    <label>
-                        Название:
-                        <input type="text" className={"form-control"} value={this.state.titleBook}
-                               onChange={this.onChangeTitleBook} required={true}/>
-                    </label>
-                </div>
-                <div className={"form-group"}>
-                    <label>
-                        Автор:
-                        <input type="text" className={"form-control"} value={this.state.authorBook}
-                               onChange={this.onChangeAuthorBook} required={true}/>
-                    </label>
-                </div>
-                <div className={"form-group"}>
-                    <label>
-                        Издательство:
-                        <input type="text" className={"form-control"} value={this.state.publishing}
-                               onChange={this.onChangePublishing}/>
-                    </label>
-                </div>
-                <div className={"form-group"}>
-                    <label>
-                        Серия:
-                        <input type="text" className={"form-control"} value={this.state.series}
-                               onChange={this.onChangeSeriesBook}/>
-                    </label>
-                </div>
-                <div className={"form-group"}>
-                    <label>
-                        ID товара:
-                        <input type="text" className={"form-control"} value={this.state.idBook}
-                               onChange={this.onChangeIdBook}/>
-                    </label>
-                </div>
-                <div className={"form-group"}>
-                    <input type="submit" value={"Добавить в базу"} className={"form-control"}/>
-                </div>
-            </form>
-        )
-    };
-
-
     render() {
-
-        const {error, success} = this.state;
-
-        //const errorMessage = error ? <ErrorIndicator/> : null\
         return (
             <>
                 <h1>Добавить новую книгу</h1>
-                {error ? <ErrorHandler/> : this.showForm()}
-                {success && !error ? <SuccessHandler/> : null}
-                {console.log(success)}
+                <form className={"form_add-book"} onSubmit={this.onSubmit}>
+                    <div className={"form-group"}>
+                        <label>
+                            Название:
+                            <input type="text" className={"form-control"} value={this.state.titleBook}
+                                   onChange={this.onChangeTitleBook} required={true}/>
+                        </label>
+                    </div>
+                    <div className={"form-group"}>
+                        <label>
+                            Автор:
+                            <input type="text" className={"form-control"} value={this.state.authorBook}
+                                   onChange={this.onChangeAuthorBook} required={true}/>
+                        </label>
+                    </div>
+                    <div className={"form-group"}>
+                        <label>
+                            Издательство:
+                            <input type="text" className={"form-control"} value={this.state.publishing}
+                                   onChange={this.onChangePublishing}/>
+                        </label>
+                    </div>
+                    <div className={"form-group"}>
+                        <label>
+                            Серия:
+                            <input type="text" className={"form-control"} value={this.state.series}
+                                   onChange={this.onChangeSeriesBook}/>
+                        </label>
+                    </div>
+                    <div className={"form-group"}>
+                        <label>
+                            ID товара:
+                            <input type="text" className={"form-control"} value={this.state.idBook}
+                                   onChange={this.onChangeIdBook}/>
+                        </label>
+                    </div>
+                    <div className={"form-group"}>
+                        <input type="submit" value={"Добавить в базу"} className={"form-control"}/>
+                    </div>
+                </form>
+                <NotificationContainer/>
             </>
         )
     }
