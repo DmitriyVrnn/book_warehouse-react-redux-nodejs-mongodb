@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9175101-8be7-435f-b63e-e1ca36548d5a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-app/src/components/AddBook/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-app/src/components/AddBook/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-app/src/components/Handlers/Handlers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-app/src/static/styles/modules/_project.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-app/src/static/styles/modules/_project.scss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -38,14 +34,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend-app/src/components/AddBook/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
+            <state relative-caret-position="-2944">
               <caret line="5" column="52" lean-forward="true" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_project.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frontend-app/src/static/styles/modules/_project.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="116" column="22" lean-forward="true" selection-start-line="116" selection-start-column="22" selection-end-line="116" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -117,7 +122,6 @@
         <option value="$PROJECT_DIR$/api/server.js" />
         <option value="$PROJECT_DIR$/frontend-app/src/components/pages/main-page.js" />
         <option value="$PROJECT_DIR$/frontend-app/src/components/Links/index.js" />
-        <option value="$PROJECT_DIR$/frontend-app/src/static/styles/modules/_project.scss" />
         <option value="$PROJECT_DIR$/api/routes/serverBookRouter.js" />
         <option value="$PROJECT_DIR$/frontend-app/src/components/ErrorIndicator/index.js" />
         <option value="$PROJECT_DIR$/frontend-app/src/components/Handlers/ErrorHandler.js" />
@@ -125,6 +129,7 @@
         <option value="$PROJECT_DIR$/frontend-app/src/static/styles/components/_handlers.scss" />
         <option value="$PROJECT_DIR$/frontend-app/src/components/Handlers/Handlers.js" />
         <option value="$PROJECT_DIR$/frontend-app/src/components/AddBook/index.js" />
+        <option value="$PROJECT_DIR$/frontend-app/src/static/styles/modules/_project.scss" />
       </list>
     </option>
   </component>
@@ -249,6 +254,24 @@
               <item name="styles" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="styles" type="462c0819:PsiDirectoryNode" />
+              <item name="cosmetics" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="styles" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -329,7 +352,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="168838000" />
+    <option name="totallyTimeSpent" value="169933000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -673,13 +696,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend-app/src/static/styles/modules/_project.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="149" column="28" lean-forward="true" selection-start-line="149" selection-start-column="28" selection-end-line="149" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/routes/postRoute.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-48">
@@ -769,11 +785,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend-app/src/components/AddBook/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
+        <state relative-caret-position="-2944">
           <caret line="5" column="52" lean-forward="true" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend-app/src/static/styles/modules/_project.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="116" column="22" lean-forward="true" selection-start-line="116" selection-start-column="22" selection-end-line="116" selection-end-column="22" />
         </state>
       </provider>
     </entry>
