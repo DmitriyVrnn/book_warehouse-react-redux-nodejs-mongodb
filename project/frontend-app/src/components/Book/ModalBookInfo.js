@@ -1,67 +1,49 @@
-import React from 'react'
-import axios from 'axios'
-import {withRouter} from 'react-router-dom'
+import React, {useState} from 'react'
+import {connect} from 'react-redux'
 
+import {addDescriptionBook} from "../../actions/collectionBooks";
 
-class ModalBookInfo extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            description: this.props.description,
+const ModalBookInfo = (props) => {
+    const [description, setDescription] = useState('');
+    const [_id, setId] = useState(props.book ? props.book._id : null);
+
+    const onChangeText = e => {
+        const description = e.target.value;
+        setDescription(description);
+    };
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        console.log(`Что я передаю ${_id}`);
+        props.onAdd(_id);
+        console.log(_id)
+    };
+
+    return (
+        <form onSubmit={handleSubmit}>
+            <input type="text" className={"form-control"} value={description}
+                   onChange={this.onChangeText} required={true}/>
+            <button type="submit">Отправить</button>
+        </form>
+    )
+};
+
+function mapStateToProps(state, props) {
+    if (props.params._id) {
+        return {
+            booksCollection: state.booksCollection.find(item => item._id === props.params._id)
         }
     }
 
-    /*componentDidMount() {
-        axios.get('http://localhost:4200/book/edit/' + this.props.match.params.id)
-            .then(response => {
-                this.setState({
-                    description: response.data.description,
-                });
-                console.log(this.state)
-            })
-            .catch(err => {
-                console.log(err)
-            })
-    }*/
-
-    onChangeDescription = (e) => {
-        this.setState({
-            description: e.target.value
-        });
-    }
-
-    onSubmit = (e) => {
-        e.preventDefault();
-        const book = {
-            description: this.state.description,
-        };
-        axios.post('http://localhost:4200/book/update/' + this.props.match.params.id, book)
-        console.log(this.props.match.params.id)
-            .then(res => {
-                console.log(res);
-                this.props.history.push('/index/' + this.props.match.params.id)
-            })
-    };
-
-    render() {
-        console.log(this.state.description)
-        return (
-            <>
-                <h1>Редактирование</h1>
-                <form onSubmit={this.onSubmit}>
-                    <div className={"form-group"}>
-                        <label>
-                            Название:
-                            <input type="text" value={this.state.titleBook}
-                                   onChange={this.onChangeDescription} required={true}/>
-                        </label>
-                    </div>
-                    <input type="submit" value={"Сохранить"} className={"form-control"}/>
-                </form>
-            </>
-        )
-    }
-
+    return { booksCollection: null };
 }
 
-export default ModalBookInfo;
+const mapDispatchToProps = dispatch => {
+    return {
+        onAdd: description => {
+            dispatch(addDescriptionBook(description))
+        }
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ModalBookInfo)

@@ -30,6 +30,7 @@ const book = new Schema({
     collection: 'books' //books - коллекция в базе данных
 });
 
+
 book.plugin(uniqueValidator);
 
 module.exports = mongoose.model('book', book);

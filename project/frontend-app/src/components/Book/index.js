@@ -1,10 +1,14 @@
 import React, {useState} from 'react'
+import {connect} from 'react-redux'
 
 import Modal from '../Modal'
-import ModalBookInfo from './ModalBookInfo'
+import Test from './Test'
+import {addDescriptionBook} from "../../actions/collectionBooks";
 
-const Book = ({book: {titleBook, authorBook, description}}) => {
+const Book = ({book: {titleBook, authorBook, description, _id}}) => {
+    console.log(_id);
     const [isOpen, setOpen] = useState(false);
+    const [toggle, setToggle] = useState(false);
 
     const openModal = () => setOpen(true);
 
@@ -12,10 +16,32 @@ const Book = ({book: {titleBook, authorBook, description}}) => {
 
     const handleCancel = () => setOpen(false);
 
+    const toggleInput = () => {
+        setToggle(false)
+    };
+
+    console.log(description)
+
     const checkDescription = () => {
         if (!description) {
-            return <span>Описания: нет</span>
-        } else return <span>Описания: есть</span>
+            return (
+                <>
+                    {toggle ?
+                        <div>
+                            <Test id={_id}
+                                  description={description}
+                                  onAddChange={addDescriptionBook}/>
+                        </div>
+                        :
+                        <div>
+                            <span>Описания: нет</span>
+                            <button onClick={toggleInput}>Добавить описание</button>
+                        </div>
+                    }
+                </>
+            )
+        } else
+            return <span>Описания: {description}</span>
     };
 
     return (
@@ -26,10 +52,11 @@ const Book = ({book: {titleBook, authorBook, description}}) => {
                    onCancel={handleCancel}
                    onSubmit={handleSubmit}>
                 <p>Автор: {authorBook}</p>
-
-                {description ? <p>Описание: {description}</p> : <p>Описание: отсутствует</p>}
+                {checkDescription()}
             </Modal>
-            {checkDescription()}
+            {!description ?
+                <span>Описания: нет</span> :
+                <span>Описание: есть</span>}
             <div>Тут фото</div>
             <h2>Название: {titleBook}</h2>
             <p>Автор: {authorBook}</p>
@@ -37,7 +64,15 @@ const Book = ({book: {titleBook, authorBook, description}}) => {
     );
 };
 
-export default Book;
+/*const mapDispatchToProps = (dispatch) => {
+    return {
+        onAddDescription: description => {
+            dispatch(addDescriptionBook(description))
+        }
+    }
+}*/
+
+export default connect()(Book);
 
 
 /*const Book = ({book: {titleBook, authorBook, description}}) => {

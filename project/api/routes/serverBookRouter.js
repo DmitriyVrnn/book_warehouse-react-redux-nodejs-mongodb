@@ -8,7 +8,6 @@ serverBookRouter.route('/add').post((req, res) => {
     const book = new Book(req.body);
     book.save()
         .then(book => {
-
             res.status(200).json('Книга успешно добавлена')
         })
         .catch(err => {
