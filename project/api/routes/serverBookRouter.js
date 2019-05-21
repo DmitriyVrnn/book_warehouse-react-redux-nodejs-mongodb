@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const serverBookRouter = express.Router();
+const fileUpload = require('express-fileupload');
 
 const Book = require('../models/book');
 
@@ -35,6 +36,7 @@ serverBookRouter.route('/update/:id').post((req, res) => {
         } else {
             book.titleBook = req.body.titleBook;
             book.authorBook = req.body.authorBook;
+            book.description = req.body.description;
             book.publishing = req.body.publishing;
             book.series = req.body.series;
             book.idBook = req.body.idBook;

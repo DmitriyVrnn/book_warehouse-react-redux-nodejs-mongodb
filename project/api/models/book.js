@@ -9,6 +9,9 @@ const book = new Schema({
         type: String,
         required: true
     },
+    image : {
+        type: String,
+    },
     authorBook: {
         type: String,
         required: true

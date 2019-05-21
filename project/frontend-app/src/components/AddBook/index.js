@@ -9,11 +9,13 @@ export default class AddBook extends PureComponent {
         this.state = {
             titleBook: '',
             authorBook: '',
+            description: '',
             publishing: '',
             series: '',
             idBook: '',
             error: false,
             success: false,
+            openForm: false,
         }
     }
 
@@ -62,6 +64,12 @@ export default class AddBook extends PureComponent {
         })
     };
 
+    onChangeDescription = (e) => {
+        this.setState({
+            description: e.target.value
+        })
+    };
+
     onError = () => {
         this.setState({
             error: true
@@ -79,6 +87,7 @@ export default class AddBook extends PureComponent {
         const book = {
             titleBook: this.state.titleBook,
             authorBook: this.state.authorBook,
+            description: this.state.description,
             publishing: this.state.publishing,
             series: this.state.series,
             idBook: this.state.idBook
@@ -89,12 +98,20 @@ export default class AddBook extends PureComponent {
         this.setState({
             titleBook: '',
             authorBook: '',
+            description: '',
             publishing: '',
             series: '',
             idBook: '',
             error: false
         })
     };
+
+    setOpenForm = () => {
+        this.setState({
+            openForm: !this.state.openForm
+        })
+    };
+
 
     render() {
         return (
@@ -136,6 +153,15 @@ export default class AddBook extends PureComponent {
                                    onChange={this.onChangeIdBook}/>
                         </label>
                     </div>
+                    <div className={"form-group"}>
+                        {this.state.openForm ?
+                            <textarea className="textarea-description" onChange={this.onChangeDescription}
+                                      name="description" id="" cols="30" rows="10"/> : null}
+                    </div>
+                    <button
+                        className="btn-toggle-form" type="button"
+                        onClick={() => this.setOpenForm()}>{this.state.openForm ? 'Скрыть ▲' : 'Добавить описание ▼'}
+                    </button>
                     <div className={"form-group"}>
                         <input type="submit" value={"Добавить в базу"} className={"form-control"}/>
                     </div>

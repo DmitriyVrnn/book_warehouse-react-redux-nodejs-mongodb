@@ -11,6 +11,14 @@ h1{
   border-radius: 5px;
   background-color: white;
   box-shadow: 3px 2px 5px -2px rgba(0,0,0,0.75);
+  width: 44em;
+
+  .btn-toggle-form{
+    width: 12em;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
 
   .form-group{
     padding: 10px;
@@ -20,9 +28,18 @@ h1{
     .form-control{
       display: flex;
     }
+
+    textarea{
+      padding: 10px;
+      width: 47.5em;
+      border: 2px solid rgb(216, 210, 210);
+      border-radius: 5px;
+      background-color: #EEEEEE;
+    }
+
     input[type="text"]{
       padding: 10px;
-      width: 20em;
+      width: 41.6em;
       border: 2px solid rgb(216, 210, 210);
       border-radius: 5px;
       background-color: #EEEEEE;

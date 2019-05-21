@@ -21,6 +21,7 @@ postRoute.route('/').get((req, res) => {
     })
 });
 
+
 postRoute.route('/delete/:id').get((req, res) => {
     Post.findByIdAndRemove({_id: req.params.id},
         (err, post) => {

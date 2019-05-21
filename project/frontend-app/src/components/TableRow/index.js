@@ -32,10 +32,16 @@ const TableRow = ({obj, removeToListBook}) => {
             </td>
             <td>{obj.idBook}</td>
             <td>
-                <button><Link to={"/edit/" + obj._id}>Редактировать</Link></button>
+                <button className="table-btn table-btn-edit" title="Редактировать">
+                    <Link to={"/edit/" + obj._id}>
+                        <i className="fas fa-edit"></i>
+                    </Link>
+                </button>
             </td>
             <td>
-                <button onClick={deleteBook}>Delete</button>
+                <button className="table-btn table-btn-delete" title="Удалить" onClick={deleteBook}>
+                    <i className="fas fa-trash-alt"></i>
+                </button>
             </td>
         </tr>
     )

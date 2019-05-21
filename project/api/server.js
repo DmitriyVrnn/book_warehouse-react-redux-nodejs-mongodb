@@ -39,12 +39,13 @@ app.get('/', function(req, res) {
 app.post('/upload', (req, res, next) => {
     //console.log(req);
     let imageFile = req.files.file;
-    console.log(imageFile)
+    let file = `${__dirname}/public/${req.body.filename}.jpg`;
+    console.log(file)
     imageFile.mv(`${__dirname}/public/${req.body.filename}.jpg`, function(err) {
         if (err) {
             return res.status(500).send(err);
         }
-
+        console.log(req.body.filename)
         res.json({file: `public/${req.body.filename}.jpg`});
     });
 

@@ -8,6 +8,7 @@ export default class EditBook extends PureComponent {
         this.state = {
             titleBook: '',
             authorBook: '',
+            description: '',
             publishing: '',
             series: '',
             idBook: '',
@@ -20,6 +21,7 @@ export default class EditBook extends PureComponent {
                 this.setState({
                     titleBook: response.data.titleBook,
                     authorBook: response.data.authorBook,
+                    description: response.data.description,
                     publishing: response.data.publishing,
                     series: response.data.series,
                     idBook: response.data.idBook
@@ -61,11 +63,18 @@ export default class EditBook extends PureComponent {
         })
     };
 
+    onDescriptionBook = (e) => {
+        this.setState({
+            description: e.target.value
+        })
+    };
+
     onSubmit = (e) => {
         e.preventDefault();
         const book = {
             titleBook: this.state.titleBook,
             authorBook: this.state.authorBook,
+            description: this.state.description,
             publishing: this.state.publishing,
             series: this.state.series,
             idBook: this.state.idBook
@@ -115,6 +124,14 @@ export default class EditBook extends PureComponent {
                             ID товара:
                             <input type="text" className={"form-control"} value={this.state.idBook}
                                    onChange={this.onChangeIdBook}/>
+                        </label>
+                    </div>
+                    <div className={"form-group"}>
+                        <label>
+                            Описание:
+                            <textarea  className="form-control" onChange={this.onDescriptionBook}
+                                       value={this.state.description}
+                                 name="description" cols="30" rows="10"/>
                         </label>
                     </div>
                     <div className={"form-group"}>

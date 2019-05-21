@@ -28,3 +28,41 @@
   text-overflow: ellipsis;
 }
 
+.contend-card{
+  padding: 10px;
+  position: relative;
+}
+
+.modal-open{
+  width: 27px;
+  position: absolute;
+  font-size: 16px;
+  color: red;
+  right: 6px;
+  top: 4px;
+  background: transparent;
+  border: none;
+}
+
+.not-description{
+  color: red;
+}
+
+.card-author{
+  color: #666;
+}
+
+.card-title{
+  border-bottom: 1px solid black;
+}
+
+.modal-edit-link{
+  text-decoration: underline;
+  color: blue;
+}
+
+.card-description{
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
