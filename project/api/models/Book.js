@@ -4,13 +4,14 @@ const Schema = mongoose.Schema;
 const uniqueValidator = require('mongoose-unique-validator');
 
 //Описываем книгу
-const book = new Schema({
+const Book = new Schema({
     titleBook: {
         type: String,
         required: true
     },
     image : {
-        type: String,
+        data: Buffer,
+        contentType: String
     },
     authorBook: {
         type: String,
@@ -34,6 +35,6 @@ const book = new Schema({
 });
 
 
-book.plugin(uniqueValidator);
+Book.plugin(uniqueValidator);
 
-module.exports = mongoose.model('book', book);
+module.exports = mongoose.model('book', Book);

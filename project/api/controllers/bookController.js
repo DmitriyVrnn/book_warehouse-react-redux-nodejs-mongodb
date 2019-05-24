@@ -1,11 +1,13 @@
-const express = require('express');
-const app = express();
-const serverBookRouter = express.Router();
-const fileUpload = require('express-fileupload');
+//подключить Book
+const Book = require('../models/Book');
 
-const Book = require('../models/book');
+exports.getAllBook = (req, res) => {
+    Book.find((err, books) => {
+        err ? console.log(err) : res.json(books)
+    })
+};
 
-serverBookRouter.route('/add').post((req, res) => {
+exports.addBook = (req, res) => {
     const book = new Book(req.body);
     book.save()
         .then(book => {
@@ -14,22 +16,17 @@ serverBookRouter.route('/add').post((req, res) => {
         .catch(err => {
             res.status(400).send('Не удается сохранить в базу данных');
         })
-});
+};
 
-serverBookRouter.route('/').get((req, res) => {
-    Book.find((err, books) => {
-        err ? console.log(err) : res.json(books);
-    })
-});
 
-serverBookRouter.route('/edit/:id').get((req, res) => {
+exports.editBook = (req, res) => {
     const id = req.params.id;
     Book.findById(id, (err, book) => {
         res.json(book);
     })
-});
+};
 
-serverBookRouter.route('/update/:id').post((req, res) => {
+exports.updateBook = (req, res) => {
     Book.findById(req.params.id, (err, book) => {
         if (!book) {
             return next(new Error('Документ не загрузился'))
@@ -49,13 +46,11 @@ serverBookRouter.route('/update/:id').post((req, res) => {
                 })
         }
     })
-});
+};
 
-serverBookRouter.route('/delete/:id').get((req, res) => {
+exports.deleteBook = (req, res) => {
     Book.findByIdAndRemove({_id: req.params.id},
         (err, book) => {
             err ? res.json(err) : res.json('Удаление выполнено')
         });
-});
-
-module.exports = serverBookRouter;
+};

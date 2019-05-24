@@ -5,7 +5,6 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const cors = require('cors');
-const fileUpload = require('express-fileupload');
 
 const PORT = process.env.PORT || 4200;
 
@@ -13,9 +12,9 @@ const PORT = process.env.PORT || 4200;
 const config = require('./database/DB');
 
 //подключаем роутер
-const serverRouting = require('./routes/serverBookRouter');
-const users = require('./routes/user');
-const postRoute = require('./routes/postRoute')
+const bookRoute = require('./routes/bookRoute');
+const userRoute = require('./routes/userRoute');
+const postRoute = require('./routes/postRoute');
 
 //ожидаем, что подключимся к БД
 mongoose.connect(config.DB).then(
@@ -29,31 +28,14 @@ require('./passport')(passport);
 app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-app.use(fileUpload());
-app.use('/public', express.static(__dirname + '/public'));
 
 app.get('/', function(req, res) {
     res.send('hello');
 });
 
-app.post('/upload', (req, res, next) => {
-    //console.log(req);
-    let imageFile = req.files.file;
-    let file = `${__dirname}/public/${req.body.filename}.jpg`;
-    console.log(file)
-    imageFile.mv(`${__dirname}/public/${req.body.filename}.jpg`, function(err) {
-        if (err) {
-            return res.status(500).send(err);
-        }
-        console.log(req.body.filename)
-        res.json({file: `public/${req.body.filename}.jpg`});
-    });
+app.use('/book', bookRoute);
 
-})
-
-app.use('/book', serverRouting);
-
-app.use('/api/users', users);
+app.use('/api/users', userRoute);
 
 app.use('/posts', postRoute);
 

@@ -7,7 +7,7 @@ const TableRow = ({obj, removeToListBook}) => {
     const deleteBook = () => {
         const confirm = window.confirm(`Вы уверены что хотите удалить книгу "${obj.titleBook}"?`);
         if (confirm) {
-            axios.get('http://localhost:4200/book/delete/' + obj._id)
+            axios.get(`http://localhost:4200/book/delete/` + obj._id)
                 .then(() => {
                     alert(`Книга "${obj.titleBook}" удалена`);
                     removeToListBook(obj);

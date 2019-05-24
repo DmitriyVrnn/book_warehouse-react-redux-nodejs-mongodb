@@ -18,7 +18,7 @@ class TestDirectory extends React.Component {
         data.append('file', this.uploadInput.files[0]);
         data.append('filename', this.fileName.value);
 
-        fetch('http://localhost:4200/upload', {
+        fetch('http://localhost:4200/book/upload', {
             method: 'POST',
             body: data,
         }).then((response) => {

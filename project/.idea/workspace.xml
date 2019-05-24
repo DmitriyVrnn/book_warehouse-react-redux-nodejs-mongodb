@@ -2,23 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9175101-8be7-435f-b63e-e1ca36548d5a" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/api/routes/bookRoute.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/routes/userRoute.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/models/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/book.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/models/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/Book.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/public/kjb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/public/kjbqwd.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/api/routes/postRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/postRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/serverBookRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/serverBookRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/serverBookRouter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/user.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/api/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-app/src/actions/books.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-app/src/actions/collectionBooks.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-app/src/actions/collectionBooks.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend-app/src/components/AddBook/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-app/src/components/AddBook/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-app/src/components/Book/ModalBookInfo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-app/src/components/Book/Test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-app/src/components/Book/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-app/src/components/Book/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-app/src/components/EditBook/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-app/src/components/EditBook/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend-app/src/components/TableRow/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-app/src/components/TableRow/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-app/src/reducers/collectionBooksReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-app/src/reducers/collectionBooksReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-app/src/static/styles/components/_add-book.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-app/src/static/styles/components/_add-book.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-app/src/static/styles/components/_card-books.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-app/src/static/styles/components/_card-books.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-app/src/static/styles/modules/_project.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-app/src/static/styles/modules/_project.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-app/src/components/TestDirectory/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-app/src/components/TestDirectory/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-app/src/static/styles/components/_handlers.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-app/src/static/styles/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-app/src/static/styles/main.scss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,41 +32,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend-app/src/components/Book/index.js">
+      <file leaf-file-name="bookController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/controllers/bookController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="587">
-              <caret line="28" column="52" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="52" />
-              <folding>
-                <element signature="e#0#37#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-432" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="server.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/api/server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="book.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/models/book.js">
+      <file leaf-file-name="userController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/controllers/userController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="21" lean-forward="true" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+            <state relative-caret-position="395">
+              <caret line="103" column="29" lean-forward="true" selection-start-line="103" selection-start-column="29" selection-end-line="103" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_card-books.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend-app/src/static/styles/components/_card-books.scss">
+      <file leaf-file-name="userRoute.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/routes/userRoute.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="60" column="14" selection-start-line="60" selection-start-column="14" selection-end-line="60" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_project.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend-app/src/static/styles/modules/_project.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="206" column="23" selection-start-line="206" selection-start-column="23" selection-end-line="206" selection-end-column="23" />
+            <state relative-caret-position="336">
+              <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -74,35 +69,17 @@
       <file leaf-file-name="postRoute.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/routes/postRoute.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            <state>
+              <caret column="35" selection-start-column="35" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="serverBookRouter.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/api/routes/serverBookRouter.js">
+      <file leaf-file-name="bookRoute.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/routes/bookRoute.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
-              <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/server.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="42" column="21" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend-app/src/components/AddBook/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-13">
-              <caret line="147" column="26" selection-start-line="147" selection-start-column="26" selection-end-line="147" selection-end-column="26" />
+            <state relative-caret-position="48">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
@@ -124,6 +101,7 @@
       <find>`</find>
       <find>sidebar</find>
       <find>form_add-book</find>
+      <find>active</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -132,17 +110,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/frontend-app/src/components/MainContent/index.js" />
-        <option value="$PROJECT_DIR$/frontend-app/src/components/Login/index.js" />
-        <option value="$PROJECT_DIR$/frontend-app/src/components/Loader/index.js" />
-        <option value="$PROJECT_DIR$/frontend-app/src/components/Navbar/index.js" />
-        <option value="$PROJECT_DIR$/frontend-app/src/components/Profile/index.js" />
-        <option value="$PROJECT_DIR$/frontend-app/src/actions/constants.js" />
-        <option value="$PROJECT_DIR$/frontend-app/src/components/CreatePost/index.js" />
-        <option value="$PROJECT_DIR$/frontend-app/src/reducers/index.js" />
         <option value="$PROJECT_DIR$/frontend-app/src/pages/main-page.js" />
         <option value="$PROJECT_DIR$/api/models/post.js" />
-        <option value="$PROJECT_DIR$/api/routes/user.js" />
         <option value="$PROJECT_DIR$/api/models/Post.js" />
         <option value="$PROJECT_DIR$/frontend-app/src/reducers/postReducer.js" />
         <option value="$PROJECT_DIR$/frontend-app/src/actions/post.js" />
@@ -156,12 +125,10 @@
         <option value="$PROJECT_DIR$/frontend-app/src/index.js" />
         <option value="$PROJECT_DIR$/frontend-app/src/store.js" />
         <option value="$PROJECT_DIR$/frontend-app/src/components/NewPost/index.js" />
-        <option value="$PROJECT_DIR$/frontend-app/src/components/TestDirectory/index.js" />
         <option value="$PROJECT_DIR$/frontend-app/src/components/pages/main-page.js" />
         <option value="$PROJECT_DIR$/frontend-app/src/components/Links/index.js" />
         <option value="$PROJECT_DIR$/frontend-app/src/components/ErrorIndicator/index.js" />
         <option value="$PROJECT_DIR$/frontend-app/src/components/Handlers/ErrorHandler.js" />
-        <option value="$PROJECT_DIR$/frontend-app/src/static/styles/main.scss" />
         <option value="$PROJECT_DIR$/frontend-app/src/static/styles/components/_handlers.scss" />
         <option value="$PROJECT_DIR$/frontend-app/src/components/Handlers/Handlers.js" />
         <option value="$PROJECT_DIR$/frontend-app/src/constants/constants.js" />
@@ -175,14 +142,25 @@
         <option value="$PROJECT_DIR$/frontend-app/src/components/Book/index.js" />
         <option value="$PROJECT_DIR$/frontend-app/src/static/styles/components/_card-books.scss" />
         <option value="$PROJECT_DIR$/frontend-app/src/components/EditBook/index.js" />
-        <option value="$PROJECT_DIR$/frontend-app/src/components/AddBook/index.js" />
         <option value="$PROJECT_DIR$/frontend-app/src/static/styles/components/_add-book.scss" />
+        <option value="$PROJECT_DIR$/frontend-app/src/components/TestDirectory/index.js" />
+        <option value="$PROJECT_DIR$/api/models/book.js" />
+        <option value="$PROJECT_DIR$/api/controllers/Book.js" />
+        <option value="$PROJECT_DIR$/frontend-app/.env" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/frontend-app/src/components/AddBook/index.js" />
         <option value="$PROJECT_DIR$/frontend-app/src/components/TableRow/index.js" />
         <option value="$PROJECT_DIR$/frontend-app/src/static/styles/modules/_project.scss" />
-        <option value="$PROJECT_DIR$/api/models/book.js" />
-        <option value="$PROJECT_DIR$/api/routes/postRoute.js" />
-        <option value="$PROJECT_DIR$/api/server.js" />
+        <option value="$PROJECT_DIR$/frontend-app/src/static/styles/main.scss" />
+        <option value="$PROJECT_DIR$/api/models/Book.js" />
         <option value="$PROJECT_DIR$/api/routes/serverBookRouter.js" />
+        <option value="$PROJECT_DIR$/api/routes/bookRouter.js" />
+        <option value="$PROJECT_DIR$/api/routes/postRoute.js" />
+        <option value="$PROJECT_DIR$/api/controllers/postController.js" />
+        <option value="$PROJECT_DIR$/api/controllers/bookController.js" />
+        <option value="$PROJECT_DIR$/api/controllers/userController.js" />
+        <option value="$PROJECT_DIR$/api/routes/user.js" />
+        <option value="$PROJECT_DIR$/api/server.js" />
       </list>
     </option>
   </component>
@@ -210,8 +188,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="251" />
-    <option name="y" value="131" />
+    <option name="x" value="433" />
+    <option name="y" value="135" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -237,13 +215,7 @@
               <item name="project" type="b2602c69:ProjectViewProjectNode" />
               <item name="project" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="project" type="b2602c69:ProjectViewProjectNode" />
@@ -255,163 +227,6 @@
               <item name="project" type="b2602c69:ProjectViewProjectNode" />
               <item name="project" type="462c0819:PsiDirectoryNode" />
               <item name="frontend-app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="AddBook" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Book" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="BookList" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="CreatePost" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="EditBook" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Post" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="PostList" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="SearchBar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="TableBooks" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="TableRow" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="TestDirectory" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="containers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="reducers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="styles" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="styles" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="styles" type="462c0819:PsiDirectoryNode" />
-              <item name="cosmetics" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="styles" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -427,22 +242,22 @@
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Work\Projects\diploma-project\project\frontend-app" />
+      <recent name="E:\Work\Projects\diploma-project\project" />
+      <recent name="E:\Work\Projects\diploma-project\project\frontend-app\src\components\Handlers" />
+      <recent name="E:\Work\Projects\diploma-project\project\frontend-app\src\constants" />
+      <recent name="E:\Work\Projects\diploma-project\project\frontend-app\src\actions" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Work\Projects\diploma-project\project\frontend-app\src" />
       <recent name="E:\Work\Projects\diploma-project\project\frontend-app\src\actions" />
       <recent name="E:\Work\Projects\diploma-project\project\frontend-app\src\reducers" />
       <recent name="E:\Work\Projects\diploma-project\project\frontend-app\src\components" />
       <recent name="E:\Work\Projects\diploma-project\project\frontend-app\src\static\img" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Work\Projects\diploma-project\project\frontend-app\src\components\Handlers" />
-      <recent name="E:\Work\Projects\diploma-project\project\frontend-app\src\constants" />
-      <recent name="E:\Work\Projects\diploma-project\project\frontend-app\src\actions" />
-      <recent name="E:\Work\Projects\diploma-project\project\frontend-app\src\pages" />
-      <recent name="E:\Work\Projects\diploma-project\project\frontend-app\src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -491,11 +306,13 @@
       <workItem from="1557964863693" duration="8201000" />
       <workItem from="1558306440159" duration="5462000" />
       <workItem from="1558311924856" duration="18276000" />
+      <workItem from="1558482293236" duration="1189000" />
+      <workItem from="1558483501712" duration="10464000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="217932000" />
+    <option name="totallyTimeSpent" value="235098000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -513,11 +330,11 @@
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19220643" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4997367" weight="0.32922733" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.44391784" side_tool="true" visible="true" weight="0.25626424" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.44497102" side_tool="true" weight="0.25626424" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.53133225" weight="0.32915717" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.5560821" visible="true" weight="0.25626424" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.555029" visible="true" weight="0.25626424" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -532,19 +349,19 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1563981" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19220643" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4997367" weight="0.32922733" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.53133225" weight="0.32915717" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.56029487" visible="true" weight="0.25626424" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.4397051" side_tool="true" visible="true" weight="0.25626424" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32915717" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.555029" visible="true" weight="0.25626424" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.44497102" side_tool="true" visible="true" weight="0.25626424" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.53133225" weight="0.32915717" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -593,44 +410,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/frontend-app/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend-app/src/pages/main-page.js" />
-    <entry file="file://$PROJECT_DIR$/frontend-app/src/store.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="41" selection-start-column="41" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend-app/src/components/NavBar/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="31" column="17" lean-forward="true" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend-app/src/components/Profile/index.js" />
-    <entry file="file://$PROJECT_DIR$/frontend-app/src/components/TableBooks/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-360" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend-app/src/components/Register/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="133" column="50" selection-start-line="133" selection-start-column="50" selection-end-line="133" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/validation/is-empty.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -691,20 +470,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend-app/src/static/styles/main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="26" selection-start-column="26" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend-app/src/static/styles/components/_handlers.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend-app/src/reducers/postReducer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -730,9 +495,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-48">
           <caret line="75" column="18" selection-start-line="75" selection-start-column="4" selection-end-line="75" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -743,20 +505,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend-app/src/components/SearchBar/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend-app/src/reducers/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -764,9 +516,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="39" column="25" lean-forward="true" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -774,16 +523,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/models/Post.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="9" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -791,9 +530,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -803,12 +539,6 @@
           <caret line="17" column="50" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="50" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend-app/src/actions/books.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend-app/src/components/Book/ModalChange.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend-app/src/components/UserInfo/index.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -821,9 +551,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="8" column="53" lean-forward="true" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -841,9 +568,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
           <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="e#0#83#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -858,22 +582,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="936">
           <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#73#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend-app/src/components/Book/ModalBookInfo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend-app/src/components/Book/ModalBookInfo.js" />
     <entry file="file://$PROJECT_DIR$/frontend-app/src/static/styles/components/_add-book.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
@@ -888,55 +600,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend-app/src/static/styles/modules/_project.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="206" column="23" selection-start-line="206" selection-start-column="23" selection-end-line="206" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend-app/src/components/TableRow/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="34" column="59" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend-app/src/components/TestDirectory/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend-app/src/static/styles/components/_card-books.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="371">
           <caret line="60" column="14" selection-start-line="60" selection-start-column="14" selection-end-line="60" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend-app/src/components/Book/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="587">
-          <caret line="28" column="52" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/models/book.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="21" lean-forward="true" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/routes/postRoute.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
@@ -947,24 +614,145 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/server.js">
+    <entry file="file://$PROJECT_DIR$/frontend-app/src/components/Book/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="28" column="52" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend-app/src/components/SearchBar/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
-          <caret line="42" column="21" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend-app/src/components/AddBook/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-13">
-          <caret line="147" column="26" selection-start-line="147" selection-start-column="26" selection-end-line="147" selection-end-column="26" />
+        <state relative-caret-position="-1008">
+          <caret line="96" column="33" lean-forward="true" selection-start-line="96" selection-start-column="33" selection-end-line="96" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/routes/serverBookRouter.js">
+    <entry file="file://$PROJECT_DIR$/frontend-app/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24">
-          <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
+          <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend-app/src/static/styles/components/_post.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1152" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend-app/src/components/TableRow/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend-app/src/components/TestDirectory/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="27" column="11" lean-forward="true" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/database/DB.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend-app/src/static/styles/components/_handlers.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend-app/src/static/styles/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend-app/src/static/styles/components/_modal-window.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend-app/src/static/styles/modules/_project.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="110" column="10" selection-start-line="110" selection-start-column="10" selection-end-line="110" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/models/Post.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="21" lean-forward="true" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/models/Book.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="23" column="20" lean-forward="true" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/controllers/postController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="13" column="36" lean-forward="true" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/models/User.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/controllers/bookController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-432" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/routes/bookRoute.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/controllers/userController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="103" column="29" lean-forward="true" selection-start-line="103" selection-start-column="29" selection-end-line="103" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/routes/postRoute.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="35" selection-start-column="35" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/routes/userRoute.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>

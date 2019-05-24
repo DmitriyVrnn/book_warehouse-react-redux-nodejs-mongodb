@@ -92,7 +92,7 @@ export default class AddBook extends PureComponent {
             series: this.state.series,
             idBook: this.state.idBook
         };
-        axios.post('http://localhost:4200/book/add', book)
+        axios.post(`http://localhost:4200/book/add`, book)
             .then(res => this.onSuccess(res))
             .catch(this.onError);
         this.setState({
