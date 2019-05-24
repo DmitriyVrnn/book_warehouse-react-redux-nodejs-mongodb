@@ -1,8 +1,25 @@
+const formidable = require("formidable");
+const fs = require("fs");
+
 //подключить Book
 const Book = require('../models/Book');
 
+const sortingBook = (books) => {
+    return books.sort((a,b) => {
+        if (a.titleBook > b.titleBook) {
+            return 1;
+        }
+        if (a.titleBook < b.titleBook) {
+            return -1;
+        }
+        return 0;
+    })
+};
+
 exports.getAllBook = (req, res) => {
     Book.find((err, books) => {
+        sortingBook(books);
+        console.log(sortingBook)
         err ? console.log(err) : res.json(books)
     })
 };
