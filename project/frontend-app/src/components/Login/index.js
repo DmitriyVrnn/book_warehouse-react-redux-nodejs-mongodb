@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import {loginUser} from "../../actions/authentication";
 import classnames from 'classnames';
 
+//import 'bootstrap/dist/css/bootstrap.min.css';
+
 class Login extends Component {
 
     constructor() {

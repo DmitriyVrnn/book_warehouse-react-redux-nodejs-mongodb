@@ -33,40 +33,23 @@ export default class EditBook extends PureComponent {
             })
     }
 
-    onChangeTitleBook = (e) => {
-        this.setState({
-            titleBook: e.target.value
-        })
-    };
-
-    onChangeAuthorBook = (e) => {
-        this.setState({
-            authorBook: e.target.value
-        })
-    };
-
-    onChangePublishing = (e) => {
-        this.setState({
-            publishing: e.target.value
-        })
-    };
-
-    onChangeSeriesBook = (e) => {
-        this.setState({
-            series: e.target.value
-        })
-    };
-
-    onChangeIdBook = (e) => {
-        this.setState({
-            idBook: e.target.value
-        })
-    };
-
-    onDescriptionBook = (e) => {
-        this.setState({
-            description: e.target.value
-        })
+    handleTarget = (type) => {
+        return (e) => {
+            switch (type) {
+                case 'titleBook':
+                    return this.setState({titleBook: e.target.value});
+                case 'authorBook':
+                    return this.setState({authorBook: e.target.value});
+                case 'publishingBook':
+                    return this.setState({publishing: e.target.value});
+                case 'seriesBook':
+                    return this.setState({series: e.target.value});
+                case 'idBook':
+                    return this.setState({idBook: e.target.value});
+                case 'descriptionBook':
+                    return this.setState({description: e.target.value});
+            }
+        }
     };
 
     onSubmit = (e) => {
@@ -95,41 +78,41 @@ export default class EditBook extends PureComponent {
                         <label>
                             Название:
                             <input type="text" className={"form-control"} value={this.state.titleBook}
-                                   onChange={this.onChangeTitleBook} required={true}/>
+                                   onChange={this.handleTarget('titleBook')} required={true}/>
                         </label>
                     </div>
                     <div className={"form-group"}>
                         <label>
                             Автор:
                             <input type="text" className={"form-control"} value={this.state.authorBook}
-                                   onChange={this.onChangeAuthorBook}/>
+                                   onChange={this.handleTarget('authorBook')}/>
                         </label>
                     </div>
                     <div className={"form-group"}>
                         <label>
                             Издательство:
                             <input type="text" className={"form-control"} value={this.state.publishing}
-                                   onChange={this.onChangePublishing}/>
+                                   onChange={this.handleTarget('publishingBook')}/>
                         </label>
                     </div>
                     <div className={"form-group"}>
                         <label>
                             Серия:
                             <input type="text" className={"form-control"} value={this.state.series}
-                                   onChange={this.onChangeSeriesBook}/>
+                                   onChange={this.handleTarget('seriesBook')}/>
                         </label>
                     </div>
                     <div className={"form-group"}>
                         <label>
                             ID товара:
                             <input type="text" className={"form-control"} value={this.state.idBook}
-                                   onChange={this.onChangeIdBook}/>
+                                   onChange={this.handleTarget('idBook')}/>
                         </label>
                     </div>
                     <div className={"form-group"}>
                         <label>
                             Описание:
-                            <textarea  className="form-control" onChange={this.onDescriptionBook}
+                            <textarea  className="form-control" onChange={this.handleTarget('descriptionBook')}
                                        value={this.state.description}
                                  name="description" cols="30" rows="10"/>
                         </label>
