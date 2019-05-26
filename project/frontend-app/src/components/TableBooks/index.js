@@ -24,6 +24,8 @@ const TableBooks = ({books, removeToListBook}) => {
                         <th>Издательство</th>
                         <th>Серия</th>
                         <th width="230">ID товара</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                     {elements}
                     </tbody>

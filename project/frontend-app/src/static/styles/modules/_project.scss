@@ -46,24 +46,74 @@ $padding: 10px;
   }
 }
 
-/*input[type="search"] {
+.table-dashboard {
   display: flex;
-  width: 500px;
-  height: 15px;
-  margin-right: 20px;
-  padding: 15px;
-  border: 2px solid rgb(216, 210, 210);
-  border-radius: 5px;
-  outline: none;
-  font-size: 12px;
-  transition: all .5s ease-out;
-  justify-content: center;
+  justify-content: space-between;
+}
 
-  &:focus, &:hover {
-    width: 700px;
-    transition: all .5s ease-out;
+.table-dashboard-btn {
+  border: 1px solid #d8d2d2;
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+  margin-left: 20px;
+  border-right: 5px;
+
+  .btn-sort-table {
+    display: flex;
+    flex-direction: column;
+
+    .btn {
+      transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+                  box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+                    border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+      height: 20px;
+      border-radius: 5px;
+      border: none;
+      font-size: 15px;
+      box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+                   0px 6px 10px 0px rgba(0, 0, 0, 0.14),
+                    0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+      background: #cc584c;
+      color: white;
+      &:hover {
+        background: darken(#cc584c, 5);
+      }
+
+      .fa-sort-alpha-up:before {
+        padding-right: 5px;
+      }
+    }
+
+    .btn-sort_title {
+      margin-bottom: 5px;
+    }
   }
-}*/
+
+  .btn-excel {
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+                box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+                border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+                0px 6px 10px 0px rgba(0, 0, 0, 0.14),
+                0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+    background-image: url("E:/Work/Projects/diploma-project/project/frontend-app/src/static/img/excel.png");
+    background-repeat: no-repeat;
+    background-color: #388E3C;
+    background-size: 30px 34px;
+    background-position: 4px 6px;
+    width: 3em;
+    border-radius: 5px;
+    border: none;
+    margin-right: 15px;
+    &:hover {
+      background-color: lighten(#388E3C, 2);
+    }
+  }
+  * {
+    cursor: pointer;
+  }
+}
 
 .wrapper {
   display: flex;
@@ -203,21 +253,28 @@ $padding: 10px;
   }
 
   .table-btn {
-    padding: 6px;
-    background: #b2ebf2;
-    cursor: pointer;
-    border-radius: 5px;
+    width: 36px;
+    padding: 0;
+    font-size: 0.875rem;
+    min-width: 0;
+    box-sizing: border-box;
+    min-height: 36px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+    border-radius: 50%;
+    background-color: white;
     border: none;
-    &:hover{
-      background: lighten(rgba(147,206,222,1), 7);
+    cursor: pointer;
+    &:hover {
+      background: lighten(rgba(147, 206, 222, 1), 7);
     }
   }
 
-  .table-btn-edit *{
+  .table-btn-edit * {
     color: green;
   }
 
-  .table-btn-delete{
+  .table-btn-delete {
     color: red;
   }
 
@@ -258,6 +315,11 @@ $padding: 10px;
         display: none;
       }
     }
+  }
+
+  .header-table {
+    margin: 0 auto;
+    width: 3em;
   }
 
   @media screen and (max-width: 500px) {

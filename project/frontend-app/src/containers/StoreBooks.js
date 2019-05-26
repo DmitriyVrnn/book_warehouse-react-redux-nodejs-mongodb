@@ -85,18 +85,23 @@ class StoreBooks extends PureComponent {
             return <Loader/>
         }
         return (
-            <Fragment>
-                <SearchBar onSearchChange={this.onSearchChange}/>
-                <SortButton sortBy={this.sortBy}/>
-                <ReactToExcel
-                    table="table-to-xls"
-                    filename="books-table"
-                    sheet="books"
-                    buttonText="Экпортировать в Excel"
-                />
+            <>
+                <div className="table-dashboard">
+                    <div className="table-dashboard-btn">
+                            <ReactToExcel
+                                className={'btn-excel'}
+                                table="table-to-xls"
+                                filename="books-table"
+                                sheet="books"
+                                buttonText=""
+                            />
+                        <SortButton sortBy={this.sortBy}/>
+                    </div>
+                    <SearchBar onSearchChange={this.onSearchChange}/>
+                </div>
                 <TableBooks books={visibleItems}
                             removeToListBook={this.removeToListBook}/>
-            </Fragment>
+            </>
         )
     }
 }
