@@ -1,10 +1,30 @@
-const express = require('express');
-const app = express();
-const serverBookRouter = express.Router();
+const formidable = require("formidable");
+const fs = require("fs");
 
-const Book = require('../models/book');
+//подключить Book
+const Book = require('../models/Book');
 
-serverBookRouter.route('/add').post((req, res) => {
+const sortingBook = (books) => {
+    return books.sort((a,b) => {
+        if (a.titleBook > b.titleBook) {
+            return 1;
+        }
+        if (a.titleBook < b.titleBook) {
+            return -1;
+        }
+        return 0;
+    })
+};
+
+exports.getAllBook = (req, res) => {
+    Book.find((err, books) => {
+        sortingBook(books);
+        console.log(sortingBook)
+        err ? console.log(err) : res.json(books)
+    })
+};
+
+exports.addBook = (req, res) => {
     const book = new Book(req.body);
     book.save()
         .then(book => {
@@ -13,28 +33,24 @@ serverBookRouter.route('/add').post((req, res) => {
         .catch(err => {
             res.status(400).send('Не удается сохранить в базу данных');
         })
-});
+};
 
-serverBookRouter.route('/').get((req, res) => {
-    Book.find((err, books) => {
-        err ? console.log(err) : res.json(books);
-    })
-});
 
-serverBookRouter.route('/edit/:id').get((req, res) => {
+exports.editBook = (req, res) => {
     const id = req.params.id;
     Book.findById(id, (err, book) => {
         res.json(book);
     })
-});
+};
 
-serverBookRouter.route('/update/:id').post((req, res) => {
+exports.updateBook = (req, res) => {
     Book.findById(req.params.id, (err, book) => {
         if (!book) {
             return next(new Error('Документ не загрузился'))
         } else {
             book.titleBook = req.body.titleBook;
             book.authorBook = req.body.authorBook;
+            book.description = req.body.description;
             book.publishing = req.body.publishing;
             book.series = req.body.series;
             book.idBook = req.body.idBook;
@@ -47,13 +63,11 @@ serverBookRouter.route('/update/:id').post((req, res) => {
                 })
         }
     })
-});
+};
 
-serverBookRouter.route('/delete/:id').get((req, res) => {
+exports.deleteBook = (req, res) => {
     Book.findByIdAndRemove({_id: req.params.id},
         (err, book) => {
             err ? res.json(err) : res.json('Удаление выполнено')
         });
-});
-
-module.exports = serverBookRouter;
+};

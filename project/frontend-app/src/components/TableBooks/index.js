@@ -15,8 +15,8 @@ const TableBooks = ({books, removeToListBook}) => {
     return (
         <Fragment>
             <div className={"table-users"}>
-                <div className={"header"}>Книги</div>
-                <table cellSpacing="0">
+                <div className={"header-table"}>Книги</div>
+                <table cellSpacing="0" id="table-to-xls">
                     <tbody>
                     <tr>
                         <th>Название</th>

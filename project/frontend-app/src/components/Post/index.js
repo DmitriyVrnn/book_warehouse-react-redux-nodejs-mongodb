@@ -3,13 +3,13 @@ import UserInfo from '../UserInfo'
 
 const Post = ({post: {title, body, author, date, _id}, onDelete}) => {
     return (
-        <div>
-            <h2>{title}</h2>
-            <p>{body}</p>
-            <UserInfo name={author}/>
-            <span>{date}</span>
-            <button type="button" onClick={() => onDelete(_id)}>
-                Удалить
+        <div className="post-block">
+            <h2 className="title">{title}</h2>
+            <p className="message">{body}</p>
+            <span className="author">Отправил: <UserInfo name={author}/></span>
+            <span className="date">{date}</span>
+            <button className="btn-delete" title="Удалить сообщение" type="button" onClick={() => onDelete(_id)}>
+                <i className="fas fa-trash-alt"></i>
             </button>
         </div>
     );

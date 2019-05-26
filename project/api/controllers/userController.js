@@ -1,17 +1,13 @@
-const express = require('express');
-const router = express.Router();
 const gravatar = require('gravatar');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const passport = require('passport');
 
 const validateRegisterInput = require('../validation/register');
 const validateLoginInput = require('../validation/login');
 
 const User = require('../models/User');
 
-router.post('/register', function (req, res) {
-
+exports.registerUser = (req, res) => {
     const {errors, isValid} = validateRegisterInput(req.body);
 
     if (!isValid) {
@@ -56,9 +52,9 @@ router.post('/register', function (req, res) {
             });
         }
     });
-});
+};
 
-router.post('/login', (req, res) => {
+exports.loginUser = (req, res) => {
     const {errors, isValid} = validateLoginInput(req.body);
 
     if (!isValid) {
@@ -99,14 +95,12 @@ router.post('/login', (req, res) => {
                     }
                 });
         });
-});
+};
 
-router.get('/me', passport.authenticate('jwt', {session: false}), (req, res) => {
+exports.getProfile = (req, res) => {
     return res.json({
         id: req.user.id,
         name: req.user.name,
         email: req.user.email
     });
-});
-
-module.exports = router;
+};

@@ -46,11 +46,11 @@ class Register extends Component {
         }
     }
 
-    componentDidMount() {
+    /*componentDidMount() {
         if(this.props.auth.isAuthenticated) {
             this.props.history.push('/');
         }
-    }
+    }*/
 
     render() {
         const { errors } = this.state;

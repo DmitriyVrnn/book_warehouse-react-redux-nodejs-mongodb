@@ -5,6 +5,10 @@ export const ADD_BOOK = 'ADD_BOOK';
 export const DELETE_BOOK = 'DELETE_BOOK';
 export const UPDATE_BOOK = 'UPDATE_BOOK';
 
+/*Collection book*/
+export const FETCH_COLLECTION_BOOK = 'FETCH_COLLECTION_BOOK';
+export const ADD_DESCRIPTION_BOOK = 'ADD_DESCRIPTION_BOOK';
+
 export const SEARCH_TEXT = 'SEARCH_TEXT';
 
 export const ADD_POST = 'ADD_POST';

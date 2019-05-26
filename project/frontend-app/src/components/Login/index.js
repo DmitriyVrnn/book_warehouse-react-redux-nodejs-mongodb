@@ -19,7 +19,7 @@ class Login extends Component {
         this.setState({
             [e.target.name]: e.target.value
         })
-    }
+    };
 
     handleSubmit = (e) => {
         e.preventDefault();
@@ -28,7 +28,7 @@ class Login extends Component {
             password: this.state.password,
         }
         this.props.loginUser(user);
-    }
+    };
 
     componentDidMount() {
         if(this.props.auth.isAuthenticated) {
@@ -94,11 +94,11 @@ Login.propTypes = {
     loginUser: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired,
     errors: PropTypes.object.isRequired
-}
+};
 
 const mapStateToProps = (state) => ({
     auth: state.auth,
     errors: state.errors
-})
+});
 
 export  default connect(mapStateToProps, { loginUser })(Login)

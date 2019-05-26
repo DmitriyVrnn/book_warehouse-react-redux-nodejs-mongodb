@@ -4,10 +4,14 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {logoutUser} from '../../actions/authentication'
 import {withRouter} from 'react-router-dom';
+
 import MainPage from '../pages/main-page'
 
-
 class NavBar extends Component {
+
+    state = {
+        loading: false
+    };
 
     onLogout = (e) => {
         e.preventDefault();
@@ -16,6 +20,7 @@ class NavBar extends Component {
 
     render() {
         const {isAuthenticated, user} = this.props.auth;
+
         const authLinks = (
             <MainPage onLogout={this.onLogout}
                       user={user.name}/>

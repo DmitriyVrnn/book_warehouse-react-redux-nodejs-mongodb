@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const path = require('path');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport');
@@ -11,9 +12,9 @@ const PORT = process.env.PORT || 4200;
 const config = require('./database/DB');
 
 //подключаем роутер
-const serverRouting = require('./routes/serverBookRouter');
-const users = require('./routes/user');
-const postRoute = require('./routes/postRoute')
+const bookRoute = require('./routes/bookRoute');
+const userRoute = require('./routes/userRoute');
+const postRoute = require('./routes/postRoute');
 
 //ожидаем, что подключимся к БД
 mongoose.connect(config.DB).then(
@@ -32,9 +33,9 @@ app.get('/', function(req, res) {
     res.send('hello');
 });
 
-app.use('/book', serverRouting);
+app.use('/book', bookRoute);
 
-app.use('/api/users', users);
+app.use('/api/users', userRoute);
 
 app.use('/posts', postRoute);
 

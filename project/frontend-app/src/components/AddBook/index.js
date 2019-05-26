@@ -1,19 +1,38 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import axios from 'axios'
+import {NotificationContainer, NotificationManager} from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
 
-export default class AddBook extends Component {
-
+export default class AddBook extends PureComponent {
     constructor(props) {
-        super(props)
-
+        super(props);
         this.state = {
             titleBook: '',
             authorBook: '',
+            description: '',
             publishing: '',
             series: '',
-            idBook: ''
+            idBook: '',
+            error: false,
+            success: false,
+            openForm: false,
         }
     }
+
+    componentDidUpdate() {
+        const {error, success} = this.state;
+        if (error) {
+            NotificationManager.error('Невозможно добавить книгу', 'Ошибка!', 5000, () => {
+                alert(`Книгу невозможно добавить, возможно она уже добавлена`);
+            });
+            this.setState({error: false})
+        }
+        if (success) {
+            NotificationManager.success('Книга добавлена', 'Успешно!');
+            this.setState({success: false})
+        }
+    }
+
 
     onChangeTitleBook = (e) => {
         this.setState({
@@ -45,25 +64,54 @@ export default class AddBook extends Component {
         })
     };
 
+    onChangeDescription = (e) => {
+        this.setState({
+            description: e.target.value
+        })
+    };
+
+    onError = () => {
+        this.setState({
+            error: true
+        })
+    };
+
+    onSuccess = () => {
+        this.setState({
+            success: true
+        })
+    };
+
     onSubmit = (e) => {
         e.preventDefault();
         const book = {
             titleBook: this.state.titleBook,
             authorBook: this.state.authorBook,
+            description: this.state.description,
             publishing: this.state.publishing,
             series: this.state.series,
             idBook: this.state.idBook
         };
-        axios.post('http://localhost:4200/book/add', book)
-            .then(res => console.log(res.data))
+        axios.post(`http://localhost:4200/book/add`, book)
+            .then(res => this.onSuccess(res))
+            .catch(this.onError);
         this.setState({
             titleBook: '',
             authorBook: '',
+            description: '',
             publishing: '',
             series: '',
-            idBook: ''
+            idBook: '',
+            error: false
         })
     };
+
+    setOpenForm = () => {
+        this.setState({
+            openForm: !this.state.openForm
+        })
+    };
+
 
     render() {
         return (
@@ -106,10 +154,19 @@ export default class AddBook extends Component {
                         </label>
                     </div>
                     <div className={"form-group"}>
+                        {this.state.openForm ?
+                            <textarea className="textarea-description" onChange={this.onChangeDescription}
+                                      name="description" id="" cols="30" rows="10"/> : null}
+                    </div>
+                    <button
+                        className="btn-toggle-form" type="button"
+                        onClick={() => this.setOpenForm()}>{this.state.openForm ? 'Скрыть ▲' : 'Добавить описание ▼'}
+                    </button>
+                    <div className={"form-group"}>
                         <input type="submit" value={"Добавить в базу"} className={"form-control"}/>
                     </div>
-
                 </form>
+                <NotificationContainer/>
             </>
         )
     }

@@ -4,14 +4,21 @@ const Schema = mongoose.Schema;
 const uniqueValidator = require('mongoose-unique-validator');
 
 //Описываем книгу
-const book = new Schema({
+const Book = new Schema({
     titleBook: {
         type: String,
         required: true
     },
+    image : {
+        data: Buffer,
+        contentType: String
+    },
     authorBook: {
         type: String,
         required: true
+    },
+    description: {
+        type: String,
     },
     publishing: {
         type: String
@@ -20,13 +27,14 @@ const book = new Schema({
         type: String
     },
     idBook: {
-        type: Number,
+        type: String,
         unique: true
     }
 }, {
     collection: 'books' //books - коллекция в базе данных
 });
 
-book.plugin(uniqueValidator);
 
-module.exports = mongoose.model('book', book);
+Book.plugin(uniqueValidator);
+
+module.exports = mongoose.model('book', Book);

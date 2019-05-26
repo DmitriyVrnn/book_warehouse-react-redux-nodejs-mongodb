@@ -6,7 +6,7 @@ import jwt_decode from 'jwt-decode';
 import setAuthToken from './setAuthToken';
 import { setCurrentUser, logoutUser } from './actions/authentication';
 
-import Navbar from './components/NavBar';
+import NavBar from './components/NavBar';
 import Register from './components/Register';
 import Login from './components/Login';
 
@@ -25,6 +25,7 @@ if(localStorage.jwtToken) {
 }
 
 class App extends Component {
+
     componentDidMount(){
         document.title = "Bookstore";
     }
@@ -34,7 +35,7 @@ class App extends Component {
             <Provider store = { store }>
                 <Router>
                     <div>
-                        <Navbar />
+                        <NavBar />
                         <div className="container">
                             <Route exact path="/register" component={ Register } />
                             <Route exact path="/login" component={ Login } />
