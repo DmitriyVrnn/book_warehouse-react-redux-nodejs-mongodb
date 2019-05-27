@@ -1,10 +1,11 @@
-@import '../cosmetics/color';
+@import '../cosmetics/vars';
 @import "../cosmetics/fonts";
 
 $borderRadius: 10px;
 $imageBig: 100px;
 $imageSmall: 60px;
 $padding: 10px;
+
 
 * {
   box-sizing: border-box;
@@ -64,9 +65,7 @@ $padding: 10px;
     flex-direction: column;
 
     .btn {
-      transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
-                  box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
-                    border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+      transition: $transition;
       height: 20px;
       border-radius: 5px;
       border: none;
@@ -91,9 +90,7 @@ $padding: 10px;
   }
 
   .btn-excel {
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
-                box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
-                border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    transition: $transition;
     box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
                 0px 6px 10px 0px rgba(0, 0, 0, 0.14),
                 0px 1px 18px 0px rgba(0, 0, 0, 0.12);

@@ -1,4 +1,4 @@
-import {FETCH_COLLECTION_BOOK, ADD_DESCRIPTION_BOOK} from "../constants/constants";
+import {FETCH_COLLECTION_BOOK, ADD_DESCRIPTION_BOOK, DELETE_BOOK} from "../constants/constants";
 import axios from "axios";
 
 const apiUrl = 'http://localhost:4200/book';
@@ -9,6 +9,24 @@ export const fetchCollectionBooks = (books) => {
         books
     }
 };
+
+export const deleteBookSuccess = (id) => ({
+    type: DELETE_BOOK,
+    id
+});
+
+export const deleteBook = (id) => {
+    return dispatch => {
+        return axios.get(`${apiUrl}/delete/${id}`)
+            .then(res => {
+                dispatch(deleteBookSuccess(res.data))
+            })
+            .catch(err => {
+                throw(err)
+            })
+    }
+};
+
 
 export const fetchAllCollectionBooks = () => {
     return (dispatch) => {

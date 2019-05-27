@@ -1,31 +1,23 @@
 import React from 'react'
-import {connect} from 'react-redux'
 import Book from '../Book'
 
-const BookList = ({booksCollection}) => {
-    if(!booksCollection.length) {
+const BookList = ({booksCollection, onDelete}) => {
+    if (!booksCollection.length) {
         return (
             <div>
                 Коллекция отсутсвует
             </div>
         )
     }
-
-    return(
+    return (
         <div className="books-grid">
             {booksCollection.map(book => {
                 return (
-                    <Book book={ book } key={ book._id }/>
+                    <Book book={book} key={book._id} onDelete={onDelete}/>
                 );
             })}
         </div>
     )
 };
 
-const mapStateToProps = state => {
-    return {
-        booksCollection: state.booksCollection,
-    };
-};
-
-export default connect(mapStateToProps)(BookList)
+export default BookList

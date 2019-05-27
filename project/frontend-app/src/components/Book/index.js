@@ -1,10 +1,9 @@
 import React, {useState} from 'react'
-import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
 import Modal from '../Modal'
 
-const Book = ({book: {titleBook, authorBook, series, publishing, description, _id}}) => {
+const Book = ({book: {titleBook, authorBook, series, publishing, description, _id}, onDelete}) => {
     const [isOpen, setOpen] = useState(false);
 
     const openModal = () => setOpen(true);
@@ -27,6 +26,7 @@ const Book = ({book: {titleBook, authorBook, series, publishing, description, _i
                     {!description ? <p>Описания: <span className={"not-description"}>❌</span></p>
                         : <p>Описание: {description}</p>}
                     <Link className="modal-edit-link" to={`/edit/${_id}`}>Редактировать</Link>
+                    <button onClick={() => onDelete(_id)}>Delete</button>
                 </Modal>
                 <h2 className="card-title">Название: {titleBook}</h2>
                 <div>Тут фото</div>
@@ -37,4 +37,4 @@ const Book = ({book: {titleBook, authorBook, series, publishing, description, _i
     );
 };
 
-export default connect()(Book);
+export default Book;

@@ -1,30 +1,26 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import BookList from '../components/BookList'
-import {fetchAllCollectionBooks} from "../actions/collectionBooks";
+import {fetchAllCollectionBooks, deleteBook} from "../actions/collectionBooks";
 
 class CollectionBooks extends React.Component {
 
     componentDidMount(){
-        this.props.allCollectionBooks()
+        this.props.fetchAllCollectionBooks()
     }
 
     render() {
+        const {deleteBook, booksCollection} = this.props;
+
         return (
             <div className='container'>
-                <BookList/>
+                <BookList onDelete={deleteBook} booksCollection={booksCollection}/>
             </div>
         )
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        allCollectionBooks: books => {
-            dispatch(fetchAllCollectionBooks(books))
-        }
-    }
-}
 
-
-export default connect(null, mapDispatchToProps)(CollectionBooks)
+export default connect(state => ({
+    booksCollection: state.booksCollection
+}), {fetchAllCollectionBooks, deleteBook})(CollectionBooks)
