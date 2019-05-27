@@ -1,7 +1,7 @@
 import React from 'react'
 import Book from '../Book'
 
-const BookList = ({booksCollection, onDelete}) => {
+const BookList = ({booksCollection, onDelete, role}) => {
     if (!booksCollection.length) {
         return (
             <div>
@@ -13,7 +13,7 @@ const BookList = ({booksCollection, onDelete}) => {
         <div className="books-grid">
             {booksCollection.map(book => {
                 return (
-                    <Book book={book} key={book._id} onDelete={onDelete}/>
+                    <Book roleUser={role} book={book} key={book._id} onDelete={onDelete}/>
                 );
             })}
         </div>

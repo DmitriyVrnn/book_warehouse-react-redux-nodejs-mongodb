@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link, NavLink} from 'react-router-dom'
 
-const Links = () => {
+const Links = ({role}) => {
     return (
         <ul className="sidebar-list">
             <li className="sidebar-item">
@@ -22,21 +22,25 @@ const Links = () => {
                     <span>Стена</span>
                 </NavLink>
             </li>
-            <li className="sidebar-item">
-                <NavLink to={'/register'}>
-                    <i className="fas fa-user-plus"></i>
-                    <span>Добавить пользователя</span>
-                </NavLink>
-            </li>
-            <li className="sidebar-item">
-                <NavLink to={'/add'}>
-                    <i className="fas fa-plus"></i>
-                    <span>Добавить книгу</span>
-                </NavLink>
-            </li>
-            <li className="sidebar-item">
-                <NavLink to={'/test'}>Тестовый компонент</NavLink>
-            </li>
+            {role === 'Worker' ? null :
+                <>
+                    <li className="sidebar-item">
+                        <NavLink to={'/register'}>
+                            <i className="fas fa-user-plus"></i>
+                            <span>Добавить пользователя</span>
+                        </NavLink>
+                    </li>
+                    < li className="sidebar-item">
+                        <NavLink to={'/add'}>
+                            <i className="fas fa-plus"></i>
+                            <span>Добавить книгу</span>
+                        </NavLink>
+                    </li>
+                    <li className="sidebar-item">
+                        <NavLink to={'/test'}>Тестовый компонент</NavLink>
+                    </li>
+                </>
+            }
         </ul>
     )
 }

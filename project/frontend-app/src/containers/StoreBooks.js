@@ -1,6 +1,7 @@
 import React, {PureComponent, Fragment} from 'react'
 import axios from "axios";
 import ReactToExcel from 'react-html-table-to-excel';
+import {connect} from 'react-redux'
 
 import TableBooks from '../components/TableBooks'
 import SearchBar from '../components/SearchBar'
@@ -80,6 +81,7 @@ class StoreBooks extends PureComponent {
     render() {
         const {books, term, loading} = this.state;
         const visibleItems = this.search(books, term);
+        const {user} = this.props.auth;
 
         if (loading) {
             return <Loader/>
@@ -100,10 +102,13 @@ class StoreBooks extends PureComponent {
                     <SearchBar onSearchChange={this.onSearchChange}/>
                 </div>
                 <TableBooks books={visibleItems}
-                            removeToListBook={this.removeToListBook}/>
+                            removeToListBook={this.removeToListBook}
+                            role={user.role}/>
             </>
         )
     }
 }
 
-export default StoreBooks
+export default connect(state => ({
+    auth: state.auth
+}))(StoreBooks)

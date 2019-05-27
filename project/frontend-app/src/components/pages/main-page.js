@@ -26,27 +26,34 @@ const MainPage = (props) => {
                     <Link to="/books"><img className="logotype" src={logo}
                                            alt="Логотип"/></Link>
                     <div className="header-worker">
-                        <UserInfo name={props.user}/>
+                        <UserInfo name={props.user} role={props.role}/>
                         <Link to={"/"} onClick={props.onLogout}>Выход</Link>
                     </div>
                 </header>
 
                 <section className="wrapper">
                     <aside className="sidebar">
-                        <Links/>
+                        <Links role={props.role}/>
                     </aside>
 
                     <main className={"content"}>
                         <div className="feel-grid">
-                            <Switch>
-                                <Route exact path='/add' component={AddBook}/>
-                                <Route path='/edit/:id' component={EditBook}/>
-                                <Route path='/register' component={Register}/>
-                                <Route path='/test' component={TestDirectory}/>
-                                <Route path='/index' component={StoreBooks}/>
-                                <Route path='/post' component={CreatePost}/>
-                                <Route path='/books' component={CollectionBooks}/>
-                            </Switch>
+                            {props.role === "Worker" ?
+                                <Switch>
+                                    <Route path='/index' component={StoreBooks}/>
+                                    <Route path='/post' component={CreatePost}/>
+                                    <Route path='/books' component={CollectionBooks}/>
+                                </Switch> :
+                                <Switch>
+                                    <Route exact path='/add' component={AddBook}/>
+                                    <Route path='/edit/:id' component={EditBook}/>
+                                    <Route path='/register' component={Register}/>
+                                    <Route path='/test' component={TestDirectory}/>
+                                    <Route path='/index' component={StoreBooks}/>
+                                    <Route path='/post' component={CreatePost}/>
+                                    <Route path='/books' component={CollectionBooks}/>
+                                </Switch>
+                            }
                         </div>
                     </main>
                 </section>

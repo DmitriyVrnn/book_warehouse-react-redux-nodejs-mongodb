@@ -31,6 +31,7 @@ exports.registerUser = (req, res) => {
                 name: req.body.name,
                 email: req.body.email,
                 password: req.body.password,
+                role: req.body.role,
                 avatar
             });
 
@@ -66,7 +67,7 @@ exports.loginUser = (req, res) => {
     User.findOne({email})
         .then(user => {
             if (!user) {
-                errors.email = 'User not found'
+                errors.email = 'UserPage not found'
                 return res.status(404).json(errors);
             }
             bcrypt.compare(password, user.password)
@@ -75,7 +76,8 @@ exports.loginUser = (req, res) => {
                         const payload = {
                             id: user.id,
                             name: user.name,
-                            avatar: user.avatar
+                            avatar: user.avatar,
+                            role: user.role
                         }
                         jwt.sign(payload, 'secret', {
                             expiresIn: 3600
@@ -101,6 +103,7 @@ exports.getProfile = (req, res) => {
     return res.json({
         id: req.user.id,
         name: req.user.name,
-        email: req.user.email
+        email: req.user.email,
+        role: req.user.role
     });
 };

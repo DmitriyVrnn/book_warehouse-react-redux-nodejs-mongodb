@@ -46,7 +46,6 @@ class NewPost extends React.PureComponent {
                             value={this.state.title}
                         />
                     </div>
-                    <UserInfo name={user.name}/>
                     <textarea
                         cols="21"
                         rows="10"
@@ -57,7 +56,7 @@ class NewPost extends React.PureComponent {
                         </textarea>
                     <button className="btn-add_post" type="submit">Отправить</button>
                 </form>
-                <PostList author={user.name} date={this.state.date}/>
+                <PostList author={user.name} role={user.role} date={this.state.date}/>
             </div>
         );
     }

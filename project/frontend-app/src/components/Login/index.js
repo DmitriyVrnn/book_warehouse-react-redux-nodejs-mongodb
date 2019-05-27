@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 import {loginUser} from "../../actions/authentication";
 import classnames from 'classnames';
 
@@ -33,16 +33,16 @@ class Login extends Component {
     };
 
     componentDidMount() {
-        if(this.props.auth.isAuthenticated) {
+        if (this.props.auth.isAuthenticated) {
             this.props.history.push('/');
         }
     }
 
     componentWillReceiveProps(nextProps) {
-        if(nextProps.auth.isAuthenticated) {
+        if (nextProps.auth.isAuthenticated) {
             this.props.history.push('/')
         }
-        if(nextProps.errors) {
+        if (nextProps.errors) {
             this.setState({
                 errors: nextProps.errors
             });
@@ -51,10 +51,10 @@ class Login extends Component {
 
     render() {
         const {errors} = this.state;
-        return(
+        return (
             <div>
                 <h2>Login</h2>
-                <form onSubmit={ this.handleSubmit }>
+                <form onSubmit={this.handleSubmit}>
                     <div>
                         <input
                             type="email"
@@ -63,8 +63,8 @@ class Login extends Component {
                                 'is-invalid': errors.email
                             })}
                             name="email"
-                            onChange={ this.handleInputChange }
-                            value={ this.state.email }
+                            onChange={this.handleInputChange}
+                            value={this.state.email}
                         />
                         {errors.email && (<div className="invalid-feedback">{errors.email}</div>)}
                     </div>
@@ -76,8 +76,8 @@ class Login extends Component {
                                 'is-invalid': errors.password
                             })}
                             name="password"
-                            onChange={ this.handleInputChange }
-                            value={ this.state.password }
+                            onChange={this.handleInputChange}
+                            value={this.state.password}
                         />
                         {errors.password && (<div className="invalid-feedback">{errors.password}</div>)}
                     </div>
@@ -103,4 +103,4 @@ const mapStateToProps = (state) => ({
     errors: state.errors
 });
 
-export  default connect(mapStateToProps, { loginUser })(Login)
+export default connect(mapStateToProps, {loginUser})(Login)

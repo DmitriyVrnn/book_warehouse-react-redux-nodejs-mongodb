@@ -21,9 +21,10 @@ class NavBar extends Component {
     render() {
         const {isAuthenticated, user} = this.props.auth;
 
-        const authLinks = (
+        const authLinks =(
             <MainPage onLogout={this.onLogout}
-                      user={user.name}/>
+                      user={user.name}
+                      role={user.role}/>
         );
 
         const guestLinks = (

@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import Post from '../Post'
 import {deletePost} from "../../actions/post";
 
-const PostList = ({posts, deletePost, author, date}) => {
+const PostList = ({posts, deletePost, author, date, role}) => {
     if (!posts.length) {
         return (
             <div>
@@ -16,7 +16,12 @@ const PostList = ({posts, deletePost, author, date}) => {
         <div className={"post-list"}>
             {posts.map(post => {
                 return (
-                    <Post post={post} author={author} date={date} onDelete={deletePost} key={post._id}/>
+                    <Post post={post}
+                          author={author}
+                          date={date}
+                          onDelete={deletePost}
+                          roleUser={role}
+                          key={post._id}/>
                 );
             })}
         </div>

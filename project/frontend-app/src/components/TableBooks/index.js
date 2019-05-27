@@ -2,13 +2,14 @@ import React, {Fragment} from 'react'
 
 import TableRow from '../TableRow'
 
-const TableBooks = ({books, removeToListBook}) => {
+const TableBooks = ({books, removeToListBook, role}) => {
 
     const elements = books.map((object, i) => {
         return (
             <TableRow obj={object}
                       key={i}
-                      removeToListBook={removeToListBook}/>
+                      removeToListBook={removeToListBook}
+                      roleUser={role}/>
         )
     });
 
@@ -24,8 +25,11 @@ const TableBooks = ({books, removeToListBook}) => {
                         <th>Издательство</th>
                         <th>Серия</th>
                         <th width="230">ID товара</th>
-                        <th></th>
-                        <th></th>
+                        {role === "Worker" ? null :
+                            <>
+                                <th></th>
+                                <th></th>
+                            </>}
                     </tr>
                     {elements}
                     </tbody>
