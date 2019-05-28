@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link, NavLink} from 'react-router-dom'
+import {WORKER} from "../../constants/constants";
 
 const Links = ({role}) => {
     return (
@@ -22,7 +23,7 @@ const Links = ({role}) => {
                     <span>Стена</span>
                 </NavLink>
             </li>
-            {role === 'Worker' ? null :
+            {role === WORKER ? null :
                 <>
                     <li className="sidebar-item">
                         <NavLink to={'/register'}>

@@ -9,7 +9,7 @@ const UserInfo = ({name, role, onLogout, avatar}) => {
                 <div className="user-information">
                     <span className="role-user">{role}</span>
                     <span className="name-user">{name}</span>
-                    <Link className="logout-link" to={"/"} onClick={onLogout}>Выход</Link>
+                    <Link className="logout-link" to={"/"} onClick={onLogout}>Выход <i className="fas fa-sign-out-alt"></i></Link>
                 </div>
                 <img className="avatar-user" src={avatar} alt="avatar"/>
             </div>

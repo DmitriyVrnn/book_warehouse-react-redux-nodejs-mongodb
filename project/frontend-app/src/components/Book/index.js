@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
 
 import Modal from '../Modal'
+import {WORKER} from "../../constants/constants";
 
 const Book = ({book: {
                 titleBook,
@@ -32,7 +33,7 @@ const Book = ({book: {
                     <p>Издательство: {publishing}</p>
                     {!description ? <p>Описания: <span className={"not-description"}>❌</span></p>
                         : <p>Описание: {description}</p>}
-                    {roleUser === 'Worker' ? null :
+                    {roleUser === WORKER ? null :
                         <>
                             <Link className="modal-edit-link" to={`/edit/${_id}`}>Редактировать</Link>
                             <button onClick={() => onDelete(_id)}>Delete</button>

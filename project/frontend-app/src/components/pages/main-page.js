@@ -17,6 +17,7 @@ import CreatePost from "../../components/CreatePost"
 import Register from '../Register'
 import Links from '../Links'
 import CollectionBooks from '../../containers/CollectionBooks'
+import {WORKER} from "../../constants/constants";
 
 const MainPage = (props) => {
     return (
@@ -40,7 +41,7 @@ const MainPage = (props) => {
 
                     <main className={"content"}>
                         <div className="feel-grid">
-                            {props.role === "Worker" ?
+                            {props.role === WORKER ?
                                 <Switch>
                                     <Route path='/index' component={StoreBooks}/>
                                     <Route path='/post' component={CreatePost}/>

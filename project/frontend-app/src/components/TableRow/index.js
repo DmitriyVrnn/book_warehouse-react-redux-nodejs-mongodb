@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios';
+import {WORKER} from "../../constants/constants";
 
 const TableRow = ({obj, removeToListBook, roleUser}) => {
 
@@ -31,7 +32,7 @@ const TableRow = ({obj, removeToListBook, roleUser}) => {
                 {obj.series}
             </td>
             <td>{obj.idBook}</td>
-            {roleUser === "Worker" ? null :
+            {roleUser === WORKER ? null :
                 <>
                     <td>
                         <button className="table-btn table-btn-edit" title="Редактировать">

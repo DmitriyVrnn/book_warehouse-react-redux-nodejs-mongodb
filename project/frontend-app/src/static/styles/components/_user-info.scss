@@ -26,4 +26,14 @@
   color: white;
   text-decoration: underline;
   font-size: 12px;
+  padding-top: 5px;
+
+  .fas{
+    color: #cc584c;
+  }
+
+  &:hover{
+    color: #cc584c;
+    text-decoration: none;
+  }
 }
