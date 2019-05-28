@@ -26,8 +26,10 @@ const MainPage = (props) => {
                     <Link to="/books"><img className="logotype" src={logo}
                                            alt="Логотип"/></Link>
                     <div className="header-worker">
-                        <UserInfo name={props.user} role={props.role}/>
-                        <Link to={"/"} onClick={props.onLogout}>Выход</Link>
+                        <UserInfo name={props.user}
+                                  role={props.role}
+                                  onLogout={props.onLogout}
+                                  avatar={props.avatar}/>
                     </div>
                 </header>
 

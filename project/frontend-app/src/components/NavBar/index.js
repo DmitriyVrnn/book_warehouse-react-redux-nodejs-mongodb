@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {logoutUser} from '../../actions/authentication'
@@ -25,16 +24,9 @@ class NavBar extends Component {
         const authLinks = (
             <MainPage onLogout={this.onLogout}
                       user={user.name}
-                      role={user.role}/>
+                      role={user.role}
+                      avatar={user.avatar}/>
         );
-
-        /*const guestLinks = (
-            <ul>
-                <li>
-                    <Link to="/login">Sign In</Link>
-                </li>
-            </ul>
-        );*/
 
         return (
             <>

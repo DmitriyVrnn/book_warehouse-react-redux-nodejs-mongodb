@@ -1,13 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import {Link} from 'react-router-dom'
 
-const UserInfo = (props) => {
+const UserInfo = ({name, role, onLogout, avatar}) => {
     return (
-        <div className="block-user">
-            <span className="name-user">{props.name}</span>
-            <span>{props.role}</span>
-            {console.log(props)}
-        </div>
+        <>
+            <div className="block-user">
+                <div className="user-information">
+                    <span className="role-user">{role}</span>
+                    <span className="name-user">{name}</span>
+                    <Link className="logout-link" to={"/"} onClick={onLogout}>Выход</Link>
+                </div>
+                <img className="avatar-user" src={avatar} alt="avatar"/>
+            </div>
+        </>
+
     )
 };
 
