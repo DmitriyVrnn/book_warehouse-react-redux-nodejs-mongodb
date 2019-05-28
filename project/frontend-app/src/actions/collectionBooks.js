@@ -33,7 +33,6 @@ export const fetchAllCollectionBooks = () => {
         return axios.get(apiUrl)
             .then(response => {
                 dispatch(fetchCollectionBooks(response.data));
-                console.log(response.data)
             })
             .catch(error => {
                 throw(error);

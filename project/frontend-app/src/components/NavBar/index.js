@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import {logoutUser} from '../../actions/authentication'
 import {withRouter} from 'react-router-dom';
 
+import Login from '../Login'
 import MainPage from '../pages/main-page'
 
 class NavBar extends Component {
@@ -21,29 +22,24 @@ class NavBar extends Component {
     render() {
         const {isAuthenticated, user} = this.props.auth;
 
-        const authLinks =(
+        const authLinks = (
             <MainPage onLogout={this.onLogout}
                       user={user.name}
                       role={user.role}/>
         );
 
-        const guestLinks = (
+        /*const guestLinks = (
             <ul>
-                <li>
-                    <Link to="/register">Sign Up</Link>
-                </li>
                 <li>
                     <Link to="/login">Sign In</Link>
                 </li>
             </ul>
-        );
+        );*/
 
         return (
-            <nav>
-                <div>
-                    {isAuthenticated ? authLinks : guestLinks}
-                </div>
-            </nav>
+            <>
+                {isAuthenticated ? authLinks : <Login/>}
+            </>
         )
     }
 }

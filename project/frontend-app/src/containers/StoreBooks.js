@@ -39,7 +39,6 @@ class StoreBooks extends PureComponent {
     compareBy = (key) => {
         return (a, b) => {
             if (key) {
-                console.log(this.state.books.titleBook)
                 if (a[key] > b[key]) return 1;
                 if (a[key] < b[key]) return -1;
             }
@@ -49,7 +48,6 @@ class StoreBooks extends PureComponent {
 
     sortBy = (key) => {
         let booksCopy = [...this.state.books];
-        console.log(booksCopy);
         booksCopy.sort(this.compareBy(key));
         this.setState({books: booksCopy});
     };
