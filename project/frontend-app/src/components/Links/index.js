@@ -14,13 +14,13 @@ const Links = ({role}) => {
             <li className="sidebar-item">
                 <NavLink to={'/index'}>
                     <i className="fas fa-database"></i>
-                    <span>Хранилище</span>
+                    <span>Список книг</span>
                 </NavLink>
             </li>
             <li className="sidebar-item">
                 <NavLink to={'/post'}>
                     <i className="fas fa-comment"></i>
-                    <span>Стена</span>
+                    <span>Переговорная</span>
                 </NavLink>
             </li>
             {role === WORKER ? null :

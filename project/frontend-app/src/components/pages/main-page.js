@@ -48,7 +48,8 @@ const MainPage = (props) => {
                                     <Route path='/books' component={CollectionBooks}/>
                                 </Switch> :
                                 <Switch>
-                                    <Route exact path='/add' component={AddBook}/>
+                                    <Route exact path={'/'} component={CollectionBooks}/>
+                                    <Route path='/add' component={AddBook}/>
                                     <Route path='/edit/:id' component={EditBook}/>
                                     <Route path='/register' component={Register}/>
                                     <Route path='/test' component={TestDirectory}/>

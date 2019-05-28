@@ -20,7 +20,8 @@ const UserInfo = ({name, role, onLogout, avatar}) => {
 
 UserInfo.propTypes = {
     name: PropTypes.string.isRequired,
-    role: PropTypes.string.isRequired
+    role: PropTypes.string.isRequired,
+    avatar: PropTypes.shape,
 };
 
 export default UserInfo;

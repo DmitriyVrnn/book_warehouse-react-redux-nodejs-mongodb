@@ -24,8 +24,8 @@ class NewPost extends React.PureComponent {
         if ((this.state.body.trim()) || this.state.body.trim()) {
             this.props.onAddPost(this.state);
             this.setState({
-                author: '',
-                body: '',
+                author: this.props.auth.user.name,
+                body:'',
             })
         }
     };
