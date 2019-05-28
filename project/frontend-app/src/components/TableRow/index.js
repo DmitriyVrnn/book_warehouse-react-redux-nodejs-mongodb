@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios';
 
-const TableRow = ({obj, removeToListBook}) => {
+const TableRow = ({obj, removeToListBook, roleUser}) => {
 
     const deleteBook = () => {
         const confirm = window.confirm(`Вы уверены что хотите удалить книгу "${obj.titleBook}"?`);
@@ -31,18 +31,22 @@ const TableRow = ({obj, removeToListBook}) => {
                 {obj.series}
             </td>
             <td>{obj.idBook}</td>
-            <td>
-                <button className="table-btn table-btn-edit" title="Редактировать">
-                    <Link to={"/edit/" + obj._id}>
-                        <i className="fas fa-edit"></i>
-                    </Link>
-                </button>
-            </td>
-            <td>
-                <button className="table-btn table-btn-delete" title="Удалить" onClick={deleteBook}>
-                    <i className="fas fa-trash-alt"></i>
-                </button>
-            </td>
+            {roleUser === "Worker" ? null :
+                <>
+                    <td>
+                        <button className="table-btn table-btn-edit" title="Редактировать">
+                            <Link to={"/edit/" + obj._id}>
+                                <i className="fas fa-edit"></i>
+                            </Link>
+                        </button>
+                    </td>
+                    <td>
+                        <button className="table-btn table-btn-delete" title="Удалить" onClick={deleteBook}>
+                            <i className="fas fa-trash-alt"></i>
+                        </button>
+                    </td>
+                </>
+            }
         </tr>
     )
 };

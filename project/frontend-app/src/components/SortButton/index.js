@@ -4,12 +4,12 @@ export default class SortButton extends React.Component {
 
     render() {
         return (
-            <div>
-                <button onClick={() => this.props.sortBy('titleBook')}>
-                    Сортировка по имени
+            <div className="btn-sort-table">
+                <button className="btn btn-sort_title" onClick={() => this.props.sortBy('titleBook')}>
+                    <i className="fas fa-sort-alpha-up">По книге</i>
                 </button>
-                <button onClick={() => this.props.sortBy('authorBook')}>
-                    Сортировка по автору
+                <button className="btn btn-sort_author" onClick={() => this.props.sortBy('authorBook')}>
+                    <i className="fas fa-sort-alpha-up">По автору</i>
                 </button>
             </div>
         )

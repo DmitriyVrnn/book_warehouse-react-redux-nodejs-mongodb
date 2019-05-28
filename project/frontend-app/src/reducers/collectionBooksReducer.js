@@ -1,9 +1,11 @@
-import {FETCH_COLLECTION_BOOK} from "../constants/constants";
+import {FETCH_COLLECTION_BOOK, DELETE_BOOK} from "../constants/constants";
 
-export default (state = [], action) => {
-    switch (action.type) {
+export default (state = [], {books, type, id}) => {
+    switch (type) {
         case FETCH_COLLECTION_BOOK:
-            return action.books;
+            return books;
+        case DELETE_BOOK:
+            return [...state].filter(book => book._id !== id);
         default:
             return state;
     }

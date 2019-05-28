@@ -68,6 +68,6 @@ exports.updateBook = (req, res) => {
 exports.deleteBook = (req, res) => {
     Book.findByIdAndRemove({_id: req.params.id},
         (err, book) => {
-            err ? res.json(err) : res.json('Удаление выполнено')
+            err ? res.json(err) : res.json(req.params.id)
         });
 };

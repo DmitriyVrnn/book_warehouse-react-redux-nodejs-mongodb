@@ -1,6 +1,7 @@
 import React, {PureComponent, Fragment} from 'react'
 import axios from "axios";
 import ReactToExcel from 'react-html-table-to-excel';
+import {connect} from 'react-redux'
 
 import TableBooks from '../components/TableBooks'
 import SearchBar from '../components/SearchBar'
@@ -38,7 +39,6 @@ class StoreBooks extends PureComponent {
     compareBy = (key) => {
         return (a, b) => {
             if (key) {
-                console.log(this.state.books.titleBook)
                 if (a[key] > b[key]) return 1;
                 if (a[key] < b[key]) return -1;
             }
@@ -48,7 +48,6 @@ class StoreBooks extends PureComponent {
 
     sortBy = (key) => {
         let booksCopy = [...this.state.books];
-        console.log(booksCopy);
         booksCopy.sort(this.compareBy(key));
         this.setState({books: booksCopy});
     };
@@ -80,25 +79,34 @@ class StoreBooks extends PureComponent {
     render() {
         const {books, term, loading} = this.state;
         const visibleItems = this.search(books, term);
+        const {user} = this.props.auth;
 
         if (loading) {
             return <Loader/>
         }
         return (
-            <Fragment>
-                <SearchBar onSearchChange={this.onSearchChange}/>
-                <SortButton sortBy={this.sortBy}/>
-                <ReactToExcel
-                    table="table-to-xls"
-                    filename="books-table"
-                    sheet="books"
-                    buttonText="Экпортировать в Excel"
-                />
+            <>
+                <div className="table-dashboard">
+                    <div className="table-dashboard-btn">
+                            <ReactToExcel
+                                className={'btn-excel'}
+                                table="table-to-xls"
+                                filename="books-table"
+                                sheet="books"
+                                buttonText=""
+                            />
+                        <SortButton sortBy={this.sortBy}/>
+                    </div>
+                    <SearchBar onSearchChange={this.onSearchChange}/>
+                </div>
                 <TableBooks books={visibleItems}
-                            removeToListBook={this.removeToListBook}/>
-            </Fragment>
+                            removeToListBook={this.removeToListBook}
+                            role={user.role}/>
+            </>
         )
     }
 }
 
-export default StoreBooks
+export default connect(state => ({
+    auth: state.auth
+}))(StoreBooks)

@@ -1,8 +1,11 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 import {loginUser} from "../../actions/authentication";
-import classnames from 'classnames';
+
+import background from '../../static/img/annie-spratt-147610-unsplash.jpg'
+import logo from '../../static/img/phone-book-svgrepo-com.svg'
+//import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Login extends Component {
 
@@ -31,16 +34,16 @@ class Login extends Component {
     };
 
     componentDidMount() {
-        if(this.props.auth.isAuthenticated) {
+        if (this.props.auth.isAuthenticated) {
             this.props.history.push('/');
         }
     }
 
     componentWillReceiveProps(nextProps) {
-        if(nextProps.auth.isAuthenticated) {
+        if (nextProps.auth.isAuthenticated) {
             this.props.history.push('/')
         }
-        if(nextProps.errors) {
+        if (nextProps.errors) {
             this.setState({
                 errors: nextProps.errors
             });
@@ -49,42 +52,46 @@ class Login extends Component {
 
     render() {
         const {errors} = this.state;
-        return(
-            <div>
-                <h2>Login</h2>
-                <form onSubmit={ this.handleSubmit }>
-                    <div>
-                        <input
-                            type="email"
-                            placeholder="Email"
-                            className={classnames('form-control form-control-lg', {
-                                'is-invalid': errors.email
-                            })}
-                            name="email"
-                            onChange={ this.handleInputChange }
-                            value={ this.state.email }
-                        />
-                        {errors.email && (<div className="invalid-feedback">{errors.email}</div>)}
+        return (
+            <div className="container-login-form">
+                <div className="form-wrap">
+                    <form className="login-form-validate" onSubmit={this.handleSubmit}>
+                        <img className="logo" src={logo} alt="logo"/>
+                        <h2 className="title-form">Логин</h2>
+                        <div className="wrap-input rs1-wrap-input100 validate-input">
+                            <input
+                                type="email"
+                                placeholder="Email"
+                                className="input-field"
+                                name="email"
+                                onChange={this.handleInputChange}
+                                value={this.state.email}
+                            />
+                            <span className="focus-input"></span>
+                            {errors.email && (<div className="invalid-feedback">{errors.email}</div>)}
+                        </div>
+                        <div className="wrap-input rs2-wrap-input100 validate-input">
+                            <input
+                                type="password"
+                                placeholder="Password"
+                                className="input-field"
+                                name="password"
+                                onChange={this.handleInputChange}
+                                value={this.state.password}
+                            />
+                            <span className="focus-input"></span>
+                            {errors.password && (<div className="invalid-feedback">{errors.password}</div>)}
+                        </div>
+                        <div className="container-login-form-btn">
+                            <button className="login-form-btn" type="submit">
+                                Войти
+                            </button>
+                        </div>
+                    </form>
+                    <div className="login-more">
+                        <img className="background" src={background} alt="books"/>
                     </div>
-                    <div>
-                        <input
-                            type="password"
-                            placeholder="Password"
-                            className={classnames('form-control form-control-lg', {
-                                'is-invalid': errors.password
-                            })}
-                            name="password"
-                            onChange={ this.handleInputChange }
-                            value={ this.state.password }
-                        />
-                        {errors.password && (<div className="invalid-feedback">{errors.password}</div>)}
-                    </div>
-                    <div>
-                        <button type="submit">
-                            Login User
-                        </button>
-                    </div>
-                </form>
+                </div>
             </div>
         )
     }
@@ -101,4 +108,4 @@ const mapStateToProps = (state) => ({
     errors: state.errors
 });
 
-export  default connect(mapStateToProps, { loginUser })(Login)
+export default connect(mapStateToProps, {loginUser})(Login)
