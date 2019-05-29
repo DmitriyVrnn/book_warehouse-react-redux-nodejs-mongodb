@@ -36,6 +36,7 @@ class NewPost extends React.PureComponent {
             <div className="create-post">
                 <form className="form-post" onSubmit={this.handleSubmit}>
                     <textarea
+                        className="textarea-message-input"
                         cols="21"
                         rows="10"
                         placeholder="Введите сообщение..."

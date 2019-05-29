@@ -19,7 +19,6 @@ const sortingBook = (books) => {
 exports.getAllBook = (req, res) => {
     Book.find((err, books) => {
         sortingBook(books);
-        console.log(sortingBook)
         err ? console.log(err) : res.json(books)
     })
 };

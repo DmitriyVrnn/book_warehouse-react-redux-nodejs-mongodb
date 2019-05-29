@@ -29,9 +29,12 @@ h1{
       display: flex;
     }
 
-    textarea{
+    .textarea-description{
       padding: 10px;
-      width: 47.5em;
+      min-height: 69px;
+      box-sizing: border-box;
+      resize: none;
+      width: 50em;
       border: 2px solid rgb(216, 210, 210);
       border-radius: 5px;
       background-color: #EEEEEE;
