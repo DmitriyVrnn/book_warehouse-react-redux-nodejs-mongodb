@@ -1,24 +1,55 @@
-.container-register-form{
+.container-register-form {
   width: 30em;
-  height: 75vh;
+  height: 50vh;
   background: white;
   box-shadow: $box-shadow;
   border-radius: 10px;
 }
 
-.register-form{
+.register-form {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
 }
 
-.form-group{
+.title-register{
+  font-family: 'Fira Sans',sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36.4px;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.form-group {
   padding: 10px;
-  .input-register{
-    border-radius: 10px;
+  .input-register {
     width: 100%;
     margin-bottom: 10px;
     height: 5vh;
+    border: 2px solid #d8d2d2;
+    border-radius: 5px;
+    background-color: #EEEEEE;
+    padding-left: 10px;
+    font-family: Poppins-Regular;
   }
 
+  .btn-register{
+    width: 11.2em;
+    height: 5vh;
+    background-color: $main-color;
+    color: white;
+    border-radius: 5px;
+    border: 2px solid darken($main-color, 15);
+    cursor: pointer;
+    font-size: 1em;
+    font-family: "FiraSans-Black", "Arial", serif;
+    &:hover{
+      background-color: darken($main-color, 15);
+      color: white;
+    }
+    &:active{
+      transform: translateY(2px);
+    }
+  }
 }

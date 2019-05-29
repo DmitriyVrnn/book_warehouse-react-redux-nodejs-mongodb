@@ -35,7 +35,7 @@ export default class AddBook extends PureComponent {
         }
     }
 
-    handleTarget = (type) => {
+    handleInputChange = (type) => {
         return (e) => {
             switch (type) {
                 case 'titleBook':
@@ -99,54 +99,54 @@ export default class AddBook extends PureComponent {
     render() {
         return (
             <>
-                <h1>Добавить новую книгу</h1>
-                <form className={"form_add-book"} onSubmit={this.onSubmit}>
-                    <div className={"form-group"}>
+                <form className="form_add-book" onSubmit={this.onSubmit}>
+                    <h1 className="title-book">Добавить новую книгу</h1>
+                    <div className="form-group">
                         <label>
                             Название:
-                            <input type="text" className={"form-control"} value={this.state.titleBook}
-                                   onChange={this.handleTarget('titleBook')} required={true}/>
+                            <input type="text" className="form-control" value={this.state.titleBook}
+                                   onChange={this.handleInputChange('titleBook')} required={true}/>
                         </label>
                     </div>
-                    <div className={"form-group"}>
+                    <div className="form-group">
                         <label>
                             Автор:
-                            <input type="text" className={"form-control"} value={this.state.authorBook}
-                                   onChange={this.handleTarget('authorBook')} required={true}/>
+                            <input type="text" className="form-control" value={this.state.authorBook}
+                                   onChange={this.handleInputChange('authorBook')} required={true}/>
                         </label>
                     </div>
-                    <div className={"form-group"}>
+                    <div className="form-group">
                         <label>
                             Издательство:
-                            <input type="text" className={"form-control"} value={this.state.publishing}
-                                   onChange={this.handleTarget('publishingBook')}/>
+                            <input type="text" className="form-control" value={this.state.publishing}
+                                   onChange={this.handleInputChange('publishingBook')}/>
                         </label>
                     </div>
-                    <div className={"form-group"}>
+                    <div className="form-group">
                         <label>
                             Серия:
-                            <input type="text" className={"form-control"} value={this.state.series}
-                                   onChange={this.handleTarget('seriesBook')}/>
+                            <input type="text" className="form-control" value={this.state.series}
+                                   onChange={this.handleInputChange('seriesBook')}/>
                         </label>
                     </div>
-                    <div className={"form-group"}>
+                    <div className="form-group">
                         <label>
                             ID товара:
-                            <input type="text" className={"form-control"} value={this.state.idBook}
-                                   onChange={this.handleTarget('idBook')}/>
+                            <input type="text" className="form-control" value={this.state.idBook}
+                                   onChange={this.handleInputChange('idBook')}/>
                         </label>
                     </div>
-                    <div className={"form-group"}>
+                    <div className="form-group">
                         {this.state.openForm ?
-                            <textarea className="textarea-description" onChange={this.handleTarget('descriptionBook')}
+                            <textarea className="textarea-description" onChange={this.handleInputChange('descriptionBook')}
                                       name="description" id="" cols="30" rows="10"/> : null}
                     </div>
                     <button
                         className="btn-toggle-form" type="button"
                         onClick={() => this.setOpenForm()}>{this.state.openForm ? 'Скрыть ▲' : 'Добавить описание ▼'}
                     </button>
-                    <div className={"form-group"}>
-                        <input type="submit" value={"Добавить в базу"} className={"form-control"}/>
+                    <div className="form-group">
+                        <input type="submit" value={"Добавить в базу"} className="form-control"/>
                     </div>
                 </form>
                 <NotificationContainer/>

@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9175101-8be7-435f-b63e-e1ca36548d5a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/api/controllers/bookController.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/bookController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/models/Post.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/Post.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-app/src/actions/authentication.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-app/src/actions/authentication.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-app/src/components/NewPost/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-app/src/components/NewPost/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-app/src/components/AddBook/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-app/src/components/AddBook/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend-app/src/components/Register/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-app/src/components/Register/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend-app/src/components/pages/main-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-app/src/components/pages/main-page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend-app/src/static/styles/components/_add-book.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-app/src/static/styles/components/_add-book.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-app/src/static/styles/components/_post.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-app/src/static/styles/components/_post.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-app/src/static/styles/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-app/src/static/styles/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-app/src/static/styles/modules/_project.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-app/src/static/styles/modules/_project.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-app/src/static/styles/components/_register.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-app/src/static/styles/components/_register.scss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,20 +21,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend-app/src/components/Register/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="52" column="7" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
+            <state relative-caret-position="-912">
+              <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_main-form-login.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend-app/src/static/styles/components/_main-form-login.scss">
+      <file leaf-file-name="authReducer.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend-app/src/reducers/authReducer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2856">
-              <caret line="119" column="23" lean-forward="true" selection-start-line="119" selection-start-column="23" selection-end-line="119" selection-end-column="23" />
+            <state relative-caret-position="336">
+              <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="authentication.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend-app/src/actions/authentication.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -46,8 +57,20 @@
       <file leaf-file-name="_register.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend-app/src/static/styles/components/_register.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+            <state relative-caret-position="48">
+              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frontend-app/src/components/AddBook/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="48">
+              <caret line="140" column="103" selection-start-line="140" selection-start-column="103" selection-end-line="140" selection-end-column="103" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -61,11 +84,24 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="main-page.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend-app/src/components/pages/main-page.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="65">
+              <caret line="45" column="43" selection-start-line="45" selection-start-column="43" selection-end-line="45" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+                <element signature="e#337#386#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend-app/src/components/Login/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-57">
-              <caret line="51" column="14" lean-forward="true" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="14" />
+            <state relative-caret-position="-201">
+              <caret line="66" column="41" lean-forward="true" selection-start-line="66" selection-start-column="41" selection-end-line="66" selection-end-column="42" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -87,7 +123,6 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>postReducer</find>
-      <find>sidebar</find>
       <find>form_add-book</find>
       <find>active</find>
       <find>`</find>
@@ -95,6 +130,7 @@
       <find>Download</find>
       <find>header-worker</find>
       <find>/login</find>
+      <find>sidebar</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -112,7 +148,6 @@
         <option value="$PROJECT_DIR$/api/controllers/postController.js" />
         <option value="$PROJECT_DIR$/frontend-app/.gitignore" />
         <option value="$PROJECT_DIR$/api/validation/register.js" />
-        <option value="$PROJECT_DIR$/frontend-app/src/components/AddBook/index.js" />
         <option value="$PROJECT_DIR$/frontend-app/src/components/EditBook/index.js" />
         <option value="$PROJECT_DIR$/frontend-app/src/static/styles/components/_card-books.scss" />
         <option value="$PROJECT_DIR$/frontend-app/node_modules/react-html-table-to-excel/index.js" />
@@ -145,15 +180,16 @@
         <option value="$PROJECT_DIR$/frontend-app/src/components/Login/index.js" />
         <option value="$PROJECT_DIR$/api/models/Post.js" />
         <option value="$PROJECT_DIR$/api/controllers/bookController.js" />
-        <option value="$PROJECT_DIR$/frontend-app/src/components/pages/main-page.js" />
         <option value="$PROJECT_DIR$/frontend-app/src/components/NewPost/index.js" />
-        <option value="$PROJECT_DIR$/frontend-app/src/static/styles/components/_add-book.scss" />
         <option value="$PROJECT_DIR$/frontend-app/src/static/styles/components/_post.scss" />
-        <option value="$PROJECT_DIR$/frontend-app/src/static/styles/modules/_project.scss" />
         <option value="$PROJECT_DIR$/frontend-app/src/static/styles/main.scss" />
-        <option value="$PROJECT_DIR$/frontend-app/src/static/styles/components/_register.scss" />
+        <option value="$PROJECT_DIR$/frontend-app/src/components/pages/main-page.js" />
         <option value="$PROJECT_DIR$/frontend-app/src/actions/authentication.js" />
+        <option value="$PROJECT_DIR$/frontend-app/src/static/styles/modules/_project.scss" />
         <option value="$PROJECT_DIR$/frontend-app/src/components/Register/index.js" />
+        <option value="$PROJECT_DIR$/frontend-app/src/static/styles/components/_register.scss" />
+        <option value="$PROJECT_DIR$/frontend-app/src/static/styles/components/_add-book.scss" />
+        <option value="$PROJECT_DIR$/frontend-app/src/components/AddBook/index.js" />
       </list>
     </option>
   </component>
@@ -239,6 +275,14 @@
               <item name="frontend-app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="AddBook" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="project" type="b2602c69:ProjectViewProjectNode" />
@@ -431,12 +475,12 @@
       <workItem from="1558311924856" duration="18276000" />
       <workItem from="1558482293236" duration="1189000" />
       <workItem from="1558483501712" duration="12928000" />
-      <workItem from="1559056780348" duration="27634000" />
+      <workItem from="1559056780348" duration="32118000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="299713000" />
+    <option name="totallyTimeSpent" value="304197000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -534,23 +578,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/frontend-app/src/components/AddBook/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2359">
-          <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend-app/src/static/styles/components/_modal-window.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend-app/src/static/styles/cosmetics/_fonts.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
@@ -618,6 +645,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -842,13 +872,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend-app/src/static/styles/components/_add-book.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="35" column="19" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend-app/src/static/styles/components/_post.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -856,17 +879,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend-app/src/static/styles/modules/_project.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6641">
-          <caret line="372" column="23" lean-forward="true" selection-start-line="372" selection-start-column="23" selection-end-line="372" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend-app/src/components/pages/main-page.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="54" column="74" selection-start-line="54" selection-start-column="74" selection-end-line="54" selection-end-column="74" />
+        <state relative-caret-position="65">
+          <caret line="45" column="43" selection-start-line="45" selection-start-column="43" selection-end-line="45" selection-end-column="43" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
             <element signature="e#337#386#0" expanded="true" />
@@ -874,17 +890,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend-app/src/static/styles/components/_main-form-login.scss">
+    <entry file="file://$PROJECT_DIR$/frontend-app/src/components/Login/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2856">
-          <caret line="119" column="23" lean-forward="true" selection-start-line="119" selection-start-column="23" selection-end-line="119" selection-end-column="23" />
+        <state relative-caret-position="-201">
+          <caret line="66" column="41" lean-forward="true" selection-start-line="66" selection-start-column="41" selection-end-line="66" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend-app/src/static/styles/components/_register.scss">
+    <entry file="file://$PROJECT_DIR$/frontend-app/src/reducers/authReducer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+        <state relative-caret-position="336">
+          <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend-app/src/static/styles/components/_main-form-login.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-120">
+          <caret line="31" column="17" lean-forward="true" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -895,20 +921,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend-app/src/components/Login/index.js">
+    <entry file="file://$PROJECT_DIR$/frontend-app/src/static/styles/modules/_project.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-57">
-          <caret line="51" column="14" lean-forward="true" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="495">
+          <caret line="377" lean-forward="true" selection-start-line="377" selection-end-line="377" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend-app/src/static/styles/components/_register.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend-app/src/static/styles/components/_add-book.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend-app/src/actions/authentication.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="7" column="46" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="46" />
+        <state relative-caret-position="168">
+          <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -917,8 +954,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend-app/src/components/Register/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="52" column="7" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
+        <state relative-caret-position="-912">
+          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend-app/src/components/AddBook/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="140" column="103" selection-start-line="140" selection-start-column="103" selection-end-line="140" selection-end-column="103" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

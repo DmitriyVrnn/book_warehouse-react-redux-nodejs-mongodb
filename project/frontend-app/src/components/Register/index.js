@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {withRouter} from 'react-router-dom';
 import {registerUser} from "../../actions/authentication";
 import classnames from 'classnames';
 
-class Register extends Component {
+class Register extends PureComponent {
 
     constructor() {
         super();
@@ -36,9 +36,13 @@ class Register extends Component {
     };
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.auth.isAuthenticated) {
-            this.props.history.push('/')
-        }
+        this.setState({
+            name: '',
+            email: '',
+            password: '',
+            password_confirm: '',
+            errors: {}
+        });
         if (nextProps.errors) {
             this.setState({
                 errors: nextProps.errors
@@ -46,22 +50,22 @@ class Register extends Component {
         }
     }
 
-    /*componentDidMount() {
+    componentDidMount() {
         if(this.props.auth.isAuthenticated) {
-            this.props.history.push('/');
+            this.props.history.push('/register');
         }
-    }*/
+    }
 
     render() {
         const {errors} = this.state;
         return (
             <div className="container-register-form">
                 <form className="register-form" onSubmit={this.handleSubmit}>
-                    <h2 className="title-register">Registration</h2>
+                    <h2 className="title-register">Зарегистрировать сотрудника</h2>
                     <div className="form-group">
                         <input
                             type="text"
-                            placeholder="Name"
+                            placeholder="Имя"
                             className="input-register"
                             name="name"
                             onChange={this.handleInputChange}
@@ -72,7 +76,7 @@ class Register extends Component {
                     <div className="form-group">
                         <input
                             type="email"
-                            placeholder="Email"
+                            placeholder="E-mail"
                             className="input-register"
                             name="email"
                             onChange={this.handleInputChange}
@@ -83,7 +87,7 @@ class Register extends Component {
                     <div className="form-group">
                         <input
                             type="password"
-                            placeholder="Password"
+                            placeholder="Пароль"
                             className="input-register"
                             name="password"
                             onChange={this.handleInputChange}
@@ -94,7 +98,7 @@ class Register extends Component {
                     <div className="form-group">
                         <input
                             type="password"
-                            placeholder="Confirm Password"
+                            placeholder="Повторить пароль"
                             className="input-register"
                             name="password_confirm"
                             onChange={this.handleInputChange}
@@ -103,8 +107,8 @@ class Register extends Component {
                         {errors.password_confirm && (<div className="invalid-feedback">{errors.password_confirm}</div>)}
                     </div>
                     <div className="form-group">
-                        <button type="submit" className="btn btn-primary">
-                            Register User
+                        <button className="btn-register" type="submit">
+                            Добавить сотрудника
                         </button>
                     </div>
                 </form>

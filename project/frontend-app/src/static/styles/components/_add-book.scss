@@ -1,5 +1,9 @@
 h1{
-  font-family: "FiraSans-Black", "Arial", serif;
+  font-family: 'Fira Sans',sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36.4px;
+  text-decoration: none;
   color: $black;
 }
 
@@ -13,6 +17,10 @@ h1{
   box-shadow: 3px 2px 5px -2px rgba(0,0,0,0.75);
   width: 44em;
 
+  .title-book{
+    margin-left: 10px;
+  }
+
   .btn-toggle-form{
     width: 12em;
     border: none;
@@ -23,7 +31,7 @@ h1{
   .form-group{
     padding: 10px;
     font-size: 1em;
-    font-family: "Comic Sans MS", serif;
+    font-family: Poppins-Regular;
 
     .form-control{
       display: flex;

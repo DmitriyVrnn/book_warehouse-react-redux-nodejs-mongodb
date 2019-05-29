@@ -43,16 +43,15 @@ const MainPage = (props) => {
                         <div className="feel-grid">
                             {props.role === WORKER ?
                                 <Switch>
-                                    <Route exact path={'/'} component={CollectionBooks}/>
+                                    <Route path={'/'} component={CollectionBooks}/>
                                     <Route path='/index' component={StoreBooks}/>
                                     <Route path='/post' component={CreatePost}/>
                                     <Route path='/books' component={CollectionBooks}/>
                                 </Switch> :
                                 <Switch>
-                                    <Route exact path={'/'} component={CollectionBooks}/>
                                     <Route path='/add' component={AddBook}/>
                                     <Route path='/edit/:id' component={EditBook}/>
-                                    <Route path='/register' component={Register}/>
+                                    <Route exact path='/register' component={Register}/>
                                     <Route path='/test' component={TestDirectory}/>
                                     <Route path='/index' component={StoreBooks}/>
                                     <Route path='/post' component={CreatePost}/>
