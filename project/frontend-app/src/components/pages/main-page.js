@@ -17,6 +17,7 @@ import CreatePost from "../../components/CreatePost"
 import Register from '../Register'
 import Links from '../Links'
 import CollectionBooks from '../../containers/CollectionBooks'
+import NotFound from '../NotFound'
 import {WORKER} from "../../constants/constants";
 
 const MainPage = (props) => {
@@ -43,19 +44,22 @@ const MainPage = (props) => {
                         <div className="feel-grid">
                             {props.role === WORKER ?
                                 <Switch>
-                                    <Route path={'/'} component={CollectionBooks}/>
+                                    <Route path={'/'} exact component={CollectionBooks}/>
                                     <Route path='/index' component={StoreBooks}/>
                                     <Route path='/post' component={CreatePost}/>
                                     <Route path='/books' component={CollectionBooks}/>
+                                    <Route path="*" component={NotFound}/>
                                 </Switch> :
                                 <Switch>
+                                    <Route path={'/'} exact component={CollectionBooks}/>
                                     <Route path='/add' component={AddBook}/>
                                     <Route path='/edit/:id' component={EditBook}/>
-                                    <Route exact path='/register' component={Register}/>
+                                    <Route path='/register' exact component={Register}/>
                                     <Route path='/test' component={TestDirectory}/>
                                     <Route path='/index' component={StoreBooks}/>
                                     <Route path='/post' component={CreatePost}/>
                                     <Route path='/books' component={CollectionBooks}/>
+                                    <Route path="*" component={NotFound}/>
                                 </Switch>
                             }
                         </div>

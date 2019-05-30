@@ -1,0 +1,60 @@
+.section__not-found {
+  //margin: 0 auto;
+  //max-width: 600px;
+ // background: white;
+  //box-shadow: $box-shadow;
+  padding: 10px;
+
+  img {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.content{
+  margin: 0 auto;
+  width: 100%;
+  background: white;
+}
+
+.img-404{
+  margin-left: 6em;
+}
+
+
+.title-whoops{
+  font-size: 50px;
+  font-weight: 800;
+  color:#009688;
+}
+
+.message-1 {
+  font-size: 28px;
+  width: 300px;
+  color: #323232;
+}
+
+
+.flex-wrapper{
+  display: flex;
+}
+
+.link-wrap{
+  margin-top: -60px;
+
+  .sidebar-list{
+    .sidebar-item{
+      margin-bottom: 10px;
+      text-decoration: underline;
+      a{
+        color: #398B93;
+        &:hover{
+          color: darken(#398B93, 10)
+        }
+      }
+      .fas{
+        display: none;
+      }
+    }
+  }
+}
