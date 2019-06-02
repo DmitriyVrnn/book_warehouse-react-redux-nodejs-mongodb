@@ -28,7 +28,7 @@ const Links = ({role}) => {
                     <li className="sidebar-item">
                         <NavLink to={'/register'}>
                             <i className="fas fa-user-plus"></i>
-                            <span>Добавить пользователя</span>
+                            <span>Добавить сотрудника</span>
                         </NavLink>
                     </li>
                     < li className="sidebar-item">
@@ -36,9 +36,6 @@ const Links = ({role}) => {
                             <i className="fas fa-plus"></i>
                             <span>Добавить книгу</span>
                         </NavLink>
-                    </li>
-                    <li className="sidebar-item">
-                        <NavLink to={'/test'}>Тестовый компонент</NavLink>
                     </li>
                 </>
             }

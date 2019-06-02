@@ -34,14 +34,13 @@ const Book = ({book: {
                     {!description ? <p>Описания: <span className={"not-description"}>❌</span></p>
                         : <p>Описание: {description}</p>}
                     {roleUser === WORKER ? null :
-                        <>
+                        <div className="modal-book-btn">
                             <Link className="modal-edit-link" to={`/edit/${_id}`}>Редактировать</Link>
-                            <button onClick={() => onDelete(_id)}>Delete</button>
-                        </>
+                            <button className="modal-delete-btn" onClick={() => onDelete(_id)}>Удалить</button>
+                        </div>
                     }
                 </Modal>
                 <h2 className="card-title">Название: {titleBook}</h2>
-                <div>Тут фото</div>
                 <span className="card-author">Автор: {authorBook}</span>
                 <p className="card-description">Описание: {description}</p>
             </div>

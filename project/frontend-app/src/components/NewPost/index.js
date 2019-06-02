@@ -46,7 +46,9 @@ class NewPost extends React.PureComponent {
                         </textarea>
                     <button className="btn-add_post" type="submit">Отправить</button>
                 </form>
-                <PostList author={user.name} role={user.role} date={this.state.date}/>
+                <PostList author={user.name}
+                          role={user.role}
+                          date={this.state.date}/>
             </div>
         );
     }

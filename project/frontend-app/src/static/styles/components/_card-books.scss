@@ -64,3 +64,22 @@
   text-overflow: ellipsis;
   overflow: hidden;
 }
+
+.modal-book-btn{
+  display: flex;
+  flex-direction: column;
+  .modal-delete-btn{
+    margin-top: 10px;
+    width: 100px;
+    border-radius: 10px;
+    background: lightcoral;
+    border: none;
+    color: #323232;
+    padding: 2px;
+    cursor: pointer;
+    &:hover{
+      background: darken(lightcoral, 10);
+    }
+
+  }
+}

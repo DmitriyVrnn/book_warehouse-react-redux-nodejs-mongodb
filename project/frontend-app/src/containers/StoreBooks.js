@@ -89,7 +89,7 @@ class StoreBooks extends PureComponent {
                 <div className="table-dashboard">
                     <div className="table-dashboard-btn">
                             <ReactToExcel
-                                className={'btn-excel'}
+                                className='btn-excel'
                                 table="table-to-xls"
                                 filename="books-table"
                                 sheet="books"

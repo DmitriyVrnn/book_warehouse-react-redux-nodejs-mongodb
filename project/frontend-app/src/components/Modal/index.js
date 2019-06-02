@@ -15,8 +15,8 @@ const Modal = ({title, isOpen, onCancel, onSubmit, children}) => {
                             {children}
                         </div>
                         <div className="modalFooter">
-                            <button onClick={onCancel}>Назад</button>
-                            <button onClick={onSubmit}>Отправить</button>
+                            <button className="modal-btn-back" onClick={onCancel}>
+                                <i className="fas fa-arrow-circle-left"></i></button>
                         </div>
                     </div>
                 </div>

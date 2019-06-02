@@ -43,6 +43,18 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+
+  .modal-btn-back {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    .fa-arrow-circle-left {
+      font-size: 25px;
+      &:hover {
+        color: green;
+      }
+    }
+  }
 }
 
 .modalFooter button:last-child {

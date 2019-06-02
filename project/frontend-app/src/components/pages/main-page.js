@@ -25,8 +25,8 @@ const MainPage = (props) => {
         <Router>
             <div className={'body'}>
                 <header className='header'>
-                    <Link to="/books"><img className="logotype" src={logo}
-                                           alt="Логотип"/></Link>
+                    <Link to="/"><img className="logotype" src={logo}
+                                      alt="Логотип"/></Link>
                     <div className="header-worker">
                         <UserInfo name={props.user}
                                   role={props.role}
@@ -42,26 +42,16 @@ const MainPage = (props) => {
 
                     <main className={"content"}>
                         <div className="feel-grid">
-                            {props.role === WORKER ?
-                                <Switch>
-                                    <Route path={'/'} exact component={CollectionBooks}/>
-                                    <Route path='/index' component={StoreBooks}/>
-                                    <Route path='/post' component={CreatePost}/>
-                                    <Route path='/books' component={CollectionBooks}/>
-                                    <Route path="*" component={NotFound}/>
-                                </Switch> :
-                                <Switch>
-                                    <Route path={'/'} exact component={CollectionBooks}/>
-                                    <Route path='/add' component={AddBook}/>
-                                    <Route path='/edit/:id' component={EditBook}/>
-                                    <Route path='/register' exact component={Register}/>
-                                    <Route path='/test' component={TestDirectory}/>
-                                    <Route path='/index' component={StoreBooks}/>
-                                    <Route path='/post' component={CreatePost}/>
-                                    <Route path='/books' component={CollectionBooks}/>
-                                    <Route path="*" component={NotFound}/>
-                                </Switch>
-                            }
+                            <Switch>
+                                <Route path={'/'} exact component={props.role === WORKER ? null: CollectionBooks}/>
+                                <Route path='/add' component={ props.role === WORKER ? null: AddBook}/>
+                                <Route path='/edit/:id' component={props.role === WORKER ? null: EditBook}/>
+                                <Route path='/register' exact component={props.role === WORKER ? null: Register}/>
+                                <Route path='/index' component={StoreBooks}/>
+                                <Route path='/post' component={CreatePost}/>
+                                <Route path='/books' component={CollectionBooks}/>
+                                <Route path="*" component={NotFound}/>
+                            </Switch>
                         </div>
                     </main>
                 </section>
