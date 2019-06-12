@@ -45,8 +45,10 @@ const CardBook = ({book: { titleBook, authorBook, series,
     );
 };
 
+export default CardBook;
+
 CardBook.propTypes = {
-        book: PropTypes.shape({
+    book: PropTypes.shape({
         titleBook: PropTypes.string,
         authorBook: PropTypes.string,
         series: PropTypes.string,
@@ -70,5 +72,3 @@ CardBook.defaultProps = {
     },
     roleUser: '',
 };
-
-export default CardBook;

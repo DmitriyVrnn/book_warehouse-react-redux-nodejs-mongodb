@@ -24,6 +24,12 @@ const CardsBooks = ({fetchAllCollectionBooks, deleteBook,
     }
 };
 
+export default connect((state) => ({
+    booksCollection: state.booksCollection.booksItem,
+    loading: state.booksCollection.loading,
+    auth: state.auth
+}), {fetchAllCollectionBooks, deleteBook})(CardsBooks)
+
 CardsBooks.propTypes = {
     fetchAllCollectionBooks: PropTypes.func,
     deleteBook: PropTypes.func,
@@ -39,12 +45,6 @@ CardsBooks.defaultProps = {
     loading: false,
     user: '',
 };
-
-export default connect((state) => ({
-    booksCollection: state.booksCollection.booksItem,
-    loading: state.booksCollection.loading,
-    auth: state.auth
-}), {fetchAllCollectionBooks, deleteBook})(CardsBooks)
 
 /*class CardsBooks extends React.Component {
 

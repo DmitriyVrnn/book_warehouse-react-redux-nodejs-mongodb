@@ -99,6 +99,16 @@ export default class AddBook extends PureComponent {
         })
     };
 
+    renderInput = (nameInput, stateName, stringNameField, flag = true) => {
+        return (
+            <label>
+                {`${nameInput}:`}
+                <input type="text" className="form-control" value={stateName}
+                       onChange={this.handleInputChange(stringNameField)} required={flag}/>
+            </label>
+        )
+    };
+
     render() {
         const {
             titleBook, authorBook,
@@ -110,39 +120,19 @@ export default class AddBook extends PureComponent {
                     <h1 className="title-book">Добавить новую книгу</h1>
                     <ul>
                         <li className="form-group">
-                            <label>
-                                Название:
-                                <input type="text" className="form-control" value={titleBook}
-                                       onChange={this.handleInputChange('titleBook')} required={true}/>
-                            </label>
+                            {this.renderInput('Название', titleBook, 'titleBook', true)}
                         </li>
                         <li className="form-group">
-                            <label>
-                                Автор:
-                                <input type="text" className="form-control" value={authorBook}
-                                       onChange={this.handleInputChange('authorBook')} required={true}/>
-                            </label>
+                            {this.renderInput('Автор', authorBook, 'authorBook', true)}
                         </li>
                         <li className="form-group">
-                            <label>
-                                Издательство:
-                                <input type="text" className="form-control" value={publishing}
-                                       onChange={this.handleInputChange('publishingBook')}/>
-                            </label>
+                            {this.renderInput('Издательство', publishing, 'publishingBook', false)}
                         </li>
                         <li className="form-group">
-                            <label>
-                                Серия:
-                                <input type="text" className="form-control" value={series}
-                                       onChange={this.handleInputChange('seriesBook')}/>
-                            </label>
+                            {this.renderInput('Серия', series, 'seriesBook', false)}
                         </li>
                         <li className="form-group">
-                            <label>
-                                ID товара:
-                                <input type="text" className="form-control" value={idBook}
-                                       onChange={this.handleInputChange('idBook')}/>
-                            </label>
+                            {this.renderInput('ID книги', idBook, 'idBook', true)}
                         </li>
                         <li className="form-group">
                             {this.state.openForm ?

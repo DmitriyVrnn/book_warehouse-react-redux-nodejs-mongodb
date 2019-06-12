@@ -9,10 +9,6 @@ import MainPage from '../pages/main-page'
 
 class NavBar extends Component {
 
-    state = {
-        loading: false
-    };
-
     onLogout = (e) => {
         e.preventDefault();
         this.props.logoutUser(this.props.history);

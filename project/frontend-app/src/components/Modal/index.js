@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import Portal from '../Portal';
 
 const Modal = ({title, isOpen, onCancel, children}) => {

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import CardBook from '../CardBook';
 
 const ListBookCards = ({booksCards, onDelete, role}) => {
+
     if (!booksCards.length) {
         return (
             <p>
@@ -15,17 +16,23 @@ const ListBookCards = ({booksCards, onDelete, role}) => {
         <section className="books-grid">
             {booksCards.map(book => {
                 return (
-                    <CardBook roleUser={role} book={book} key={book._id} onDelete={onDelete}/>
+                    <CardBook roleUser={role}
+                              book={book}
+                              key={book._id}
+                              onDelete={onDelete}
+                    />
                 );
             })}
         </section>
     )
 };
 
+export default ListBookCards;
+
 CardBook.PropTypes = {
-  booksCards: PropTypes.array,
-  onDelete: PropTypes.func,
-  role: PropTypes.string,
+    booksCards: PropTypes.array,
+    onDelete: PropTypes.func,
+    role: PropTypes.string,
 };
 
 CardBook.defaultProps = {
@@ -33,5 +40,3 @@ CardBook.defaultProps = {
     onDelete: () => {},
     role: '',
 };
-
-export default ListBookCards;
