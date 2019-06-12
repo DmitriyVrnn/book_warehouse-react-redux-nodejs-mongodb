@@ -1,8 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Portal from '../Portal'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Portal from '../Portal';
 
-const Modal = ({title, isOpen, onCancel, onSubmit, children}) => {
+const Modal = ({title, isOpen, onCancel, children}) => {
     return (
         <>
             { isOpen && <Portal>
@@ -38,7 +38,6 @@ Modal.defaultProps = {
     title: 'Modal window',
     isOpen: false,
     onCancel: () => {},
-    onSubmit: () => {},
     children: null,
 };
 

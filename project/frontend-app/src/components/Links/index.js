@@ -1,5 +1,7 @@
-import React from 'react'
-import {Link, NavLink} from 'react-router-dom'
+import React from 'react';
+import {NavLink} from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 import {WORKER} from "../../constants/constants";
 
 const Links = ({role}) => {
@@ -41,6 +43,10 @@ const Links = ({role}) => {
             }
         </ul>
     )
-}
+};
 
 export default Links
+
+Links.propTypes = {
+  role: PropTypes.string
+};
