@@ -1,4 +1,4 @@
-import React, {PureComponent, Fragment} from 'react'
+import React, {PureComponent} from 'react'
 import axios from "axios";
 import ReactToExcel from 'react-html-table-to-excel';
 import {connect} from 'react-redux'
@@ -14,7 +14,6 @@ class StoreBooks extends PureComponent {
         term: '',
         books: [],
         loading: true,
-        sortDirection: 1, //1 - с большого, -1 - с меньшего
     };
 
     componentDidMount() {

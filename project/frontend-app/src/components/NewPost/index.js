@@ -1,6 +1,6 @@
 import React from 'react'
+
 import PostList from '../PostList'
-import UserInfo from "../UserInfo";
 
 class NewPost extends React.PureComponent {
     state = {
@@ -53,7 +53,6 @@ class NewPost extends React.PureComponent {
         );
     }
 }
-
 
 export default NewPost;
 

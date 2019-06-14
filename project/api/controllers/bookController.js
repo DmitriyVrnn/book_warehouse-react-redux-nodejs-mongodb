@@ -1,6 +1,3 @@
-const formidable = require("formidable");
-const fs = require("fs");
-
 //подключить CardBook
 const Book = require('../models/Book');
 

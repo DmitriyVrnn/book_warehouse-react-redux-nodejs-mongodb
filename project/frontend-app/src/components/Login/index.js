@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {loginUser} from "../../actions/authentication";
 
+import {loginUser} from "../../actions/authentication";
 import background from '../../static/img/annie-spratt-147610-unsplash.jpg'
 import logo from '../../static/img/phone-book-svgrepo-com.svg'
 

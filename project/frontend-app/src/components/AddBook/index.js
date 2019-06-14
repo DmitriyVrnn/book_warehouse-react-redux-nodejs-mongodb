@@ -99,12 +99,15 @@ export default class AddBook extends PureComponent {
         })
     };
 
-    renderInput = (nameInput, stateName, stringNameField, flag = true) => {
+    // - titleInput - заголовок инпута
+    // - nameState - имя из состояния
+    // - stringNameFieldState - имя, для выполнения switch из handleInputChange
+    renderInput = (titleInput, nameState, stringNameFieldState, flag = true) => {
         return (
             <label>
-                {`${nameInput}:`}
-                <input type="text" className="form-control" value={stateName}
-                       onChange={this.handleInputChange(stringNameField)} required={flag}/>
+                {`${titleInput}:`}
+                <input type="text" className="form-control" value={nameState}
+                       onChange={this.handleInputChange(stringNameFieldState)} required={flag}/>
             </label>
         )
     };
@@ -114,6 +117,7 @@ export default class AddBook extends PureComponent {
             titleBook, authorBook,
             publishing, series, idBook, openForm
         } = this.state;
+
         return (
             <>
                 <form className="form_add-book" onSubmit={this.onSubmit}>
@@ -135,7 +139,7 @@ export default class AddBook extends PureComponent {
                             {this.renderInput('ID книги', idBook, 'idBook', true)}
                         </li>
                         <li className="form-group">
-                            {this.state.openForm ?
+                            {openForm ?
                                 <textarea className="textarea-description"
                                           onChange={this.handleInputChange('descriptionBook')}
                                           name="description" id="" cols="30" rows="10"/> : null}
