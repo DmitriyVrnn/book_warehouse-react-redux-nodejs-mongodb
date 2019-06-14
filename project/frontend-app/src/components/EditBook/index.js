@@ -3,17 +3,14 @@ import axios from 'axios';
 
 export default class EditBook extends PureComponent {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            titleBook: '',
-            authorBook: '',
-            description: '',
-            publishing: '',
-            series: '',
-            idBook: '',
-        };
-    }
+    state = {
+        titleBook: '',
+        authorBook: '',
+        description: '',
+        publishing: '',
+        series: '',
+        idBook: '',
+    };
 
     componentDidMount() {
         axios.get('http://localhost:4200/book/edit/' + this.props.match.params.id)
@@ -112,9 +109,9 @@ export default class EditBook extends PureComponent {
                     <div className={"form-group"}>
                         <label>
                             Описание:
-                            <textarea  className="form-control" onChange={this.handleTarget('descriptionBook')}
-                                       value={this.state.description}
-                                 name="description" cols="30" rows="10"/>
+                            <textarea className="form-control" onChange={this.handleTarget('descriptionBook')}
+                                      value={this.state.description}
+                                      name="description" cols="30" rows="10"/>
                         </label>
                     </div>
                     <div className={"form-group"}>

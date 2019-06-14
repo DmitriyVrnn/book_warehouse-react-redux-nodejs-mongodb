@@ -67,7 +67,7 @@ exports.loginUser = (req, res) => {
     User.findOne({email})
         .then(user => {
             if (!user) {
-                errors.email = 'UserPage not found'
+                errors.email = 'UserPage not found';
                 return res.status(404).json(errors);
             }
             bcrypt.compare(password, user.password)

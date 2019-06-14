@@ -1,11 +1,25 @@
-import {FETCH_COLLECTION_BOOK, DELETE_BOOK} from "../constants/constants";
+import {FETCH_COLLECTION_BOOK, DELETE_BOOK, ADD_BOOK} from "../constants/constants";
 
-export default (state = [], {books, type, id}) => {
+const initialState = {
+    booksItem: [],
+    loading: true,
+};
+
+export default (state = initialState, {books, type, id}, action) => {
     switch (type) {
         case FETCH_COLLECTION_BOOK:
-            return books;
+            return {
+                loading: false,
+                booksItem: books
+            };
         case DELETE_BOOK:
-            return [...state].filter(book => book._id !== id);
+            const {booksItem} = state;
+            return {
+                ...state,
+                booksItem: booksItem.filter(book => book._id !== id)
+            };
+        case ADD_BOOK:
+            return [...state, action.payload];
         default:
             return state;
     }

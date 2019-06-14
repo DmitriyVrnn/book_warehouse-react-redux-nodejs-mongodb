@@ -1,50 +1,65 @@
 .create-post {
   background-color: #eeeeee;
   box-shadow: 0 0 30px 6px rgba(31, 51, 73, 0.10);
+  width: 70%;
+  margin: 0 auto;
 }
 
 .form-post {
-  border-radius: 5px;
   background: white;
   margin-bottom: 15px;
+  padding: 13px;
+  border-radius: 15px;
 }
 
-textarea {
-  background-color: transparent;
+.textarea-message-input {
+  background-color: #EEEEEE;
+  border-radius: 15px;
   border: 0;
   box-sizing: border-box;
   display: block;
-  font-size: 14px;
   line-height: 18px;
+  font-size: 18px;
   min-height: 69px;
   outline: 0;
   padding: 23px 12px 14px;
   resize: none;
   width: 100%;
+  height: 100px;
 }
 
 .btn-add_post {
-  background: #88c5cc;
-  height: 30px;
+  background: #cc584c;
+  height: 22px;
+  box-shadow: $box-shadow;
+  color: white;
   border-radius: 5px;
   border: none;
-  color: black;
-  width: 7em;
+  width: 6em;
   cursor: pointer;
-  margin-left: 10px;
+  margin-left: 3px;
+  margin-bottom: -3px;
+  margin-top: 10px;
   font-family: "FiraSans-Black", "Arial", serif;
-  font-size: 1em;
+  font-size: 0.9em;
   &:hover {
-    background: darken(#88c5cc, 15);
+    background: darken(#cc584c, 15);
   }
 }
 
 .post-list {
   display: flex;
   flex-direction: column-reverse;
+  font-family: Montserrat-Bold;
+  //max-height: 100vh;
+  //overflow-y: auto;
+  /*&::-webkit-scrollbar { width: 7px; height: 2px;}
+  &::-webkit-scrollbar-track {  background-color: #999;}
+  &::-webkit-scrollbar-track-piece { background-color: #fff;}
+  &::-webkit-scrollbar-thumb { height: 50px; background-color: $red; border-radius: 3px;}*/
 }
 
-.post-block{
+.post-block {
   background: white;
   border-radius: 5px;
   margin-bottom: 15px;
@@ -52,27 +67,47 @@ textarea {
   flex-direction: column;
   padding-left: 20px;
   padding-bottom: 10px;
+  font-size: 18px;
 
-  .btn-delete{
+  .btn-delete {
     color: $red;
     cursor: pointer;
     outline: none;
     background: none;
     border: none;
     width: 30px;
+    padding: 0;
+    margin-left: -10px;
   }
 
-  .author{
+  .author {
     display: flex;
-    &:first-child{
+    padding-top: 8px;
+    font-weight: 600;
+    margin-top: 5px;
+    &:first-child {
       font-size: 14px;
     }
-    .name-user{
+    .name-user {
       margin-left: 4px;
     }
   }
+
+  .message {
+    border-left: 1px solid gray;
+    padding-left: 10px;
+    margin-left: 12px;
+    padding-right: 20px;
+    margin-top: 0;
+  }
+
+  .date {
+    color: #939393;
+    font-size: 12.5px;
+    margin-top: -14px;
+  }
 }
 
-.post-block > *{
+.post-block > * {
   padding-bottom: 15px;
 }

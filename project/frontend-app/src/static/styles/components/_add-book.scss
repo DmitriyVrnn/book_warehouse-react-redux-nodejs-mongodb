@@ -1,5 +1,9 @@
 h1{
-  font-family: "FiraSans-Black", "Arial", serif;
+  font-family: 'Fira Sans',sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36.4px;
+  text-decoration: none;
   color: $black;
 }
 
@@ -7,11 +11,14 @@ h1{
   display: inline-flex;
   flex-direction: column;
   padding: 10px;
-  border: 1px solid black;
   border-radius: 5px;
   background-color: white;
-  box-shadow: 3px 2px 5px -2px rgba(0,0,0,0.75);
+  box-shadow: $box-shadow;
   width: 44em;
+
+  .title-book{
+    margin-left: 10px;
+  }
 
   .btn-toggle-form{
     width: 12em;
@@ -23,15 +30,18 @@ h1{
   .form-group{
     padding: 10px;
     font-size: 1em;
-    font-family: "Comic Sans MS", serif;
+    font-family: Poppins-Regular;
 
     .form-control{
       display: flex;
     }
 
-    textarea{
+    .textarea-description{
       padding: 10px;
-      width: 47.5em;
+      min-height: 69px;
+      box-sizing: border-box;
+      resize: none;
+      width: 50em;
       border: 2px solid rgb(216, 210, 210);
       border-radius: 5px;
       background-color: #EEEEEE;

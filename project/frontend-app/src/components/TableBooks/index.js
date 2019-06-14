@@ -1,6 +1,7 @@
 import React, {Fragment} from 'react'
 
 import TableRow from '../TableRow'
+import {WORKER} from "../../constants/constants";
 
 const TableBooks = ({books, removeToListBook, role}) => {
 
@@ -25,7 +26,7 @@ const TableBooks = ({books, removeToListBook, role}) => {
                         <th>Издательство</th>
                         <th>Серия</th>
                         <th width="230">ID товара</th>
-                        {role === "Worker" ? null :
+                        {role === WORKER ? null :
                             <>
                                 <th></th>
                                 <th></th>

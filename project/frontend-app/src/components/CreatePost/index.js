@@ -7,11 +7,11 @@ const mapDispatchToProps = dispatch => {
         onAddPost: post => {
             dispatch(createPost(post))
         },
-        allPosts: posts => {
+            allPosts: posts => {
             dispatch(fetchAllPosts(posts))
         }
     }
-}
+};
 
 const mapStateToProps = (state) => ({
     auth: state.auth

@@ -1,4 +1,4 @@
-import React, {PureComponent, Fragment} from 'react'
+import React, {PureComponent} from 'react'
 import axios from "axios";
 import ReactToExcel from 'react-html-table-to-excel';
 import {connect} from 'react-redux'
@@ -14,7 +14,6 @@ class StoreBooks extends PureComponent {
         term: '',
         books: [],
         loading: true,
-        sortDirection: 1, //1 - с большого, -1 - с меньшего
     };
 
     componentDidMount() {
@@ -52,23 +51,13 @@ class StoreBooks extends PureComponent {
         this.setState({books: booksCopy});
     };
 
-    /*sortDataTableByName = (direction) => {
-        this.setState({sortDir: direction});
-        this.state.books.sort((a, b) => {
-            if (a.titleBook > b.titleBook) return this.state.sortDir ? 1 : -1;
-            if (a.titleBook < b.titleBook) return this.state.sortDir ? 1 : -1;
-            return 0;
-        });
-       this.setState({sortedData: this.state.books})
-        console.log(this.state.sortedData)
-    };*/
-
     search(items, term) {
         if (term.length === 0) {
             return items;
         }
         return items.filter((item) => {
-            return item.titleBook.toLowerCase().indexOf(term.toLowerCase()) > -1;
+            return item.titleBook.toLowerCase().indexOf(term.toLowerCase()) > -1 ||
+                item.authorBook.toLowerCase().indexOf(term.toLowerCase()) > -1
         });
     }
 
@@ -89,7 +78,7 @@ class StoreBooks extends PureComponent {
                 <div className="table-dashboard">
                     <div className="table-dashboard-btn">
                             <ReactToExcel
-                                className={'btn-excel'}
+                                className='btn-excel'
                                 table="table-to-xls"
                                 filename="books-table"
                                 sheet="books"

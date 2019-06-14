@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {loginUser} from "../../actions/authentication";
 
+import {loginUser} from "../../actions/authentication";
 import background from '../../static/img/annie-spratt-147610-unsplash.jpg'
 import logo from '../../static/img/phone-book-svgrepo-com.svg'
-//import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Login extends Component {
 
@@ -29,7 +28,7 @@ class Login extends Component {
         const user = {
             email: this.state.email,
             password: this.state.password,
-        }
+        };
         this.props.loginUser(user);
     };
 

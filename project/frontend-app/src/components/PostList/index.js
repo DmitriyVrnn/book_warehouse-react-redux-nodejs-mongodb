@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+
 import Post from '../Post'
 import {deletePost} from "../../actions/post";
 
@@ -26,21 +27,13 @@ const PostList = ({posts, deletePost, author, date, role}) => {
             })}
         </div>
     );
-}
+};
 
 const mapStateToProps = state => {
     return {
         posts: state.posts,
     };
 };
-
-/*const mapDispatchToProps = dispatch => {
-    return {
-        onDelete: id => {
-            dispatch(deletePost(id));
-        },
-    };
-};*/
 
 export default connect(
     mapStateToProps,

@@ -1,5 +1,8 @@
-import React from 'react'
-import {Link, NavLink} from 'react-router-dom'
+import React from 'react';
+import {NavLink} from 'react-router-dom';
+import PropTypes from 'prop-types';
+
+import {WORKER} from "../../constants/constants";
 
 const Links = ({role}) => {
     return (
@@ -13,21 +16,21 @@ const Links = ({role}) => {
             <li className="sidebar-item">
                 <NavLink to={'/index'}>
                     <i className="fas fa-database"></i>
-                    <span>Хранилище</span>
+                    <span>Список книг</span>
                 </NavLink>
             </li>
             <li className="sidebar-item">
                 <NavLink to={'/post'}>
                     <i className="fas fa-comment"></i>
-                    <span>Стена</span>
+                    <span>Переговорная</span>
                 </NavLink>
             </li>
-            {role === 'Worker' ? null :
+            {role === WORKER ? null :
                 <>
                     <li className="sidebar-item">
                         <NavLink to={'/register'}>
                             <i className="fas fa-user-plus"></i>
-                            <span>Добавить пользователя</span>
+                            <span>Добавить сотрудника</span>
                         </NavLink>
                     </li>
                     < li className="sidebar-item">
@@ -36,13 +39,14 @@ const Links = ({role}) => {
                             <span>Добавить книгу</span>
                         </NavLink>
                     </li>
-                    <li className="sidebar-item">
-                        <NavLink to={'/test'}>Тестовый компонент</NavLink>
-                    </li>
                 </>
             }
         </ul>
     )
-}
+};
 
 export default Links
+
+Links.propTypes = {
+  role: PropTypes.string
+};

@@ -1,7 +1,4 @@
-const formidable = require("formidable");
-const fs = require("fs");
-
-//подключить Book
+//подключить CardBook
 const Book = require('../models/Book');
 
 const sortingBook = (books) => {
@@ -19,7 +16,6 @@ const sortingBook = (books) => {
 exports.getAllBook = (req, res) => {
     Book.find((err, books) => {
         sortingBook(books);
-        console.log(sortingBook)
         err ? console.log(err) : res.json(books)
     })
 };

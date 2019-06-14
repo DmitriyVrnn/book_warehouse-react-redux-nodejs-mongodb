@@ -1,16 +1,14 @@
-import React, {useState} from 'react'
-import {Link} from 'react-router-dom'
+import React, {useState} from 'react';
+import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import Modal from '../Modal'
+import {WORKER} from "../../constants/constants";
 
-const Book = ({book: {
-                titleBook,
-                authorBook,
-                series,
-                publishing,
-                description,
-                _id
-                }, onDelete, roleUser}) => {
+const CardBook = ({book: { titleBook, authorBook, series,
+                          publishing, description, _id },
+                          onDelete, roleUser}) => {
+
     const [isOpen, setOpen] = useState(false);
 
     const openModal = () => setOpen(true);
@@ -21,7 +19,7 @@ const Book = ({book: {
 
     return (
         <div className='book-card'>
-            <div className="contend-card">
+            <div className="content-card">
                 <button className="modal-open" onClick={openModal}>&#9776;</button>
                 <Modal title={titleBook}
                        isOpen={isOpen}
@@ -32,15 +30,14 @@ const Book = ({book: {
                     <p>Издательство: {publishing}</p>
                     {!description ? <p>Описания: <span className={"not-description"}>❌</span></p>
                         : <p>Описание: {description}</p>}
-                    {roleUser === 'Worker' ? null :
-                        <>
+                    {roleUser === WORKER ? null :
+                        <div className="modal-book-btn">
                             <Link className="modal-edit-link" to={`/edit/${_id}`}>Редактировать</Link>
-                            <button onClick={() => onDelete(_id)}>Delete</button>
-                        </>
+                            <button className="modal-delete-btn" onClick={() => onDelete(_id)}>Удалить</button>
+                        </div>
                     }
                 </Modal>
                 <h2 className="card-title">Название: {titleBook}</h2>
-                <div>Тут фото</div>
                 <span className="card-author">Автор: {authorBook}</span>
                 <p className="card-description">Описание: {description}</p>
             </div>
@@ -48,4 +45,30 @@ const Book = ({book: {
     );
 };
 
-export default Book;
+export default CardBook;
+
+CardBook.propTypes = {
+    book: PropTypes.shape({
+        titleBook: PropTypes.string,
+        authorBook: PropTypes.string,
+        series: PropTypes.string,
+        publishing: PropTypes.string,
+        description: PropTypes.string,
+        _id: PropTypes.object,
+    }),
+    onDelete: PropTypes.func,
+    roleUser: PropTypes.string,
+};
+
+CardBook.defaultProps = {
+    book: {},
+    titleBook: '',
+    authorBook: '',
+    series: '',
+    publishing: '',
+    description: '',
+    _id: {},
+    onDelete: () => {
+    },
+    roleUser: '',
+};

@@ -8,6 +8,5 @@ export default function filterBooks(state = initialState, action){
             return action.text;
         default:
             return state;
-
     }
 }

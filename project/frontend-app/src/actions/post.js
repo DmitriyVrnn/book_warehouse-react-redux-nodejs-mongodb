@@ -1,5 +1,5 @@
 import {ADD_POST, DELETE_POST, FETCH_POST} from "../constants/constants";
-import axios from 'axios'
+import axios from 'axios';
 
 const apiUrl = 'http://localhost:4200/posts';
 
@@ -35,7 +35,7 @@ export const deletePostSuccess = id => {
             id
         }
     }
-}
+};
 
 export const deletePost = id => {
     return (dispatch) => {
