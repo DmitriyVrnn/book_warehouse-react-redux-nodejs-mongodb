@@ -3,11 +3,11 @@ import axios from "axios";
 import ReactToExcel from 'react-html-table-to-excel';
 import {connect} from 'react-redux'
 
-import TableBooks from '../components/TableBooks'
-import SearchBar from '../components/SearchBar'
-import Loader from '../components/Loader'
-import SortButton from "../components/SortButton";
-import {API_URL} from "../constants/constants";
+import TableBooks from '../../components/TableBooks/index'
+import SearchBar from '../../components/SearchBar/index'
+import Loader from '../../components/Loader/index'
+import SortButton from "../../components/SortButton/index";
+import {API_URL} from "../../constants/constants";
 
 class StoreBooks extends PureComponent {
     state = {

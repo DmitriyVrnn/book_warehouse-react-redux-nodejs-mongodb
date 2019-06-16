@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import Loader from '../components/Loader';
-import ListBookCards from '../components/ListBookCards';
-import { fetchAllCollectionBooks, deleteBook } from "../actions/collectionBooks";
+import Loader from '../../components/Loader/index';
+import ListBookCards from '../../components/ListBookCards/index';
+import { fetchAllCollectionBooks, deleteBook } from "../../actions/collectionBooks";
 
 const CardsBooks = ({fetchAllCollectionBooks, deleteBook,
                         booksCollection, loading, auth: {user}}) => {

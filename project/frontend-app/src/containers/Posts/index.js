@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {PureComponent} from 'react';
+import {connect} from 'react-redux';
 
-import PostList from '../PostList'
+import PostList from '../../components/PostList/index';
+import {createPost, fetchAllPosts} from "../../actions/post";
 
-class NewPost extends React.PureComponent {
+class Posts extends PureComponent {
     state = {
         author: this.props.auth.user.name,
         body: '',
@@ -10,28 +12,29 @@ class NewPost extends React.PureComponent {
     };
 
     componentDidMount() {
-        this.props.allPosts()
+        this.props.fetchAllPosts()
     }
 
-    handleInputChange = e => {
+    handleInputChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
         });
     };
 
-    handleSubmit = e => {
+    handleSubmit = (e) => {
         e.preventDefault();
         if ((this.state.body.trim()) || this.state.body.trim()) {
-            this.props.onAddPost(this.state);
+            this.props.createPost(this.state);
             this.setState({
                 author: this.props.auth.user.name,
-                body:'',
+                body: '',
             })
         }
     };
 
     render() {
-        const {user} = this.props.auth;
+        const {user: {name, role}} = this.props.auth;
+        const {date} = this.state;
         return (
             <div className="create-post">
                 <form className="form-post" onSubmit={this.handleSubmit}>
@@ -46,14 +49,16 @@ class NewPost extends React.PureComponent {
                         </textarea>
                     <button className="btn-add_post" type="submit">Отправить</button>
                 </form>
-                <PostList author={user.name}
-                          role={user.role}
-                          date={this.state.date}/>
+                <PostList author={name}
+                          role={role}
+                          date={date}/>
             </div>
         );
     }
 }
 
-export default NewPost;
+export default connect(state => ({
+    auth: state.auth
+}), {createPost, fetchAllPosts})(Posts);
 
 

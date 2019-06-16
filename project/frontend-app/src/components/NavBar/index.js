@@ -1,43 +1,70 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
-import {withRouter} from 'react-router-dom';
+import React from 'react';
+import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 
-import {logoutUser} from '../../actions/authentication'
-import Login from '../Login'
-import MainPage from '../pages/main-page'
+import logo from '../../static/img/phone-book-svgrepo-com.svg';
+import "../../static/styles/main.scss";
 
-class NavBar extends Component {
+//--start--- Тестовые компоненты
+//import SandBox from '../Modal/SandBox'
+//import TestDirectory from '../TestDirectory'
+//--end---
 
-    onLogout = (e) => {
-        e.preventDefault();
-        this.props.logoutUser(this.props.history);
+import EditBook from "../../components/EditBook";
+import AddBook from "../../components/AddBook";
+import StoreBooks from '../../containers/StoreBooks/StoreBooks';
+import UserInfo from "../UserInfo";
+import Posts from "../../containers/Posts";
+import Register from '../Register';
+import Links from '../Links';
+import CardsBooks from '../../containers/CardsBooks/CardsBooks';
+import NotFound from '../NotFound';
+import {WORKER} from "../../constants/constants";
+
+const NavBar = ({user, role, onLogout, avatar}) => {
+    const getRoutes = () => {
+        return (
+            <Switch>
+                <Route path={'/'} exact component={role === WORKER ? null : CardsBooks}/>
+                <Route path='/add' component={role === WORKER ? null : AddBook}/>
+                <Route path='/edit/:id' component={role === WORKER ? null : EditBook}/>
+                <Route path='/register' exact component={role === WORKER ? null : Register}/>
+                <Route path='/index' component={StoreBooks}/>
+                <Route path='/post' component={Posts}/>
+                <Route path='/books' component={CardsBooks}/>
+                <Route path="*" component={NotFound}/>
+            </Switch>
+        )
     };
 
-    render() {
-        const {isAuthenticated, user} = this.props.auth;
-        const authLinks = (
-            <MainPage onLogout={this.onLogout}
-                      user={user.name}
-                      role={user.role}
-                      avatar={user.avatar}/>
-        );
+    return (
+        <Router>
+            <div className={'body'}>
+                <header className='header'>
+                    <Link to="/"><
+                        img className="logotype" src={logo} alt="Логотип"/>
+                    </Link>
+                    <div className="header-worker">
+                        <UserInfo name={user}
+                                  role={role}
+                                  onLogout={onLogout}
+                                  avatar={avatar}/>
+                    </div>
+                </header>
 
-        return (
-            <>
-                {isAuthenticated ? authLinks : <Login/>}
-            </>
-        )
-    }
-}
+                <section className="wrapper">
+                    <aside className="sidebar">
+                        <Links role={role}/>
+                    </aside>
 
-NavBar.propTypes = {
-    logoutUser: PropTypes.func.isRequired,
-    auth: PropTypes.object.isRequired
+                    <main className="content">
+                        <div className="feel-grid">
+                            {getRoutes()}
+                        </div>
+                    </main>
+                </section>
+            </div>
+        </Router>
+    )
 };
 
-const mapStateToProps = (state) => ({
-    auth: state.auth
-});
-
-export default connect(mapStateToProps, {logoutUser})(withRouter(NavBar));
+export default NavBar;

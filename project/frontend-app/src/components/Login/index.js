@@ -3,19 +3,15 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
 import {loginUser} from "../../actions/authentication";
-import background from '../../static/img/annie-spratt-147610-unsplash.jpg'
-import logo from '../../static/img/phone-book-svgrepo-com.svg'
+import background from '../../static/img/annie-spratt-147610-unsplash.jpg';
+import logo from '../../static/img/phone-book-svgrepo-com.svg';
 
 class Login extends Component {
-
-    constructor() {
-        super();
-        this.state = {
-            email: '',
-            password: '',
-            errors: {}
-        }
-    }
+    state = {
+        email: '',
+        password: '',
+        errors: {}
+    };
 
     handleInputChange = (e) => {
         this.setState({
@@ -96,15 +92,13 @@ class Login extends Component {
     }
 }
 
+export default connect(state => ({
+    auth: state.auth,
+    errors: state.errors
+}), {loginUser})(Login)
+
 Login.propTypes = {
     loginUser: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired,
     errors: PropTypes.object.isRequired
 };
-
-const mapStateToProps = (state) => ({
-    auth: state.auth,
-    errors: state.errors
-});
-
-export default connect(mapStateToProps, {loginUser})(Login)

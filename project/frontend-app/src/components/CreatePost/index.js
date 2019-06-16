@@ -1,6 +1,6 @@
-import {connect} from 'react-redux'
+/*import {connect} from 'react-redux'
 import {createPost, fetchAllPosts} from "../../actions/post";
-import NewPost from '../NewPost'
+import Posts from '../Posts'
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -17,4 +17,4 @@ const mapStateToProps = (state) => ({
     auth: state.auth
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(NewPost);
+export default connect(mapStateToProps, mapDispatchToProps)(Posts);*/
