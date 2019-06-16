@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const UserInfo = ({name, role, onLogout, avatar}) => {
     return (
@@ -18,10 +18,10 @@ const UserInfo = ({name, role, onLogout, avatar}) => {
     )
 };
 
+export default UserInfo;
+
 UserInfo.propTypes = {
     name: PropTypes.string.isRequired,
     role: PropTypes.string.isRequired,
-    avatar: PropTypes.shape,
+    avatar: PropTypes.string,
 };
-
-export default UserInfo;

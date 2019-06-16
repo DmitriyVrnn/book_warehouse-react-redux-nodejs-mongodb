@@ -1,4 +1,4 @@
-import {FETCH_COLLECTION_BOOK, DELETE_BOOK, ADD_BOOK} from "../constants/constants";
+import { FETCH_COLLECTION_BOOK, DELETE_BOOK, ADD_BOOK } from "../constants/constants";
 
 const initialState = {
     booksItem: [],

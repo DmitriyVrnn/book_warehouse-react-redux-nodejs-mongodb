@@ -1,8 +1,5 @@
-import {FETCH_COLLECTION_BOOK, ADD_BOOK, DELETE_BOOK} from "../constants/constants";
+import { FETCH_COLLECTION_BOOK, DELETE_BOOK, API_URL } from "../constants/constants";
 import axios from "axios";
-import {createPostSuccess} from "./post";
-
-const apiUrl = 'http://localhost:4200/book';
 
 export const fetchCollectionBooks = (books) => {
     return {
@@ -16,7 +13,7 @@ export const deleteBookSuccess = (id) => ({
     id
 });
 
-export const addBookSuccess = ({titleBook, authorBook, description, publishing, series, idBook}) => ({
+/*export const addBookSuccess = ({titleBook, authorBook, description, publishing, series, idBook}) => ({
     type: ADD_BOOK,
     payload: {
         titleBook,
@@ -26,11 +23,11 @@ export const addBookSuccess = ({titleBook, authorBook, description, publishing, 
         series,
         idBook
     }
-});
+});*/
 
 export const deleteBook = (id) => {
     return dispatch => {
-        return axios.get(`${apiUrl}/delete/${id}`)
+        return axios.get(`${API_URL}/book/delete/${id}`)
             .then(res => {
                 dispatch(deleteBookSuccess(res.data))
             })
@@ -40,9 +37,9 @@ export const deleteBook = (id) => {
     }
 };
 
-export const addBook = ({titleBook, authorBook, description, publishing, series, idBook}) => {
+/*export const addBook = ({titleBook, authorBook, description, publishing, series, idBook}) => {
     return (dispatch) => {
-        return axios.post(`${apiUrl}/book/add`, {titleBook, authorBook, description, publishing, series, idBook})
+        return axios.post(`${API_URL}/book/add`, {titleBook, authorBook, description, publishing, series, idBook})
             .then(response => {
                 dispatch(addBookSuccess(response.data))
             })
@@ -50,12 +47,12 @@ export const addBook = ({titleBook, authorBook, description, publishing, series,
                 throw(error);
             });
     };
-};
+};*/
 
 
 export const fetchAllCollectionBooks = () => {
     return (dispatch) => {
-        return axios.get(apiUrl)
+        return axios.get(`${API_URL}/book`)
             .then(response => {
                 dispatch(fetchCollectionBooks(response.data));
             })

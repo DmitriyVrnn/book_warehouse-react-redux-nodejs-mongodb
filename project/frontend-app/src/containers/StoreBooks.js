@@ -7,9 +7,9 @@ import TableBooks from '../components/TableBooks'
 import SearchBar from '../components/SearchBar'
 import Loader from '../components/Loader'
 import SortButton from "../components/SortButton";
+import {API_URL} from "../constants/constants";
 
 class StoreBooks extends PureComponent {
-
     state = {
         term: '',
         books: [],
@@ -17,7 +17,7 @@ class StoreBooks extends PureComponent {
     };
 
     componentDidMount() {
-        axios.get('http://localhost:4200/book/')
+        axios.get(`${API_URL}/book/`)
             .then(response => {
                 this.setState({
                     books: response.data,
@@ -30,8 +30,9 @@ class StoreBooks extends PureComponent {
     };
 
     removeToListBook = (item) => {
+        const {books} = this.state;
         this.setState({
-            books: this.state.books.filter(el => el._id !== item._id)
+            books: books.filter(el => el._id !== item._id)
         })
     };
 
@@ -77,16 +78,16 @@ class StoreBooks extends PureComponent {
             <>
                 <div className="table-dashboard">
                     <div className="table-dashboard-btn">
-                            <ReactToExcel
-                                className='btn-excel'
-                                table="table-to-xls"
-                                filename="books-table"
-                                sheet="books"
-                                buttonText=""
-                            />
+                        <ReactToExcel
+                            className='btn-excel'
+                            table="table-to-xls"
+                            filename="books-table"
+                            sheet="books"
+                            buttonText=""
+                        />
                         <SortButton sortBy={this.sortBy}/>
                     </div>
-                    <SearchBar onSearchChange={this.onSearchChange}/>
+                    <SearchBar onSearch={this.onSearchChange}/>
                 </div>
                 <TableBooks books={visibleItems}
                             removeToListBook={this.removeToListBook}

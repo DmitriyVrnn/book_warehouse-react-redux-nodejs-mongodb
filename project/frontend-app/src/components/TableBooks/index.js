@@ -1,14 +1,14 @@
-import React, {Fragment} from 'react'
+import React, { Fragment } from 'react'
 
 import TableRow from '../TableRow'
-import {WORKER} from "../../constants/constants";
+import { WORKER } from "../../constants/constants";
 
 const TableBooks = ({books, removeToListBook, role}) => {
 
     const elements = books.map((object, i) => {
         return (
-            <TableRow obj={object}
-                      key={i}
+            <TableRow key={i}
+                      obj={object}
                       removeToListBook={removeToListBook}
                       roleUser={role}/>
         )

@@ -1,5 +1,6 @@
 import React, {PureComponent} from 'react';
 import axios from 'axios';
+import {API_URL} from "../../constants/constants";
 
 export default class EditBook extends PureComponent {
 
@@ -13,7 +14,7 @@ export default class EditBook extends PureComponent {
     };
 
     componentDidMount() {
-        axios.get('http://localhost:4200/book/edit/' + this.props.match.params.id)
+        axios.get(`${API_URL}/book/edit/${this.props.match.params.id}`)
             .then(response => {
                 this.setState({
                     titleBook: response.data.titleBook,
@@ -45,6 +46,8 @@ export default class EditBook extends PureComponent {
                     return this.setState({idBook: e.target.value});
                 case 'descriptionBook':
                     return this.setState({description: e.target.value});
+                default:
+                    return null;
             }
         }
     };
@@ -59,7 +62,7 @@ export default class EditBook extends PureComponent {
             series: this.state.series,
             idBook: this.state.idBook
         };
-        axios.post('http://localhost:4200/book/update/' + this.props.match.params.id, book)
+        axios.post(`${API_URL}/book/update/${this.props.match.params.id}`, book)
             .then(res => {
                 console.log(res);
                 this.props.history.push('/index/' + this.props.match.params.id)

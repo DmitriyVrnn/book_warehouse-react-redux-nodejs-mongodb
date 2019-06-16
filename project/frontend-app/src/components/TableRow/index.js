@@ -1,7 +1,7 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios';
-import {WORKER} from "../../constants/constants";
+import { WORKER } from "../../constants/constants";
 
 const TableRow = ({obj, removeToListBook, roleUser}) => {
 

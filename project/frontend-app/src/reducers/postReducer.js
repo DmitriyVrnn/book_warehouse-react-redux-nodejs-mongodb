@@ -1,4 +1,4 @@
-import {ADD_POST, DELETE_POST, FETCH_POST} from "../constants/constants";
+import { ADD_POST, DELETE_POST, FETCH_POST } from "../constants/constants";
 
 export default (state = [], action) => {
     switch (action.type){

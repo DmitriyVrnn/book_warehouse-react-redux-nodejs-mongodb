@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import axios from 'axios'
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
+import {API_URL} from "../../constants/constants";
 
 export default class AddBook extends PureComponent {
     constructor(props) {
@@ -49,6 +50,8 @@ export default class AddBook extends PureComponent {
                     return this.setState({idBook: e.target.value});
                 case 'descriptionBook':
                     return this.setState({description: e.target.value});
+                default:
+                    return null;
             }
         }
     };
@@ -72,14 +75,14 @@ export default class AddBook extends PureComponent {
         } = this.state;
         e.preventDefault();
         const book = {
-            titleBook: titleBook,
-            authorBook: authorBook,
-            description: description,
-            publishing: publishing,
-            series: series,
-            idBook: idBook
+            titleBook,
+            authorBook,
+            description,
+            publishing,
+            series,
+            idBook,
         };
-        axios.post(`http://localhost:4200/book/add`, book)
+        axios.post(`${API_URL}/book/add`, book)
             .then(res => this.onSuccess(res))
             .catch(this.onError);
         this.setState({

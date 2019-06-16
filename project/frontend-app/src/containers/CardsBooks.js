@@ -1,10 +1,10 @@
-import React, {useEffect} from 'react';
-import {connect} from 'react-redux';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import Loader from '../components/Loader';
 import ListBookCards from '../components/ListBookCards';
-import {fetchAllCollectionBooks, deleteBook} from "../actions/collectionBooks";
+import { fetchAllCollectionBooks, deleteBook } from "../actions/collectionBooks";
 
 const CardsBooks = ({fetchAllCollectionBooks, deleteBook,
                         booksCollection, loading, auth: {user}}) => {

@@ -28,7 +28,7 @@ const CardBook = ({book: { titleBook, authorBook, series,
                     <p>Автор: {authorBook}</p>
                     <p>Серия: {series}</p>
                     <p>Издательство: {publishing}</p>
-                    {!description ? <p>Описания: <span className={"not-description"}>❌</span></p>
+                    {!description ? <p>Описания: <span role="img" aria-label="empty" className={"not-description"}>❌</span></p>
                         : <p>Описание: {description}</p>}
                     {roleUser === WORKER ? null :
                         <div className="modal-book-btn">
@@ -54,7 +54,7 @@ CardBook.propTypes = {
         series: PropTypes.string,
         publishing: PropTypes.string,
         description: PropTypes.string,
-        _id: PropTypes.object,
+        _id: PropTypes.string,
     }),
     onDelete: PropTypes.func,
     roleUser: PropTypes.string,

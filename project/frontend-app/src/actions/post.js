@@ -1,11 +1,9 @@
-import {ADD_POST, DELETE_POST, FETCH_POST} from "../constants/constants";
+import {ADD_POST, DELETE_POST, FETCH_POST, API_URL} from "../constants/constants";
 import axios from 'axios';
-
-const apiUrl = 'http://localhost:4200/posts';
 
 export const createPost = ({ title, author, body, date }) => {
     return (dispatch) => {
-        return axios.post(`${apiUrl}/add`, {title, author, body, date})
+        return axios.post(`${API_URL}/posts/add`, {title, author, body, date})
             .then(response => {
                 dispatch(createPostSuccess(response.data))
             })
@@ -39,7 +37,7 @@ export const deletePostSuccess = id => {
 
 export const deletePost = id => {
     return (dispatch) => {
-        return axios.get(`${apiUrl}/delete/${id}`)
+        return axios.get(`${API_URL}/posts/delete/${id}`)
             .then(response => {
                 dispatch(deletePostSuccess(response.data))
             })
@@ -58,7 +56,7 @@ export const fetchPosts = (posts) => {
 
 export const fetchAllPosts = () => {
     return (dispatch) => {
-        return axios.get(apiUrl)
+        return axios.get(`${API_URL}/posts`)
             .then(response => {
                 dispatch(fetchPosts(response.data))
             })
