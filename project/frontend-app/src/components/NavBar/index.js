@@ -15,12 +15,13 @@ import StoreBooks from '../../containers/StoreBooks/StoreBooks';
 import UserInfo from "../UserInfo";
 import Posts from "../../containers/Posts";
 import Register from '../Register';
-import Links from '../Links';
+import Menu from '../Menu';
 import CardsBooks from '../../containers/CardsBooks/CardsBooks';
 import NotFound from '../NotFound';
 import {WORKER} from "../../constants/constants";
 
 const NavBar = ({user, role, onLogout, avatar}) => {
+
     const getRoutes = () => {
         return (
             <Switch>
@@ -53,7 +54,7 @@ const NavBar = ({user, role, onLogout, avatar}) => {
 
                 <section className="wrapper">
                     <aside className="sidebar">
-                        <Links role={role}/>
+                        <Menu role={role}/>
                     </aside>
 
                     <main className="content">

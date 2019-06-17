@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import {WORKER} from "../../constants/constants";
 
-const Links = ({role}) => {
+const Menu = ({role}) => {
     return (
         <ul className="sidebar-list">
             <li className="sidebar-item">
@@ -45,8 +45,8 @@ const Links = ({role}) => {
     )
 };
 
-export default Links
+export default Menu;
 
-Links.propTypes = {
+Menu.propTypes = {
   role: PropTypes.string
 };

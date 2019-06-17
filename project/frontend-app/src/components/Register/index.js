@@ -1,22 +1,19 @@
-import React, { PureComponent } from 'react';
-import { connect } from 'react-redux';
+import React, {PureComponent} from 'react';
+import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 
-import { registerUser } from "../../actions/authentication";
+import {registerUser} from "../../actions/authentication";
 
 class Register extends PureComponent {
 
-    constructor() {
-        super();
-        this.state = {
-            name: '',
-            email: '',
-            password: '',
-            password_confirm: '',
-            errors: {}
-        }
-    }
+    state = {
+        name: '',
+        email: '',
+        password: '',
+        password_confirm: '',
+        errors: {}
+    };
 
     handleInputChange = (e) => {
         this.setState({
@@ -25,12 +22,13 @@ class Register extends PureComponent {
     };
 
     handleSubmit = (e) => {
+        const {name, email, password, password_confirm} = this.state;
         e.preventDefault();
         const user = {
-            name: this.state.name,
-            email: this.state.email,
-            password: this.state.password,
-            password_confirm: this.state.password_confirm
+            name,
+            email,
+            password,
+            password_confirm
         };
         this.props.registerUser(user, this.props.history);
     };
@@ -51,7 +49,7 @@ class Register extends PureComponent {
     }
 
     componentDidMount() {
-        if(this.props.auth.isAuthenticated) {
+        if (this.props.auth.isAuthenticated) {
             this.props.history.push('/register');
         }
     }
@@ -117,14 +115,12 @@ class Register extends PureComponent {
     }
 }
 
+export default connect(state => ({
+    auth: state.auth,
+    errors: state.errors
+}), {registerUser})(withRouter(Register))
+
 Register.propTypes = {
     registerUser: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired
 };
-
-const mapStateToProps = state => ({
-    auth: state.auth,
-    errors: state.errors
-});
-
-export default connect(mapStateToProps, {registerUser})(withRouter(Register))

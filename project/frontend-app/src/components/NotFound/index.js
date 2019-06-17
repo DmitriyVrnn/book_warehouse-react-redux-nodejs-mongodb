@@ -1,5 +1,5 @@
 import React from 'react'
-import Links from '../Links'
+import Menu from '../Menu'
 import {connect} from 'react-redux'
 import notFount from '../../static/img/notFound.PNG'
 
@@ -18,7 +18,7 @@ const NotFound = ({auth: {user}}) => {
                 </div>
                 <div className="link-wrap">
                     <p className="message-3">Вот несколько полезных ссылок, которые помогут вам: </p>
-                    <Links role={user.role}/>
+                    <Menu role={user.role}/>
                 </div>
             </div>
         </section>
