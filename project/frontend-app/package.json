@@ -38,6 +38,8 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-plugin-react": "^7.13.0",
     "loaders.css": "^0.1.2"
   }
 }
