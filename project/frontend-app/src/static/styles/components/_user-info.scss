@@ -1,0 +1,39 @@
+.block-user {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-information {
+  display: flex;
+  flex-direction: column;
+  height: 0;
+  padding-left: 62px;
+}
+
+.role-user {
+  font-size: 12px;
+  font-weight: 500;
+  color: #80cbc4;
+  text-transform: uppercase;
+}
+
+.avatar-user {
+  width: 53px;
+  border-radius: 10px;
+}
+
+.logout-link {
+  color: white;
+  text-decoration: underline;
+  font-size: 12px;
+  padding-top: 5px;
+
+  .fas{
+    color: #00c853;
+  }
+
+  &:hover{
+    color: #cc584c;
+    text-decoration: none;
+  }
+}

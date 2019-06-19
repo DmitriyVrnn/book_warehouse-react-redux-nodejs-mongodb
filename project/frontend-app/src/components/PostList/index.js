@@ -1,0 +1,41 @@
+import React from 'react'
+import {connect} from 'react-redux'
+
+import Post from '../Post'
+import {deletePost} from "../../actions/post";
+
+const PostList = ({posts, deletePost, author, date, role}) => {
+    if (!posts.length) {
+        return (
+            <div>
+                Сообщения отсутствуют
+            </div>
+        )
+    }
+
+    return (
+        <div className={"post-list"}>
+            {posts.map(post => {
+                return (
+                    <Post post={post}
+                          author={author}
+                          date={date}
+                          onDelete={deletePost}
+                          roleUser={role}
+                          key={post._id}/>
+                );
+            })}
+        </div>
+    );
+};
+
+const mapStateToProps = state => {
+    return {
+        posts: state.posts,
+    };
+};
+
+export default connect(
+    mapStateToProps,
+    {deletePost},
+)(PostList);
