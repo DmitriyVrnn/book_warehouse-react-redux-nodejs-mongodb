@@ -1,4 +1,3 @@
-//Эта функция проверяет, является ли переданное значение undefined или null или длина объекта или строки равна 0.
 const isEmpty = (value) => {
     return (
         value === undefined ||
