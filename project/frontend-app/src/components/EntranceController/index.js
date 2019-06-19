@@ -1,40 +1,72 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
-import {withRouter} from 'react-router-dom';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
-import {logoutUser} from '../../actions/authentication'
-import Login from '../Login'
-import NavBar from '../NavBar/index'
+import { logoutUser } from '../../actions/authentication';
+import Login from '../Login';
+import NavBar from '../NavBar/index';
 
 class EntranceController extends Component {
-    onLogout = (e) => {
-        e.preventDefault();
-        this.props.logoutUser(this.props.history);
-    };
+  onLogout = (e) => {
+    const { history } = this.props;
+    const { logoutUserConnect } = this.props;
+    e.preventDefault();
+    logoutUserConnect(history);
+  };
 
-    render() {
-        const {isAuthenticated, user} = this.props.auth;
-        const authLinks = (
-            <NavBar onLogout={this.onLogout}
-                    user={user.name}
-                    role={user.role}
-                    avatar={user.avatar}/>
-        );
+  render() {
+    const {
+      auth: {
+        isAuthenticated,
+        user: {
+          name,
+          role,
+          avatar,
+        },
+      },
+    } = this.props;
+    const authLinks = (
+      <NavBar
+        onLogout={this.onLogout}
+        user={name}
+        role={role}
+        avatar={avatar}
+      />
+    );
 
-        return (
-            <>
-                {isAuthenticated ? authLinks : <Login/>}
-            </>
-        )
-    }
+    return (
+      <>
+        {isAuthenticated ? authLinks : <Login />}
+      </>
+    );
+  }
 }
 
 export default connect(state => ({
-    auth: state.auth
-}), {logoutUser})(withRouter(EntranceController));
+  auth: state.auth,
+}), { logoutUserConnect: logoutUser })(withRouter(EntranceController));
+
+EntranceController.defaultProps = {
+  auth: PropTypes.shape({
+    user: PropTypes.shape({
+      name: '',
+      role: '',
+    }),
+    isAuthenticated: false,
+  }),
+};
 
 EntranceController.propTypes = {
-    logoutUser: PropTypes.func.isRequired,
-    auth: PropTypes.object.isRequired
+  auth: PropTypes.shape({
+    user: PropTypes.shape({
+      name: PropTypes.string,
+      role: PropTypes.string,
+    }),
+    isAuthenticated: PropTypes.bool,
+  }),
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }).isRequired,
+  logoutUserConnect: PropTypes.func.isRequired,
 };

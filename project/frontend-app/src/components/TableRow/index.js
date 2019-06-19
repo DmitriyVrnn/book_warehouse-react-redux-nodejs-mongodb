@@ -1,55 +1,73 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { WORKER } from "../../constants/constants";
+import PropTypes from 'prop-types';
 
-const TableRow = ({obj, removeToListBook, roleUser}) => {
+import { WORKER } from '../../constants/constants';
 
-    const deleteBook = () => {
-        const confirm = window.confirm(`Вы уверены что хотите удалить книгу "${obj.titleBook}"?`);
-        if (confirm) {
-            axios.get(`http://localhost:4200/book/delete/` + obj._id)
-                .then(() => {
-                    alert(`Книга "${obj.titleBook}" удалена`);
-                    removeToListBook(obj);
-                })
-                .catch((err) => console.log(err));
-        } else alert("Удаление отменено")
-    };
+const TableRow = ({ obj, removeToListBook, roleUser }) => {
+  const {
+    titleBook, authorBook, publishing, series, idBook, _id,
+  } = obj;
 
-    return (
-        <tr>
+  const deleteBook = () => {
+    const confirm = window.confirm(`Вы уверены что хотите удалить книгу "${titleBook}"?`);
+    if (confirm) {
+      axios.get(`http://localhost:4200/book/delete/${_id}`)
+        .then(() => {
+          alert(`Книга "${titleBook}" удалена`);
+          removeToListBook(obj);
+        })
+        .catch(err => console.log(err));
+    } else alert('Удаление отменено');
+  };
+
+  return (
+    <tr>
+      <td>
+        {titleBook}
+      </td>
+      <td>
+        {authorBook}
+      </td>
+      <td>
+        {publishing}
+      </td>
+      <td>
+        {series}
+      </td>
+      <td>{idBook}</td>
+      {roleUser === WORKER ? null
+        : (
+          <>
             <td>
-                {obj.titleBook}
+              <button type="button" className="table-btn table-btn-edit" title="Редактировать">
+                <Link to={`/edit/${_id}`}>
+                  <i className="fas fa-edit" />
+                </Link>
+              </button>
             </td>
             <td>
-                {obj.authorBook}
+              <button type="button" className="table-btn table-btn-delete" title="Удалить" onClick={deleteBook}>
+                <i className="fas fa-trash-alt" />
+              </button>
             </td>
-            <td>
-                {obj.publishing}
-            </td>
-            <td>
-                {obj.series}
-            </td>
-            <td>{obj.idBook}</td>
-            {roleUser === WORKER ? null :
-                <>
-                    <td>
-                        <button className="table-btn table-btn-edit" title="Редактировать">
-                            <Link to={"/edit/" + obj._id}>
-                                <i className="fas fa-edit"></i>
-                            </Link>
-                        </button>
-                    </td>
-                    <td>
-                        <button className="table-btn table-btn-delete" title="Удалить" onClick={deleteBook}>
-                            <i className="fas fa-trash-alt"></i>
-                        </button>
-                    </td>
-                </>
-            }
-        </tr>
-    )
+          </>
+        )
+        }
+    </tr>
+  );
 };
 
 export default TableRow;
+
+TableRow.propTypes = {
+  obj: PropTypes.objectOf(PropTypes.any),
+  removeToListBook: PropTypes.func.isRequired,
+  roleUser: PropTypes.string,
+};
+
+TableRow.defaultProps = {
+  obj: {},
+  roleUser: '',
+};

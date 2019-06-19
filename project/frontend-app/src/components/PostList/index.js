@@ -1,41 +1,46 @@
-import React from 'react'
-import {connect} from 'react-redux'
+import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
-import Post from '../Post'
-import {deletePost} from "../../actions/post";
+import Post from '../Post';
+import { deletePost } from '../../actions/post';
 
-const PostList = ({posts, deletePost, author, date, role}) => {
-    if (!posts.length) {
-        return (
-            <div>
-                Сообщения отсутствуют
-            </div>
-        )
-    }
-
+const PostList = ({
+  posts, deletePostConnect, author, date, role,
+}) => {
+  if (!posts.length) {
     return (
-        <div className={"post-list"}>
-            {posts.map(post => {
-                return (
-                    <Post post={post}
-                          author={author}
-                          date={date}
-                          onDelete={deletePost}
-                          roleUser={role}
-                          key={post._id}/>
-                );
-            })}
-        </div>
+      <div>
+          Сообщения отсутствуют
+      </div>
     );
+  }
+
+  return (
+    <div className="post-list">
+      {posts.map(post => (
+        <Post
+          post={post}
+          author={author}
+          date={date}
+          onDelete={deletePostConnect}
+          roleUser={role}
+          key={post._id}
+        />
+      ))}
+    </div>
+  );
 };
 
-const mapStateToProps = state => {
-    return {
-        posts: state.posts,
-    };
+export default connect(state => ({
+  posts: state.posts,
+}), { deletePostConnect: deletePost })(PostList);
+
+PostList.propTypes = {
+  posts: PropTypes.array.isRequired,
+  deletePostConnect: PropTypes.func.isRequired,
+  author: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  role: PropTypes.string.isRequired,
 };
 
-export default connect(
-    mapStateToProps,
-    {deletePost},
-)(PostList);
