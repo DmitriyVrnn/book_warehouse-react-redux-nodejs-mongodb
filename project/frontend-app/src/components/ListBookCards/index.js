@@ -30,7 +30,7 @@ export default ListBookCards;
 ListBookCards.propTypes = {
   onDelete: PropTypes.func,
   role: PropTypes.string,
-  booksCards: PropTypes.array,
+  booksCards: PropTypes.arrayOf(PropTypes.any),
 };
 
 ListBookCards.defaultProps = {

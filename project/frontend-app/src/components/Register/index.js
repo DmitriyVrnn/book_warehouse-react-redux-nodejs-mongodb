@@ -10,13 +10,14 @@ class Register extends PureComponent {
       name: '',
       email: '',
       password: '',
-      password_confirm: '',
+      passwordConfirm: '',
       errors: {},
     };
 
     componentDidMount() {
-      if (this.props.auth.isAuthenticated) {
-        this.props.history.push('/register');
+      const { auth: { isAuthenticated }, history } = this.props;
+      if (isAuthenticated) {
+        history.push('/register');
       }
     }
 
@@ -25,7 +26,7 @@ class Register extends PureComponent {
         name: '',
         email: '',
         password: '',
-        password_confirm: '',
+        passwordConfirm: '',
         errors: {},
       });
       if (nextProps.errors) {
@@ -43,20 +44,23 @@ class Register extends PureComponent {
 
     handleSubmit = (e) => {
       const {
-        name, email, password, password_confirm,
+        name, email, password, passwordConfirm,
       } = this.state;
+      const { registerUserConnect, history } = this.props;
       e.preventDefault();
       const user = {
         name,
         email,
         password,
-        password_confirm,
+        passwordConfirm,
       };
-      this.props.registerUser(user, this.props.history);
+      registerUserConnect(user, history);
     };
 
     render() {
-      const { errors } = this.state;
+      const {
+        errors, name, password, email, passwordConfirm,
+      } = this.state;
       return (
         <div className="container-register-form">
           <form className="register-form" onSubmit={this.handleSubmit}>
@@ -68,7 +72,7 @@ class Register extends PureComponent {
                 className="input-register"
                 name="name"
                 onChange={this.handleInputChange}
-                value={this.state.name}
+                value={name}
               />
               {errors.name && (<div className="invalid-feedback">{errors.name}</div>)}
             </div>
@@ -79,7 +83,7 @@ class Register extends PureComponent {
                 className="input-register"
                 name="email"
                 onChange={this.handleInputChange}
-                value={this.state.email}
+                value={email}
               />
               {errors.email && (<div className="invalid-feedback">{errors.email}</div>)}
             </div>
@@ -90,7 +94,7 @@ class Register extends PureComponent {
                 className="input-register"
                 name="password"
                 onChange={this.handleInputChange}
-                value={this.state.password}
+                value={password}
               />
               {errors.password && (<div className="invalid-feedback">{errors.password}</div>)}
             </div>
@@ -101,13 +105,13 @@ class Register extends PureComponent {
                 className="input-register"
                 name="password_confirm"
                 onChange={this.handleInputChange}
-                value={this.state.password_confirm}
+                value={passwordConfirm}
               />
-              {errors.password_confirm && (<div className="invalid-feedback">{errors.password_confirm}</div>)}
+              {errors.passwordConfirm && (<div className="invalid-feedback">{errors.passwordConfirm}</div>)}
             </div>
             <div className="form-group">
               <button className="btn-register" type="submit">
-                            Добавить сотрудника
+                Добавить сотрудника
               </button>
             </div>
           </form>
@@ -119,9 +123,27 @@ class Register extends PureComponent {
 export default connect(state => ({
   auth: state.auth,
   errors: state.errors,
-}), { registerUser })(withRouter(Register));
+}), { registerUserConnect: registerUser })(withRouter(Register));
 
 Register.propTypes = {
-  registerUser: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired,
+  registerUserConnect: PropTypes.func.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }).isRequired,
+  auth: PropTypes.shape({
+    isAuthenticated: PropTypes.bool,
+  }),
+  errors: PropTypes.shape({
+    name: PropTypes.string,
+    email: PropTypes.string,
+    password: PropTypes.string,
+    passwordConfirm: PropTypes.string,
+  }),
+};
+
+Register.defaultProps = {
+  errors: ({}),
+  auth: {
+    isAuthenticated: false,
+  },
 };

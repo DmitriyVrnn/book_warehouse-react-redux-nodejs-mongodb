@@ -38,7 +38,7 @@ export default connect(state => ({
 CardsBooks.propTypes = {
   fetchAllCollectionBooksConnect: PropTypes.func,
   deleteBookConnect: PropTypes.func,
-  booksCollection: PropTypes.array,
+  booksCollection: PropTypes.arrayOf(PropTypes.any),
   loading: PropTypes.bool,
   auth: PropTypes.shape({
     user: PropTypes.shape({
