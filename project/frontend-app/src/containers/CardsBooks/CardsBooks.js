@@ -4,44 +4,59 @@ import PropTypes from 'prop-types';
 
 import Loader from '../../components/Loader/index';
 import ListBookCards from '../../components/ListBookCards/index';
-import { fetchAllCollectionBooks, deleteBook } from "../../actions/collectionBooks";
+import { fetchAllCollectionBooks, deleteBook } from '../../actions/collectionBooks';
 
-const CardsBooks = ({fetchAllCollectionBooks, deleteBook,
-                        booksCollection, loading, auth: {user}}) => {
+const CardsBooks = ({
+  fetchAllCollectionBooksConnect, deleteBookConnect,
+  booksCollection, loading, auth: { user: { role } },
+}) => {
+  useEffect(() => {
+    fetchAllCollectionBooksConnect();
+  }, []);
 
-    useEffect(() => {
-        fetchAllCollectionBooks()
-    }, []);
-
-    if (loading) {
-        return <Loader/>
-    } else {
-        return (
-            <ListBookCards role={user.role}
-                           onDelete={deleteBook}
-                           booksCards={booksCollection}/>
-        )
-    }
+  if (loading) {
+    return <Loader />;
+  }
+  return (
+    <ListBookCards
+      role={role}
+      onDelete={deleteBookConnect}
+      booksCards={booksCollection}
+    />
+  );
 };
 
-export default connect((state) => ({
-    booksCollection: state.booksCollection.booksItem,
-    loading: state.booksCollection.loading,
-    auth: state.auth
-}), {fetchAllCollectionBooks, deleteBook})(CardsBooks)
+export default connect(state => ({
+  booksCollection: state.booksCollection.booksItem,
+  loading: state.booksCollection.loading,
+  auth: state.auth,
+}), {
+  fetchAllCollectionBooksConnect: fetchAllCollectionBooks,
+  deleteBookConnect: deleteBook,
+})(CardsBooks);
 
 CardsBooks.propTypes = {
-    fetchAllCollectionBooks: PropTypes.func,
-    deleteBook: PropTypes.func,
-    booksCollection: PropTypes.array,
-    loading: PropTypes.bool,
-    user: PropTypes.string,
+  fetchAllCollectionBooksConnect: PropTypes.func,
+  deleteBookConnect: PropTypes.func,
+  booksCollection: PropTypes.array,
+  loading: PropTypes.bool,
+  auth: PropTypes.shape({
+    user: PropTypes.shape({
+      role: PropTypes.string,
+    }),
+  }),
 };
 
 CardsBooks.defaultProps = {
-    fetchAllCollectionBooks: () => {},
-    deleteBook: () => {},
-    booksCollection: [],
-    loading: false,
-    user: '',
+  fetchAllCollectionBooksConnect: () => {
+  },
+  deleteBookConnect: () => {
+  },
+  booksCollection: {},
+  loading: false,
+  auth: {
+    user: {
+      role: '',
+    },
+  },
 };
