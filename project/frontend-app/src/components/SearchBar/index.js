@@ -1,23 +1,28 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
-const SearchBar = ({onSearch}) => {
-    const initialState = '';
-    const [text, setText] = useState(initialState);
+const SearchBar = ({ onSearch }) => {
+  const initialState = '';
+  const [text, setText] = useState(initialState);
 
-    const onSearchChange = (e) => {
-        const text = e.target.value;
-        setText(text);
-        onSearch(text);
-    };
+  const onSearchChange = (e) => {
+    setText(e.target.value);
+    onSearch(text);
+  };
 
-    return (
-        <div className={'search-bar'}>
-            <input type="search"
-                   value={text}
-                   onChange={onSearchChange}
-                   placeholder={'Введите название книги...'}
-            />
-        </div>
-    )
+  return (
+    <div className="search-bar">
+      <input
+        type="search"
+        value={text}
+        onChange={onSearchChange}
+        placeholder="Введите название книги..."
+      />
+    </div>
+  );
 };
 export default SearchBar;
+
+SearchBar.propTypes = {
+  onSearch: PropTypes.func.isRequired,
+};
