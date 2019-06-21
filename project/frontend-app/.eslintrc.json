@@ -32,6 +32,6 @@
     "no-shadow": ["error", { "hoist": "never" }],
     "spaced-comment":"off",
     "no-underscore-dangle": "off",
-    "linebreak-style": "off",
+    "linebreak-style": "off"
   }
 }
